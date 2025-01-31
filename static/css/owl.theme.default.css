@@ -21,7 +21,7 @@
     cursor: pointer;
     border-radius: 3px; }
     .owl-theme .owl-nav [class*='owl-']:hover {
-      background: #ff8119;
+      background: #FF5E57;
       
       text-decoration: none;
       color:#fff; }
@@ -51,4 +51,4 @@
       transition: opacity 200ms ease;
       }
     .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-       border-radius:5px; background-color: #ff8119; }
+       border-radius:5px; background-color: #FF5E57; }
