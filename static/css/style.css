@@ -446,6 +446,15 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 #navigation.small-screen .submenu-button.submenu-opened:before { display: none; }
 #navigation.small-screen.select-list { padding: 5px; }
 
+/* search-bar */
+#search-bar { margin-top: 20px; display: flex; align-items: center;}
+#search-bar .search-bar-ele { display: flex; flex-direction: column; }
+#search-bar label{ font-size: 14px; color: #292c2e; font-weight: normal;}
+#search-bar option{ font-size: 14px; color: #292c2e;}
+#search-bar .reset-btn { margin: 0 auto; position: absolute; bottom: -30px; }
+#search-bar .search-btn{ width: 100%; }
+#search-bar .search-input { height: 35px; }
+
 /*----------------------------------------------
     5.4 Page Header
 ----------------------------------------------*/
