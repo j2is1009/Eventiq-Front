@@ -350,11 +350,12 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 }
 .social ul li a:hover{background-color: #8e1e1a; color:#fff;}
 .header {}
-.header-wrapper { z-index: 9; background: #fff; position: relative; padding-top: 20px; padding-bottom: 5px;border-bottom: 1px #ebecee solid; }
+.header-decoration-line { background: linear-gradient(to right,#1B3B5F,#FFD93D,#FF5E57); margin: 0; margin-bottom: 20px; height: 9px; border: none;}
+.header-wrapper { z-index: 9; background: #fff; position: relative; padding-top: 0px; padding-bottom: 10px;border-bottom: 1px #ebecee solid; }
 .is-sticky .header-wrapper {border-bottom: 1px #ebecee solid; }
 /*--------------------------
     5.2 Navigations Regular
-   ----------------------------*/
+----------------------------*/
 .hero-section { background: url(../images/hero-img.jpg) no-repeat center; background-size: cover; }
 .hero-section-caption { margin-top: 110px; margin-bottom: 110px; background-color: #4d8638; border-radius: 6px; }
 .hero-title { color: #fff; font-size: 35px; font-weight: 100; line-height: 45px; margin-bottom: 25px; }
@@ -368,7 +369,7 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 #navigation.align-center > ul > li { display: inline-block; float: none; }
 #navigation.align-center ul ul { text-align: left; }
 #navigation.align-right > ul > li { float: right; }
-#navigation > ul > li > a { margin: 0px 2px; border-radius: 7px; padding: 14px; font-size: 15px; color: #292c2e; text-decoration: none; font-weight: 600; text-transform: capitalize; }
+#navigation > ul > li > a { margin: 0px 2px; border-radius: 7px; padding: 14px; font-size: 16px; color: #292c2e; text-decoration: none; font-weight: 600; text-transform: capitalize; }
 #navigation > ul > li:hover > a { background-color:#FFD93D; color: #6e6e6e; }
 #navigation > ul > li.has-sub > a { padding-right: 32px; }
 
@@ -451,13 +452,14 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 #search-bar { position: relative; border: 1.5px solid #FFD93D; align-items: center; justify-content: space-between; display: flex; margin-top: 20px; border-radius: 15px; }
 #search-bar .search-bar-ele { display: flex; flex-direction: column; padding: 5px;}
 #search-bar label{ margin-bottom: 4px; font-size: 11px; color: #292c2e; }
-#search-bar select { font-size: 13px; }
-#search-bar option{ font-size: 13px; color: #292c2e;}
+#search-bar select { font-size: 12px; }
+#search-bar option{ font-size: 12px; color: #292c2e;}
 #search-bar .btn-set { position: absolute; right: 0; margin: 0; padding: 0; height: 100%; }
 #search-bar .search-btn{ right: 0; position: absolute; height: 100%; width: 80%; margin: 0; border-radius: 0 15px 15px 0; padding: 10px 10px 6px 10px; background-color: #FFD93D; }
 #search-bar .search-btn:hover { background-color: #ffeeab; }
-#search-bar .search-input { margin: 0; font-size: 13px; height: 25px; border-bottom: 1px solid #c1c1c1; box-shadow: none; }
-#search-bar select { height: 25px; border-radius: 5px; }
+#search-bar .search-input { margin: 0; font-size: 12px; height: 22px; border-bottom: 1px solid #c1c1c1; box-shadow: none; }
+#search-bar .search-input:focus { box-shadow: 0 0 7px #ffeeab; }
+#search-bar select { height: 22px; border-radius: 5px; }
 #search-bar .reset-btn > svg { cursor: pointer; height: 17px; width: 17px; bottom: -5px; position: relative;}
 #search-bar .form-select { border-radius: 5px; border: none; cursor: pointer; border: #FFD93D 1.5px solid; background-color: #fffcf0; }
 #search-bar .form-select:focus { outline: none; box-shadow: 0 0 7px #ffeeab; }
