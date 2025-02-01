@@ -41,96 +41,87 @@
                                 alt=""></a>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-10 col-sm-8 col-xs-12">
+                <div class="col-lg-9 col-md-10 col-sm-8 col-xs-12">
                     <div class="navigation-wrapper">
                         <div id="navigation">
                             <ul>
-                                <li class="active"><a href="index.html" title="">Home</a></li>
-                                <li><a href="about.html" title="">About</a> </li>
-                                <li class="has-sub"><a href="#" title="">Courses</a>
-                                    <ul>
-                                        <li><a href="courses.html" title="">Courses</a></li>
-                                        <li><a href="courses-single.html" title="">Courses Single </a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub"><a href="#" title="">Blog</a>
-                                    <ul>
-                                        <li><a href="blog-default.html" title="">Blog Default</a></li>
-                                        <li><a href="blog-single.html" title="">Blog Single</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub"><a href="#" title="">Features</a>
-                                    <ul>
-                                        <li><a href="testimonials.html" title="">Testimonials</a></li>
-                                        <li><a href="404-error.html" title="">404 error</a></li>
-                                        <li><a href="styleguide.html" title="">Styleguide</a></li>
-                                    </ul>
-                                </li>
-                                <!-- <li><a href="contact.html" title="">Contact</a> </li> -->
+                                <li class="active"><a href="index.html" title="">이벤트 둘러보기</a></li>
+                                <li class="active"><a href="index.html" title="">이벤트 주최하기</a></li>
+                                <li class="active"><a href="index.html" title="">유료 서비스</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 hidden-md hidden-sm hidden-xs"> <a href="#" class="btn btn-primary">로그인</a> </div>
+                <div class="col-lg-1 hidden-md hidden-sm hidden-xs"> <a href="#" class="btn btn-primary">로그인</a> </div>
                 <!-- <div class="col-lg-2 hidden-md hidden-sm hidden-xs"> <a href="#" class="btn btn-primary">로그아웃</a> </div> -->
             </div>
             <div class="row">
                 <div id="search-bar">
-                    <!-- 검색어 입력 -->
-                    <div class="col-lg-5 col-md-5 col-xs-5 search-bar-ele">
-                        <label class="form-label">검색어</label>
-                        <input type="text" class="form-control search-input" placeholder="제목, 채널 이름으로 검색 하세요.">
+                    <div class="serach-bar-border col-lg-11 col-md-11 col-xs-11">
+                        <!-- 검색어 입력 -->
+                        <div class="col-lg-6 col-md-6 col-xs-6 search-bar-ele">
+                            <label class="form-label">검색어</label>
+                            <input type="text" class="form-control search-input" placeholder="제목, 채널 이름으로 검색 하세요.">
+                        </div>
+                
+                        <!-- 카테고리 -->
+                        <div class="col-lg-2 col-md-2 col-xs-2 search-bar-ele">
+                            <label class="form-label">카테고리</label>
+                            <select class="form-select">
+                                <option selected>전체</option>
+                                <option>IT/기술</option>
+                                <option>스타트업</option>
+                                <option>커리어</option>
+                                <option>취미</option>
+                                <option>디자인</option>
+                                <option>비즈니스</option>
+                                <option>음식 & 음료</option>
+                                <option>프로그래밍</option>
+                                <option>홈 & 라이프스타일</option>
+                                <option>여행</option>
+                                <option>자기계발</option>
+                                <option>스포츠</option>
+                                <option>금융</option>
+                                <option>건강</option>
+                                <option>마케팅</option>
+                                <option>파티</option>
+                                <option>독서</option>
+                            </select>
+                        </div>
+                        
+                        <!-- 이벤트 유형 -->
+                        <div class="col-lg-2 col-md-2 col-xs-2 search-bar-ele">
+                            <label class="form-label">이벤트 유형</label>
+                            <select class="form-select">
+                                <option selected>전체</option>
+                                <option>온라인</option>
+                                <option>오프라인</option>
+                            </select>
+                        </div>
+                
+                        <!-- 유/무료 -->
+                        <div class="col-lg-1 col-md-1 col-xs-1 search-bar-ele">
+                            <label class="form-label">유/무료</label>
+                            <select class="form-select">
+                                <option selected>전체</option>
+                                <option>유료</option>
+                                <option>무료</option>
+                            </select>
+                        </div>
+                        <div class="reset-btn" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bootstrap-reboot" viewBox="0 0 16 16">
+                                <path d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 1 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.8 6.8 0 0 0 1.16 8z"/>
+                                <path d="M6.641 11.671V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352zm0-3.75V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324z"/>
+                            </svg>
+                        </div>
+                    <!-- 검색 버튼 -->
                     </div>
-            
-                    <!-- 이벤트 유형 -->
-                    <div class="col-lg-2 col-md-2 col-xs-2 search-bar-ele">
-                        <label class="form-label">이벤트 유형</label>
-                        <select class="form-select">
-                            <option selected>전체</option>
-                            <option>온라인</option>
-                            <option>오프라인</option>
-                        </select>
-                    </div>
-            
-                    <!-- 카테고리 -->
-                    <div class="col-lg-2 col-md-2 col-xs-2 search-bar-ele">
-                        <label class="form-label">카테고리</label>
-                        <select class="form-select">
-                            <option selected>전체</option>
-                            <option>IT/기술</option>
-                            <option>스타트업</option>
-                            <option>커리어</option>
-                            <option>취미</option>
-                            <option>디자인</option>
-                            <option>비즈니스</option>
-                            <option>음식 & 음료</option>
-                            <option>프로그래밍</option>
-                            <option>홈 & 라이프스타일</option>
-                            <option>여행</option>
-                            <option>자기계발</option>
-                            <option>스포츠</option>
-                            <option>금융</option>
-                            <option>건강</option>
-                            <option>마케팅</option>
-                            <option>파티</option>
-                            <option>독서</option>
-                        </select>
-                    </div>
-            
-                    <!-- 유/무료 -->
-                    <div class="col-lg-1 col-md-2 col-xs-2 search-bar-ele">
-                        <label class="form-label">유/무료</label>
-                        <select class="form-select">
-                            <option selected>전체</option>
-                            <option>유료</option>
-                            <option>무료</option>
-                        </select>
-                    </div>
-            
-                    <!-- 초기화 및 검색 버튼 -->
                     <div class="col-lg-1 col-md-1 col-xs-1 btn-set">
-                        <a class="btn btn-outline-secondary hidden-xs hidden-sm reset-btn">초기화</a>
-                        <button class="btn btn-primary search-btn">검색</button>
+                        <button class="btn btn-primary search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>

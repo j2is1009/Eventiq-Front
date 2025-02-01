@@ -136,7 +136,7 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 /*-----------------------------------
     3. Buttons 
 -----------------------------------*/
-.btn { font-family: 'Open Sans', sans-serif; font-size: 13px; text-transform: uppercase; font-weight: 700; padding: 12px 14px;  margin-bottom: 4px; letter-spacing: .75px; border-radius:3px; border: transparent; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s;}
+.btn { font-family: 'Open Sans', sans-serif; font-size: 13px; text-transform: uppercase; font-weight: 700; padding: 12px 14px;  margin-bottom: 4px; letter-spacing: .75px; border-radius:10px; border: transparent; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s;}
 .btn-primary { background-color:#FF5E57; color: #fff; }
 .btn-primary:hover { background-color: #ff9e99; color: #fff;  }
 .btn-primary.focus, .btn-default:focus { background-color: #ff9e99; color: #fff;  }
@@ -350,7 +350,7 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 }
 .social ul li a:hover{background-color: #8e1e1a; color:#fff;}
 .header {}
-.header-wrapper { z-index: 9; background: #fff; position: relative; padding-top: 20px; padding-bottom: 20px;border-bottom: 1px #ebecee solid; }
+.header-wrapper { z-index: 9; background: #fff; position: relative; padding-top: 20px; padding-bottom: 5px;border-bottom: 1px #ebecee solid; }
 .is-sticky .header-wrapper {border-bottom: 1px #ebecee solid; }
 /*--------------------------
     5.2 Navigations Regular
@@ -368,9 +368,10 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 #navigation.align-center > ul > li { display: inline-block; float: none; }
 #navigation.align-center ul ul { text-align: left; }
 #navigation.align-right > ul > li { float: right; }
-#navigation > ul > li > a { padding: 14px; font-size: 15px; color: #292c2e; text-decoration: none; font-weight: 600; text-transform: capitalize; }
-#navigation > ul > li:hover > a { background-color:#FFD93D; border-top-right-radius:2px; border-top-left-radius:2px; }
+#navigation > ul > li > a { margin: 0px 2px; border-radius: 7px; padding: 14px; font-size: 15px; color: #292c2e; text-decoration: none; font-weight: 600; text-transform: capitalize; }
+#navigation > ul > li:hover > a { background-color:#FFD93D; color: #6e6e6e; }
 #navigation > ul > li.has-sub > a { padding-right: 32px; }
+
 
 /*#navigation > ul > li.has-sub > a:after {
  position: absolute;
@@ -447,13 +448,21 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 #navigation.small-screen.select-list { padding: 5px; }
 
 /* search-bar */
-#search-bar { margin-top: 20px; display: flex; align-items: center;}
-#search-bar .search-bar-ele { display: flex; flex-direction: column; }
-#search-bar label{ font-size: 14px; color: #292c2e; font-weight: normal;}
-#search-bar option{ font-size: 14px; color: #292c2e;}
-#search-bar .reset-btn { margin: 0 auto; position: absolute; bottom: -30px; }
-#search-bar .search-btn{ width: 100%; }
-#search-bar .search-input { height: 35px; }
+#search-bar { position: relative; border: 1.5px solid #FFD93D; align-items: center; justify-content: space-between; display: flex; margin-top: 20px; border-radius: 15px; }
+#search-bar .search-bar-ele { display: flex; flex-direction: column; padding: 5px;}
+#search-bar label{ margin-bottom: 4px; font-size: 11px; color: #292c2e; }
+#search-bar select { font-size: 13px; }
+#search-bar option{ font-size: 13px; color: #292c2e;}
+#search-bar .btn-set { position: absolute; right: 0; margin: 0; padding: 0; height: 100%; }
+#search-bar .search-btn{ right: 0; position: absolute; height: 100%; width: 80%; margin: 0; border-radius: 0 15px 15px 0; padding: 10px 10px 6px 10px; background-color: #FFD93D; }
+#search-bar .search-btn:hover { background-color: #ffeeab; }
+#search-bar .search-input { margin: 0; font-size: 13px; height: 25px; border-bottom: 1px solid #c1c1c1; box-shadow: none; }
+#search-bar select { height: 25px; border-radius: 5px; }
+#search-bar .reset-btn > svg { cursor: pointer; height: 17px; width: 17px; bottom: -5px; position: relative;}
+#search-bar .form-select { border-radius: 5px; border: none; cursor: pointer; border: #FFD93D 1.5px solid; background-color: #fffcf0; }
+#search-bar .form-select:focus { outline: none; box-shadow: 0 0 7px #ffeeab; }
+#search-bar .form-select option { background-color: white; color: black; }
+#search-bar .serach-bar-border {  margin: 6px 0 3px 0;; display: flex; align-items: center; display: flex; justify-content: space-evenly;}
 
 /*----------------------------------------------
     5.4 Page Header
