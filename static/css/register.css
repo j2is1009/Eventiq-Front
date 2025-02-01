@@ -1,0 +1,66 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    height: 70vh;
+    width: 30vw;
+}
+
+.register-container .row {
+    width: 30vw;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.register-info {
+    margin-bottom: 3%;
+}
+
+.register-info> img {
+    height: 70px;
+    padding-bottom: 3%;
+}
+
+.register-container .row * {
+    margin-bottom: 0px !important;
+}
+
+/* 주소 디자인 */
+.register-button-container {
+    display: flex;
+}
+
+.register-button-container > .input-group {
+    width: 100%;
+}
+
+.search-address > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.email-send-auth > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* 회원가입 버튼 디자인*/
+.register-submit-btn {
+    flex-direction: row !important;
+}
+
+.register-submit-btn > button {
+    width: 95%;
+    height: 5vh;
+}
