@@ -9,7 +9,7 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 3%;
+    margin-top: 5%;
     margin-bottom: 5%;
     height: 70vh;
     width: 30vw;
@@ -63,4 +63,59 @@ main {
 .register-submit-btn > button {
     width: 95%;
     height: 5vh;
+}
+
+/* 이용 약관 */
+.tos-group {
+    margin-top: 15px;
+    align-items: baseline;
+}
+
+
+.tos-all-container {
+    border-bottom: 2px solid rgb(52, 52, 52);
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.tos-info input[type="checkbox"] {
+    margin-top: 0px;
+    margin-right: 10px;
+}
+
+.tos-info label {
+    font-size: 16px;
+    padding-right: 5px;
+}
+
+.tos-info label > .required-span {
+    color: red;
+    margin-right: 5px;
+}
+
+.tos-info label > .choice-span {
+    color: gray;
+    margin-right: 5px;
+}
+
+.choice-group {
+    margin-left: 10%;
+}
+
+.next-btn-container {
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid rgb(52, 52, 52);
+}
+
+.next-btn {
+    margin-top: 10px;
+    width: 20vw !important;
+}
+
+.next-btn > button {
+    font-size: 14px;   
+    border-radius: 10px;
 }
