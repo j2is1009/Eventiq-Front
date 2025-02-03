@@ -426,7 +426,8 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 #navigation.small-screen { width: 100%; }
 #navigation.small-screen ul { width: 100%; display: none; }
 #navigation.small-screen.align-center > ul { text-align: left; }
-#navigation.small-screen ul li { width: 100%; border-top:1px solid #2a5dce; top: auto; background-color:#1c4cb5; }
+#navigation.small-screen ul li { width: 100%; border-top:1px solid #ff726b; top: auto; background-color:#FF5E57; }
+#navigation.small-screen ul li a:hover { width: 100%; border-top:1px solid #FF5E57; top: auto; background-color:#ff726b; }
 #navigation.small-screen ul ul li, #navigation.small-screen li:hover > ul > li { height: auto; }
 #navigation.small-screen ul li a, #navigation.small-screen ul ul li a { width: 100%; border-bottom: 0; padding: 20px 15px; color:#fff;   }
 #navigation.small-screen > ul > li { float: none; }
@@ -436,12 +437,12 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 #navigation.small-screen ul ul li:hover > a, #navigation.small-screen ul ul li.active > a { background-color: #fff5ce; }
 #navigation.small-screen ul ul, #navigation.small-screen ul ul ul, #navigation.small-screen.align-right ul ul { position: relative; left: 0; width: 100%; margin: 0; text-align: left; }
 #navigation.small-screen > ul > li.has-sub > a:after, #navigation.small-screen > ul > li.has-sub > a:before, #navigation.small-screen ul ul > li.has-sub > a:after, #navigation.small-screen ul ul > li.has-sub > a:before { display: none; }
-#navigation.small-screen #menu-button {display: block; padding: 18px; color: #fff; cursor: pointer; font-size: 12px; text-transform: uppercase; font-weight: 600; background-color: #1c4cb5; margin-top: 60px; }
+#navigation.small-screen #menu-button {display: block; padding: 18px; color: #fff; cursor: pointer; font-size: 12px; text-transform: uppercase; font-weight: 600; background-color: #FF5E57; margin-top: 60px; }
 #navigation.small-screen #menu-button:after { position: absolute; top: 16px; right: 17px; display: block; height: 12px; width: 20px; border-top: 2px solid #fff; border-bottom: 2px solid #fff; content: ''; }
 #navigation.small-screen #menu-button:before { position: absolute; top: 21px; right: 17px; display: block; height: 2px; width: 20px; background: #fff; content: ''; }
 #navigation.small-screen #menu-button.menu-opened:after { top: 20px; border: 0; height: 2px; width: 15px; background: #fff; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
 #navigation.small-screen #menu-button.menu-opened:before { top: 20px; background: #fff; width: 15px; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
-#navigation.small-screen .submenu-button { position: absolute; z-index: 99; right: 0; top: 0; display: block; border-left: 1px solid #2a5dce; height: 54px; width: 53px; cursor: pointer; }
+#navigation.small-screen .submenu-button { position: absolute; z-index: 99; right: 0; top: 0; display: block; border-left: 1px solid #ff726b; height: 54px; width: 53px; cursor: pointer; }
 #navigation.small-screen .submenu-button.submenu-opened { }
 #navigation.small-screen ul ul .submenu-button { height: 34px; width: 34px; }
 #navigation.small-screen .submenu-button:after { position: absolute; top: 25px; right: 20px; width: 8px; height: 2px; display: block; background: #fff; content: ''; }
@@ -469,6 +470,9 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 #search-bar .form-select:focus { outline: none; box-shadow: 0 0 7px #ffeeab; }
 #search-bar .form-select option { background-color: white; color: black; }
 #search-bar .serach-bar-border {  margin: 6px 0 3px 0;; display: flex; align-items: center; display: flex; justify-content: space-evenly;}
+@media (max-width: 786px) {
+    #search-bar {display: none;}
+}
 
 /*----------------------------------------------
     5.4 Page Header
