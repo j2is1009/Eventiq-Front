@@ -1,0 +1,203 @@
+/* 기존 스타일 유지 */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 메인 컨테이너 */
+.tos-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 25vw;
+    min-width: 320px;
+    text-align: center;
+}
+
+/* 라벨 스타일 */
+.tos-info label {
+    margin-bottom: 0px;
+}
+
+/* 로고 스타일 */
+.tos-container img {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+/* 전체 동의 항목 */
+.tos-all-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* 체크박스 그룹 */
+.tos-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    position: relative; /* 상대 위치 설정 */
+}
+
+/* 체크박스 스타일 */
+.tos-info input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* 체크박스 체크 시 스타일 */
+.tos-info input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.tos-info input[type="checkbox"]:checked::after {
+    content: '✔';
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    left: 4px;
+    top: -2px;
+}
+
+/* 약관 제목 스타일 */
+.tos-info label {
+    font-size: 16px;
+    flex: 1;
+    text-align: left;
+}
+
+
+/* 약관 자세히보기 스타일*/
+.choice-group a {
+    flex-basis: 28%;
+}
+
+/* 필수 및 선택 구분 */
+.required-span {
+    color: red;
+    font-weight: bold;
+}
+
+.choice-span {
+    color: gray;
+}
+
+/* "자세히 보기" 링크 */
+.tos-group a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.tos-group a:hover {
+    text-decoration: underline;
+}
+
+/* 선택 항목 포함 스타일 */
+.choice-group {
+    margin-left: 30px; /* 하위 선택 항목 들여쓰기 */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* 다음 버튼 */
+.next-btn-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #dee2e6;
+    display: flex;
+    justify-content: center;
+}
+
+.next-btn {
+    width: 100%;
+}
+
+.next-btn button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.next-btn button:hover {
+    background-color: #0056b3;
+}
+
+.next-btn button:hover {
+    background-color: #0056b3;
+}
+
+/* 반응형 적용 (태블릿 및 모바일 최적화) */
+@media screen and (max-width: 1200px) {
+    .tos-container {
+        width: 35vw; /* 1200px 이하에서는 35% 너비 적용 */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .tos-container {
+        width: 45vw; /* 992px 이하에서는 45% 너비 적용 */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tos-container {
+        width: 60vw; /* 태블릿 환경에서 60% 너비 */
+        padding: 20px;
+    }
+
+    .tos-info label {
+        font-size: 14px;
+    }
+
+    .next-btn button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .tos-container {
+        width: 80vw; /* 모바일 환경에서 80% 너비 */
+    }
+
+    .tos-info input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .tos-container {
+        width: 90vw; /* 작은 화면에서 90% 너비 */
+    }
+
+    .tos-info label {
+        font-size: 12px;
+    }
+}
