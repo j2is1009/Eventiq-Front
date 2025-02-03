@@ -827,6 +827,20 @@ hr,.post-hr{border-bottom: 1px solid #e6e7e9;
 .error h2{font-size: 30px;font-weight: 600;}
 
 
+/* --------- mypage css --------- */
+/* mypage-main */
+.mypage-main{ display: flex; flex-direction: column; align-items: center; }
+.mypage-main .mypage-container { margin: 30px 0; border: 0.5px solid; width: 800px; display: flex; flex-direction: column; justify-content: flex-start;}
+.mypage-main .mypage-title { font-size: 20px; margin: 20px;}
+.mypage-main .mypage-content-container { width: 100%; display: flex; flex-direction: row; }
+.mypage-main .mypage-content-menu { width: 27%; }
+.mypage-main .profile-container { flex-direction: column; display: flex; justify-content: center; align-items: center; width: 100%; aspect-ratio: 1 / 1; background-color: #FFD93D;}
+.mypage-main .user-picture { margin: 20px 0; border-radius: 100%; height: 80%; aspect-ratio: 1 / 1; background-color: #fff;}
+.mypage-main .user-name { height: 20%;}
+.mypage-main .menu-container ul { border: 0.5px solid; }
+.mypage-main .menu-container li { border-bottom: 0.5px solid; padding: 12px 10px;}
+
+.mypage-main .mypage-content { width: 73%; }
 
 /*==========  Non-Mobile First Method  ==========*/
 
