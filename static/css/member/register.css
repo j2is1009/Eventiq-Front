@@ -20,7 +20,6 @@ main {
     flex: 1;
     padding: 12px;
     border: 1px solid #ced4da;
-    border-radius: 0 5px 5px 0;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
 }
@@ -41,11 +40,11 @@ main {
     margin-top: 5%;
     margin-bottom: 5%;
     height: 80vh;
+    min-height: 730px;
     width: 30vw;
     min-width: 350px;
     max-width: 500px; 
     border: 1px solid #ddd;
-    border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -60,9 +59,9 @@ main {
     margin-bottom: 3%;
 }
 
-.register-info> img {
+.register-info > img {
     height: 70px;
-    padding-bottom: 3%;
+    padding-bottom: 20px;
 }
 
 .register-container .row * {
@@ -109,15 +108,27 @@ main {
     color: white;
     border: none;
     font-size: 14px;
-    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    border: 1px solid #ced4da;
+}
+
+.form-control {
+    border-radius: 0%;
 }
 /* 반응형 디자인 */
 @media screen and (max-width: 768px) {
     .register-container {
         width: 80vw;
         padding: 15px;
+    }
+
+    .input-button-group{
+        height: 100%;
+    }
+
+    .input-button-group{
+        height: 100%;
     }
 
     .input-group {
@@ -129,6 +140,7 @@ main {
     .input-group-text {
         width: auto;
         padding: 5px 10px;
+        height: 100%;
         display: flex;
         align-items: center;
     }
@@ -147,6 +159,10 @@ main {
         align-items: center;
         width: 100%;
     }
+    .email-send-auth,
+    .search-address  {
+        height: 100%;
+    }
 
     .email-send-auth,
     .search-address {
@@ -157,6 +173,7 @@ main {
     .search-address a {
         font-size: 14px;
         padding: 10px;
+        height: 100%;
         width: auto;
         white-space: nowrap; /* 버튼 글자가 줄바꿈되지 않도록 */
     }
@@ -167,6 +184,7 @@ main {
         width: 100%;
     }
 }
+
 
 /* 📌 모바일 환경 최적화 */
 @media screen and (max-width: 576px) {

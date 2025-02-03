@@ -106,6 +106,7 @@
   display: flex;
   align-items: center;
   background-color: #FEE500;
+  border-color: #FEE500;
 }
 
 .kakao-button img {
@@ -120,6 +121,7 @@
   display: flex;
   align-items: center;
   background-color: rgb(3, 199, 90);
+  border-color: rgb(3, 199, 90);
 }
 
 .naver-button img {

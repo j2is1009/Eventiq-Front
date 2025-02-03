@@ -41,6 +41,7 @@ main {
     flex-direction: column;
     margin-bottom: 5%;
     height: 55vh;
+    min-height: 460px;
     width: 30vw;
     min-width: 350px;
     max-width: 500px; 
@@ -76,8 +77,9 @@ main {
 }
 
 .login-submit-btn > button {
-    width: 95%;
+    width: 92%;
     height: 5vh;
+    min-height: 41px;
 }
 
 /* 버튼 공통 디자인 */
@@ -132,17 +134,28 @@ main {
     margin-right: 10px;
 }
 
-/* 개별 플랫폼 스타일 */
-.google {
-    background-color: #db4437;
+/* 로그인 옵션 (아이디/비밀번호 찾기 + 회원가입) */
+.login-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-bottom: 15px;
+    font-size: 14px;
 }
 
-.kakao {
-    background-color: #fee500;
+.login-options a {
+    color: #6c757d;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.naver {
-    background-color: #03c75a;
+.login-options a:hover {
+    color: #007bff; 
+}
+
+.divider {
+    color: #adb5bd;
 }
 
 /* 반응형 - 모바일에서 버튼 크기 조정 */
@@ -154,60 +167,6 @@ main {
     .social-btn {
         font-size: 14px;
         padding: 8px;
-    }
-}
-/* 반응형 디자인 */
-@media screen and (max-width: 768px) {
-    .login-container {
-        width: 80vw;
-        padding: 15px;
-    }
-
-    .input-group {
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-    }
-
-    .input-group-text {
-        width: auto;
-        padding: 5px 10px;
-        display: flex;
-        align-items: center;
-    }
-
-    .input-group input {
-        flex: 1;
-        font-size: 14px;
-        padding: 10px;
-        width: 100%;
-    }
-
-    /* 버튼을 입력 필드 옆에 정렬 */
-    .login-button-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-    }
-
-    .email-send-auth,
-    .search-address {
-        flex-shrink: 0;
-    }
-
-    .email-send-auth a,
-    .search-address a {
-        font-size: 14px;
-        padding: 10px;
-        width: auto;
-        white-space: nowrap; /* 버튼 글자가 줄바꿈되지 않도록 */
-    }
-
-    .login-submit-btn button {
-        font-size: 16px;
-        padding: 12px;
-        width: 100%;
     }
 }
 
