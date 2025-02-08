@@ -829,47 +829,72 @@ hr,.post-hr{border-bottom: 1px solid #e6e7e9;
 
 /* --------- mypage css --------- */
 /* mypage-menu */
-.mypage-main{ display: flex; flex-direction: column; align-items: center; }
-.mypage-main .mypage-container { margin: 30px 0; width: 800px; display: flex; flex-direction: column; justify-content: flex-start;}
+.mypage-main{ display: flex; flex-direction: column; align-items: center; background-color: #f5f5f5; } 
+.mypage-main .mypage-container { margin: 30px 0 100px; width: 900px; display: flex; flex-direction: column; justify-content: flex-start;}
 .mypage-main .mypage-title { font-size: 22px; font-weight: bold; margin: 20px 20px 40px 7px; }
 .mypage-main .mypage-content-container { width: 100%; display: flex; flex-direction: row; }
-.mypage-main .mypage-content-menu { margin-right: 20px; width: 25%; }
+.mypage-main .mypage-content-menu { margin-right: 40px; width: 25%; }
 .mypage-main .profile-container { flex-direction: column; display: flex; justify-content: center; align-items: center; width: 100%; aspect-ratio: 1 / 1; background-color: #FFD93D;}
-.mypage-main .user-picture { margin: 20px 0; border-radius: 100%; height: 80%; aspect-ratio: 1 / 1; background-color: #fff;}
+.mypage-main .user-picture { overflow: hidden; margin: 20px 0; border-radius: 100%; height: 80%; aspect-ratio: 1 / 1; background-color: #fff;}
+.mypage-main .user-picture img { object-fit: cover; height: 100%; }
 .mypage-main .user-name { height: 20%;}
-.mypage-main .menu-container ul { border: 0.5px solid; }
-.mypage-main .menu-container .only-menu { border-bottom: 0.5px solid; padding: 12px 10px;}
-.mypage-main .menu-container .only-menu a { font-size: 14px; }
-.mypage-main .menu-container .several-menu { border-bottom: 0.5px solid; padding-top: 12px;}
-.mypage-main .menu-container .several-menu a { font-size: 14px; margin: 12px 10px; }
-.mypage-main .menu-container .several-menu .sub-menu { border: none; border-top: 0.5px solid; margin-top: 12px; }
-.mypage-main .menu-container .several-menu .sub-menu li { padding: 10px 0;}
+.mypage-main .menu-container ul { border: 0.5px solid #00000031; border-bottom: none; }
+.mypage-main .menu-container .only-menu { background-color: #fff; border-bottom: 0.5px solid #00000031; }
+.mypage-main .menu-container .only-menu:hover { background-color: #fff9e1; color: #FFD93D; }
+.mypage-main .menu-container .only-menu a { font-size: 14px; width: 100%; }
+.mypage-main .menu-container .several-menu { background-color: #fff; border-bottom: 0.5px solid #00000031; }
+.mypage-main .menu-container .several-menu:hover { background-color: #fff9e1; color: #FFD93D; }
+.mypage-main .menu-container .several-menu a { font-size: 14px; width: 100%;}
+.mypage-main .menu-container .several-menu .sub-menu { background-color: #fff; border: none; border-top: 0.5px solid #00000031; }
+.mypage-main .menu-container .several-menu .sub-menu li { cursor: pointer; padding: 10px;}
 .mypage-main .menu-container .several-menu .sub-menu li:last-child { padding-bottom: 15px;}
-.mypage-main .menu-container .several-menu .sub-menu a { font-size: 12.5px; }
+.mypage-main .menu-container .several-menu .sub-menu a { font-size: 12.5px; width: 100%; }
+.mypage-main .menu-container .several-menu .sub-menu a:hover { text-decoration: underline; }
+.mypage-main .menu-container .detail-menu-container { cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 12px 10px; }
+.mypage-main .menu-container .mypage-selected-menu { background-color: #fff9e1; color: #FFD93D; }
 
 /* myage-main */
-.mypage-main .mypage-content { width: 73%; padding: 40px 25px;}
+.mypage-main .mypage-content { width: 73%; padding: 40px 25px; background-color: #fff;}
 .mypage-main .mypage-content hr { margin: 20px 0; }
 .mypage-main .mypage-content .main-container-title { font-size: 18.5px; font-weight: bold;}
 .mypage-main .mypage-content .user-info-setting { font-size: 15.5px; font-weight: bold; margin: 30px 0 20px;}
-.mypage-main .mypage-content .main-container { padding: 0 10px; margin-bottom: 45px; }
+.mypage-main .mypage-content .main-container { display: flex; flex-direction: column; align-items: flex-end; padding: 0 10px; margin-bottom: 37px; }
 .mypage-main .mypage-content .main-container .user-info-table{ width: 100%;  border-top: 0.5px solid #c4c4c4; border-bottom: 0.5px solid #c4c4c4; }
 .mypage-main .mypage-content .main-container .user-info-table tbody{ height: 42px; border-bottom: 0.5px solid #c4c4c4; }
 .mypage-main .mypage-content .main-container .user-info-table th{ background-color: #d0d0d047; padding: 0 15px; border-right: 0.5px solid #c4c4c4; width: 32%; font-size: 13px; font-weight: normal;}
 .mypage-main .mypage-content .main-container .user-info-table td{ padding: 0 20px; width: 68%; font-size: 13px}
-.mypage-main .mypage-content .main-container .user-info-table .user-modifie-btn { margin-left: 15px; border-radius: 3px; background-color: #767676; color: #fff; padding: 2px 6px; font-size: 11.5px;}
-.mypage-main .mypage-content .main-container .user-info-table .user-modifie-btn:hover { background-color: #aeaeae; }
+.mypage-main .mypage-content .main-container .user-modifie-btn { margin-top: 12px; border-radius: 4px; background-color: #767676; color: #fff; padding: 9px; font-size: 14px;}
+.mypage-main .mypage-content .main-container .user-modifie-btn:hover { background-color: #aeaeae; }
 .mypage-main .mypage-content .main-container .user-info-table .user-leave-btn { margin-right: 5px; border-radius: 3px; background-color: #d1d1d1; color: #ff0000; padding: 2px 6px; font-size: 11.5px; font-weight: bold; }
 .mypage-main .mypage-content .main-container .user-info-table .user-leave-btn:hover { background-color: #ff0000; color: #FFF; font-weight: bold; }
-
 .mypage-main .mypage-content .secure-container { padding: 0 10px; }
 .mypage-main .mypage-content .secure-container .secure-title { font-size: 13.5px; font-weight: bold; margin-bottom: 8px;}
 .mypage-main .mypage-content .secure-container .secure-content { width: 100%; }
-.mypage-main .mypage-content .secure-container .secure-content .if-nothing { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 150px; background-color: #dedede9e;}
+.mypage-main .mypage-content .secure-container .secure-content .if-nothing { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 150px; background-color: #dedede5f;}
 .mypage-main .mypage-content .secure-container .secure-content .if-nothing span { font-size: 14px; margin-bottom: 12px; }
 .mypage-main .mypage-content .secure-container .secure-content .if-nothing .secure-submit-btn { font-size: 16px; font-weight: bold; border-radius: 4px; background-color: #767676; color: #fff; padding: 10px;}
 .mypage-main .mypage-content .secure-container .secure-content .if-nothing .secure-submit-btn:hover { background-color: #e0e0e0; border: 2px solid #767676; color: #767676; }
 
+/* 관심 이벤트 리스트 */
+.like-event-list-header { margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+.like-event-list-header span { font-weight: bold; font-size: 11.5px; text-align: center; }
+.like-event-list-header .event-category-header { width: 11%; }
+.like-event-list-header .event-img-header { width: 19%; }
+.like-event-list-header .event-info-header { display: flex; flex-direction: column; width: 23%; }
+.like-event-list-header .event-end-header { width: 14%; }
+.like-event-list-header .event-date-header { width: 14%; }
+.like-event-list-header .event-state-header { width: 9%; }
+.like-event-list-header .event-buy-btn-header { width: 10%; }
+.like-event-list .like-event-list-container { margin-bottom: 22px; height: 90px; align-items: center; display: flex; flex-direction: row; font-size: 11.5px; }
+.like-event-list span { text-align: center; }
+.like-event-list .event-category { width: 11%; }
+.like-event-list .event-category p { margin-bottom: 10px; }
+.like-event-list .event-img { width: 19%; padding: 0 10px;}
+.like-event-list .event-info { height: 100%; justify-content: space-evenly; align-items: flex-start; display: flex; flex-direction: column; width: 23%; }
+.like-event-list .event-end { width: 14%; }
+.like-event-list .event-date { width: 14%; }
+.like-event-list .event-state { width: 9%; }
+.like-event-list .event-buy-btn { width: 10%; }
 
 /*==========  Non-Mobile First Method  ==========*/
 
