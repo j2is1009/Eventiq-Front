@@ -513,7 +513,7 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 8. Footer 
 -------------------------------------*/
 
-.footer { background-color: #111213; padding-top: 60px; padding-bottom: 30px; color: #9a9da0; }
+.footer { background-color: #111213; padding-top: 60px; padding-bottom: 30px; color: #9a9da0; font-size: 14px; }
 
 .footer-title { margin-bottom: 40px; color: #fff; }
 .footer-widget { }
@@ -543,6 +543,8 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 .footer-social a span.active {background-color: #1B3B5F; color:#fff;}
 .footer-link { color: #FFD93D; font-size: 16px; font-weight: 600; border-bottom: 1px solid #FFD93D; padding-bottom: 2px; }
 .footer-link:hover { color: #f7da3d; border-bottom: 1px solid #f7da3d; }
+.footer-legal { color:#9a9da0; font-size: 12px; line-height: .95; }
+.footer-legal a { color: #9a9da0; font-weight: 600; }
 
 /*-------------- tiny footer ------------*/
 
