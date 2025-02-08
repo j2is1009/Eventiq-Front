@@ -1,0 +1,139 @@
+.organizer-container {
+    height: 80vh;
+    margin-top: 10px;
+}
+.organizer-container > .organizer-nav {
+    border-bottom: 1px #ebecee solid;
+    padding-bottom: 10px;
+}
+
+/* 메뉴 스타일 */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.has-submenu .submenu {
+    display: none;
+    position: absolute;
+    background: #f8f9fa;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+    z-index: 1;
+}
+
+.submenu a:hover {
+    background: #FFD93D;
+}
+
+/* 주최자 정보 */
+.event-info {
+    padding-top: 10px;
+}
+
+.event-info > .row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.info-box {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+/* 프로필 */
+.organizer-profile {
+    height: 140px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    justify-content: space-around !important;
+    margin-bottom: 20px;
+}
+
+.organizer-img {
+    margin: auto 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 150px;
+}
+
+.organizer-img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 150px;
+}
+
+.organizer-info-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.organizer-info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.organizer-introduce {
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+.organizer-introduce-container {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.organizer-max-length{
+    text-align: right;
+}
+
+.organizer-introduce-input > textarea {
+    width: 90%;
+    height: 100%;
+}
+
+/* 리스트 스타일 */
+.info-list-box {
+    display: flex;
+    margin-top: 20px;
+}
+
+
+.info-gorup-list {
+    height: 50vh;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
