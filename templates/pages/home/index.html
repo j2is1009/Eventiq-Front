@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Digital marketing courses website template that can help you boost your business courses website and its completely free.">
-    <meta name="keywords" content="seo,free website template, free responsive website template, seo marketing, search engine optimization, web analytics">
+    <meta name="description"
+        content="Digital marketing courses website template that can help you boost your business courses website and its completely free.">
+    <meta name="keywords"
+        content="seo,free website template, free responsive website template, seo marketing, search engine optimization, web analytics">
     <title>Digital Marketing Courses Website Template</title>
     <!-- Bootstrap -->
     <link href="../../../static/css/bootstrap.min.css" rel="stylesheet">
     <!-- Style CSS -->
     <link href="../../../static/css/style.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+        rel="stylesheet">
     <!-- FontAwesome CSS -->
     <link rel="stylesheet" type="text/css" href="../../../static/css/fontello.css">
     <link href="../../../static/css/font-awesome.min.css" rel="stylesheet">
@@ -30,44 +33,125 @@
 
 <body>
     <div class="header-wrapper">
+        <div class="header-decoration-line"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-sm-4 col-md-2 col-xs-12">
                     <div class="logo">
-                        <a href="index.html"><img src="../../../static/images/logo.png" class="img-responsive" alt=""></a>
+                        <a href="index.html"><img src="../../../static/images/logo.png" class="img-responsive"
+                                alt=""></a>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-10 col-sm-8 col-xs-12">
+                <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">
                     <div class="navigation-wrapper">
                         <div id="navigation">
                             <ul>
-                                <li class="active"><a href="index.html" title="">Home</a></li>
-                                <li><a href="about.html" title="">About</a> </li>
-                                <li class="has-sub"><a href="#" title="">Courses</a>
-                                    <ul>
-                                        <li><a href="courses.html" title="">Courses</a></li>
-                                        <li><a href="courses-single.html" title="">Courses Single </a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub"><a href="#" title="">Blog</a>
-                                    <ul>
-                                        <li><a href="blog-default.html" title="">Blog Default</a></li>
-                                        <li><a href="blog-single.html" title="">Blog Single</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub"><a href="#" title="">Features</a>
-                                    <ul>
-                                        <li><a href="testimonials.html" title="">Testimonials</a></li>
-                                        <li><a href="404-error.html" title="">404 error</a></li>
-                                        <li><a href="styleguide.html" title="">Styleguide</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html" title="">Contact</a> </li>
+                                <li class="active"><a href="index.html" title="">이벤트 둘러보기</a></li>
+                                <li class="active"><a href="index.html" title="">이벤트 주최하기</a></li>
+                                <li class="active"><a href="index.html" title="">유료 서비스</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 hidden-md hidden-sm hidden-xs"> <a href="#" class="btn btn-primary">로그인</a> </div>
+
+                <!-- 로그인 후 프로필 및 드롭다운 메뉴 -->
+                <div class="col-lg-1 hidden-md hidden-sm hidden-xs pro-container">
+                    <div class="pro-picture">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                        </svg>
+                    </div>
+                    <div class="pro-dropdown">
+                        <ul>
+                            <li><a href="" >마이페이지</a></li>
+                            <li><a>참여 이벤트 살펴보기</a></li>
+                            <li><a>주최 이벤트 살펴보기</a></li>
+                            <hr>
+                            <li>
+                                <a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+                                        <path d="M7.5 1v7h1V1z"/>
+                                        <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812"/>
+                                    </svg>
+                                    로그아웃
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 로그인 버튼 -->
+                <!-- <div class="col-lg-1 hidden-md hidden-sm hidden-xs"><a href="#" class="btn btn-primary login-out-btn">로그인</a></div> -->
+            </div>
+            <div class="row">
+                <div id="search-bar">
+                    <div class="serach-bar-border col-lg-11 col-md-11 col-xs-11">
+                        <!-- 검색어 입력 -->
+                        <div class="col-lg-6 col-md-6 col-xs-6 search-bar-ele search-word">
+                            <label class="form-label">검색어</label>
+                            <input type="text" class="form-control search-input" placeholder="제목, 채널 이름으로 검색 하세요.">
+                        </div>
+                
+                        <!-- 카테고리 -->
+                        <div class="col-lg-2 col-md-2 col-xs-2 search-bar-ele">
+                            <label class="form-label">카테고리</label>
+                            <select class="form-select">
+                                <option selected>전체</option>
+                                <option>IT/기술</option>
+                                <option>스타트업</option>
+                                <option>커리어</option>
+                                <option>취미</option>
+                                <option>디자인</option>
+                                <option>비즈니스</option>
+                                <option>음식 & 음료</option>
+                                <option>프로그래밍</option>
+                                <option>홈 & 라이프스타일</option>
+                                <option>여행</option>
+                                <option>자기계발</option>
+                                <option>스포츠</option>
+                                <option>금융</option>
+                                <option>건강</option>
+                                <option>마케팅</option>
+                                <option>파티</option>
+                                <option>독서</option>
+                            </select>
+                        </div>
+                        
+                        <!-- 이벤트 유형 -->
+                        <div class="col-lg-2 col-md-2 col-xs-2 search-bar-ele">
+                            <label class="form-label">이벤트 유형</label>
+                            <select class="form-select">
+                                <option selected>전체</option>
+                                <option>온라인</option>
+                                <option>오프라인</option>
+                            </select>
+                        </div>
+                
+                        <!-- 유/무료 -->
+                        <div class="col-lg-1 col-md-1 col-xs-1 search-bar-ele">
+                            <label class="form-label">유/무료</label>
+                            <select class="form-select">
+                                <option selected>전체</option>
+                                <option>유료</option>
+                                <option>무료</option>
+                            </select>
+                        </div>
+                        <div class="reset-btn" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bootstrap-reboot" viewBox="0 0 16 16">
+                                <path d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 1 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.8 6.8 0 0 0 1.16 8z"/>
+                                <path d="M6.641 11.671V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352zm0-3.75V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324z"/>
+                            </svg>
+                        </div>
+                    <!-- 검색 버튼 -->
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-xs-1 btn-set">
+                        <button class="btn btn-primary search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -80,10 +164,13 @@
                     <div class="row">
                         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                             <div class="slider-captions">
-                                <h1 class="slider-title">Certified <span class="slider-highlight-text">Digital Marketing</span> 
-                Master Course</h1>
+                                <h1 class="slider-title">Certified <span class="slider-highlight-text">Digital
+                                        Marketing</span>
+                                    Master Course</h1>
                                 <p class="slider-text hidden-xs">Education for Students Bright Future. </p>
-                                <a href="about.html" class="btn btn-default btn-lg hidden-sm hidden-xs"> view Courses</a> </div>
+                                <a href="about.html" class="btn btn-default btn-lg hidden-sm hidden-xs"> view
+                                    Courses</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,10 +180,12 @@
                     <div class="row">
                         <div class="col-lg-7 col-md-7 col-sm-12  col-xs-12">
                             <div class="slider-captions">
-                                <h1 class="slider-title">Our Happy <span class="slider-highlight-text">Educated 
-Students</span></h1>
+                                <h1 class="slider-title">Our Happy <span class="slider-highlight-text">Educated
+                                        Students</span></h1>
                                 <p class="slider-text hidden-xs">Education for Students Bright Future. </p>
-                                <a href="about.html" class="btn btn-default btn-lg hidden-sm hidden-xs"> Request A Course </a> </div>
+                                <a href="about.html" class="btn btn-default btn-lg hidden-sm hidden-xs"> Request A
+                                    Course </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,10 +195,13 @@ Students</span></h1>
                     <div class="row">
                         <div class="col-lg-7 col-md-7 col-sm-12  col-xs-12">
                             <div class="slider-captions">
-                                <h1 class="slider-title">Our Digital <span class="slider-highlight-text">Qualifide Experts
-Teach You</span></h1>
+                                <h1 class="slider-title">Our Digital <span class="slider-highlight-text">Qualifide
+                                        Experts
+                                        Teach You</span></h1>
                                 <p class="slider-text hidden-xs">Education for Students Bright Future. </p>
-                                <a href="about.html" class="btn btn-default btn-lg  hidden-sm hidden-xs "> view Courses</a> </div>
+                                <a href="about.html" class="btn btn-default btn-lg  hidden-sm hidden-xs "> view
+                                    Courses</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,28 +217,32 @@ Teach You</span></h1>
                     <div class="counter-block">
                         <div class="counter-content">
                             <h1 class="counter-title">1099<sup>+</sup></h1>
-                            <span class="counter-text">Educare Students</span> </div>
+                            <span class="counter-text">Educare Students</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                     <div class="counter-block">
                         <div class="counter-content">
                             <h1 class="counter-title">045<sup>+</sup></h1>
-                            <span class="counter-text">Educare Experts</span> </div>
+                            <span class="counter-text">Educare Experts</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                     <div class="counter-block">
                         <div class="counter-content">
                             <h1 class="counter-title">10<sup>+</sup></h1>
-                            <span class="counter-text">Certifications</span> </div>
+                            <span class="counter-text">Certifications</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                     <div class="counter-block">
                         <div class="counter-content">
                             <h1 class="counter-title">450<sup>+</sup></h1>
-                            <span class="counter-text">Hands-On Tasks</span> </div>
+                            <span class="counter-text">Hands-On Tasks</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -170,8 +266,10 @@ Teach You</span></h1>
                         <div class="service-icon"><i class="icon-switches"></i></div>
                         <div class="service-content">
                             <h3><a href="#" class="title">Web Analytics</a></h3>
-                            <p>Curabitur aliquet lacinia libero one sitamet lucturaesent odio loremips veliconsectetu.</p>
-                            <a href="#" class="btn-link"> read more</a> </div>
+                            <p>Curabitur aliquet lacinia libero one sitamet lucturaesent odio loremips veliconsectetu.
+                            </p>
+                            <a href="#" class="btn-link"> read more</a>
+                        </div>
                     </div>
                 </div>
                 <!-- cources-close-->
@@ -182,7 +280,8 @@ Teach You</span></h1>
                         <div class="service-content">
                             <h3><a href="#" class="title">Search Engine Marketing</a></h3>
                             <p>Nullam efficitur semper dapibusn euismod sodales lacuut vulputate est blandit nonuis.</p>
-                            <a href="" class="btn-link"> read more</a> </div>
+                            <a href="" class="btn-link"> read more</a>
+                        </div>
                     </div>
                 </div>
                 <!-- cources-close-->
@@ -192,8 +291,10 @@ Teach You</span></h1>
                         <div class="service-icon"><i class="icon-social-network"></i></div>
                         <div class="service-content">
                             <h3><a href="#" class="title">Social Media Marketing</a></h3>
-                            <p>Aliquam at vestibulum ipsumrasid cursus ligula aliquam nibama nulla acsem lobortis suscipe.</p>
-                            <a href="#" class="btn-link"> read more</a> </div>
+                            <p>Aliquam at vestibulum ipsumrasid cursus ligula aliquam nibama nulla acsem lobortis
+                                suscipe.</p>
+                            <a href="#" class="btn-link"> read more</a>
+                        </div>
                     </div>
                 </div>
                 <!-- cources-close-->
@@ -207,12 +308,17 @@ Teach You</span></h1>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="about-section">
                         <h1 class="text-white">About Us</h1>
-                        <p class="lead">Personalised Training for Marketing Professionals, Entrepreneurs &amp; Students velitconsectetur utleo velaoreet in bibendum felirbi iaculis iaculis dpibus ecenas one euismod tristique egestas.</p>
-                        <p>Velitconsectetur utleo velaoreet in bibendum felirbi iaculis iaculis dpibus ecenas one posuereorci ut euismod tristique egestas.</p>
-                        <a href="#" class="btn btn-primary btn-lg">Know More About Us</a> </div>
+                        <p class="lead">Personalised Training for Marketing Professionals, Entrepreneurs &amp; Students
+                            velitconsectetur utleo velaoreet in bibendum felirbi iaculis iaculis dpibus ecenas one
+                            euismod tristique egestas.</p>
+                        <p>Velitconsectetur utleo velaoreet in bibendum felirbi iaculis iaculis dpibus ecenas one
+                            posuereorci ut euismod tristique egestas.</p>
+                        <a href="#" class="btn btn-primary btn-lg">Know More About Us</a>
+                    </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="about-img"><img src="../../../static/images/about-img.jpg" alt="" class="img-responsive">
+                    <div class="about-img"><img src="../../../static/images/about-img.jpg" alt=""
+                            class="img-responsive">
                         <div class="about-icon">
                             <a href="#"><img src="../../../static/images/play.png"></a>
                         </div>
@@ -264,7 +370,8 @@ Teach You</span></h1>
                     </div>
                     <div class="team-content mt20">
                         <h3 class="team-title">Richard Walker</h3>
-                        <span class="team-meta">Instructor</span> </div>
+                        <span class="team-meta">Instructor</span>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -274,7 +381,8 @@ Teach You</span></h1>
                     </div>
                     <div class="team-content mt20">
                         <h3 class="team-title">Jimmie Wood</h3>
-                        <span class="team-meta">Instructor</span> </div>
+                        <span class="team-meta">Instructor</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -296,10 +404,13 @@ Teach You</span></h1>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="testimonial-block ">
                         <div class="testimonial-content">
-                            <p class="testimonial-text">“Nunc luctus fringilla tincidunt isn Fusce varius est eget gravida ones interdum Integer facilisis sit amets risus sed molliaecenas magna one ante, lacinia quis elit et, auctor venenatis sapien.”</p>
+                            <p class="testimonial-text">“Nunc luctus fringilla tincidunt isn Fusce varius est eget
+                                gravida ones interdum Integer facilisis sit amets risus sed molliaecenas magna one ante,
+                                lacinia quis elit et, auctor venenatis sapien.”</p>
                         </div>
                     </div>
-                    <div class="testimonial-pic"><img src="../../../static/images/testi-pic-1.jpg" alt="" class="img-circle"></div>
+                    <div class="testimonial-pic"><img src="../../../static/images/testi-pic-1.jpg" alt=""
+                            class="img-circle"></div>
                     <div class="testimonial-user">
                         <h4> Michel joe</h4>
                         <div class="testimonial-meta">(Web Devloper,Social Media Marketing)</div>
@@ -310,10 +421,13 @@ Teach You</span></h1>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="testimonial-block ">
                         <div class="testimonial-content">
-                            <p class="testimonial-text">“Morbi volutpat sollicitudin eleiend hendrerit aliquet nislnec tincidunts nulla nulla ullamcorperat dictumse interdumsit etexd consectetur nibh idante tempus facilisiroin convallis mauris vitae tortor tempor.” </p>
+                            <p class="testimonial-text">“Morbi volutpat sollicitudin eleiend hendrerit aliquet nislnec
+                                tincidunts nulla nulla ullamcorperat dictumse interdumsit etexd consectetur nibh idante
+                                tempus facilisiroin convallis mauris vitae tortor tempor.” </p>
                         </div>
                     </div>
-                    <div class="testimonial-pic"><img src="../../../static/images/testi-pic-2.jpg" alt="" class="img-circle"></div>
+                    <div class="testimonial-pic"><img src="../../../static/images/testi-pic-2.jpg" alt=""
+                            class="img-circle"></div>
                     <div class="testimonial-user">
                         <h4>Jodi Conner</h4>
                         <div class="testimonial-meta">(Web Devloper)</div>
@@ -324,10 +438,13 @@ Teach You</span></h1>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="testimonial-block ">
                         <div class="testimonial-content">
-                            <p class="testimonial-text">“Interdum et malesuada famesac ante ipsum misin faucibus uspeisse accumsan mollis orcied scele lrem sitamet enim condimenta sagittise justo egestauis sed tempus velit on Aenean vitae porttitor diam.”</p>
+                            <p class="testimonial-text">“Interdum et malesuada famesac ante ipsum misin faucibus
+                                uspeisse accumsan mollis orcied scele lrem sitamet enim condimenta sagittise justo
+                                egestauis sed tempus velit on Aenean vitae porttitor diam.”</p>
                         </div>
                     </div>
-                    <div class="testimonial-pic"><img src="../../../static/images/testi-pic-3.jpg" alt="" class="img-circle"></div>
+                    <div class="testimonial-pic"><img src="../../../static/images/testi-pic-3.jpg" alt=""
+                            class="img-circle"></div>
                     <div class="testimonial-user">
                         <h4>Clyde Kirk</h4>
                         <div class="testimonial-meta">(President, SEO)</div>
@@ -345,7 +462,8 @@ Teach You</span></h1>
                 <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-6 col-xs-12">
                     <div class="cta-block">
                         <h1>Ohh!! Have A Question?</h1>
-                        <p class="cta-text">Velitconsectetur utleo velaoreet in bibendum felirbi iaculis iaculis dpibusectetur utlin bibendum.</p>
+                        <p class="cta-text">Velitconsectetur utleo velaoreet in bibendum felirbi iaculis iaculis
+                            dpibusectetur utlin bibendum.</p>
                         <a href="#" class="btn btn-primary btn-lg">Learn more</a>
                         <a href="#" class="btn btn-default btn-lg">Contact us</a>
                     </div>
