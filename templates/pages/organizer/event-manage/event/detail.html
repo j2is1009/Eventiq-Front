@@ -30,7 +30,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="../../../../../static/css/organizer/dashboard.css">
-    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/schedule/create-form.css">
+    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/event/detail.css">
 </head>
 
 <body>
@@ -88,9 +88,9 @@
                             <li class="has-submenu col-lg-3">
                                 <a href="#">이벤트 관리</a>
                                 <ul class="submenu">
-                                    <li><a href="#">이벤트 관리</a></li>
-                                    <li><a href="./list.html">일정 관리</a></li>
-                                    <li><a href="#">발표자 관리</a></li>
+                                    <li><a href="../event/list.html">이벤트 관리</a></li>
+                                    <li><a href="../schedule/list.html">일정 관리</a></li>
+                                    <li><a href="../speaker/list.html">발표자 관리</a></li>
                                     <li><a href="#">참가자 관리</a></li>
                                     <li><a href="#">자료 관리</a></li>
                                 </ul>
@@ -117,132 +117,104 @@
                 </div>
             </div>
         </div>
-        <div class="new-schedule-container">
-            <form class="form-container">
-                <div class="form-section">
-                    <h2 class="section-title">기본 정보</h2>
-                    <div class="form-group">
-                        <label class="form-label">일정 제목</label>
-                        <input type="text" class="form-input" placeholder="일정 제목을 입력하세요">
-                    </div>
 
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label class="form-label">시작 일시</label>
-                            <input type="datetime-local" class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">종료 일시</label>
-                            <input type="datetime-local" class="form-input">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">일정 유형</label>
-                        <select class="form-select">
-                            <option value="">일정 유형을 선택하세요</option>
-                            <option value="meeting">미팅</option>
-                            <option value="event">행사</option>
-                            <option value="task">업무</option>
-                            <option value="other">기타</option>
-                        </select>
-                    </div>
+        <div class="container">
+            <div class="event-card">
+                <div class="event-header">
+                    <h1 class="page-title">이벤트 상세 정보</h1>
+                    <span class="status-badge status-selling">티켓 판매중</span>
                 </div>
 
-                <div class="form-section">
-                    <h2 class="section-title">상세 정보</h2>
-                    <div class="form-group">
-                        <label class="form-label">일정 설명</label>
-                        <textarea class="form-textarea" placeholder="일정에 대한 상세 설명을 입력하세요"></textarea>
+                <div class="info-group">
+                    <div class="info-label">
+                        이벤트 대표 이미지
+                        <span class="readonly-badge">수정 불가</span>
                     </div>
-
-                    <div class="form-group">
-                        <label class="form-label">장소</label>
-                        <input type="text" class="form-input" placeholder="장소를 입력하세요">
-                    </div>
+                    <img src="https://api.a0.dev/assets/image?text=tech%20conference%20event%20modern&aspect=16:9"
+                        alt="이벤트 대표 이미지" class="event-image">
                 </div>
 
-
-                <div class="form-group">
-                    <label class="form-label">참석자</label>
-                    <span class="participant-msg">* 동일한 이벤트 그룹에 소속된 사용자만 초대 가능합니다.</span>
-                    <div class="participant-container">
-                        <span class="participant" onclick="showAddAttendeeModal()">+ 참석자 추가</span>
+                <div class="info-group">
+                    <div class="info-label">
+                        카테고리
+                        <span class="readonly-badge">수정 불가</span>
                     </div>
-                    <div class="attendee-list" id="attendeeList">
-                    </div>
+                    <div class="info-content">기술 컨퍼런스</div>
                 </div>
 
-                <!-- 참석자 추가 모달 -->
-                <div class="modal" id="addAttendeeModal">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>참석자 추가</h3>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label class="form-label">이름 *</label>
-                                <input type="text" class="form-input" id="attendeeName" placeholder="참석자 이름">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">이메일 *</label>
-                                <input type="email" class="form-input" id="attendeeEmail" placeholder="이메일 주소">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">역할</label>
-                                <select class="form-select" id="attendeeRole">
-                                    <option value="organizer">주최자</option>
-                                    <option value="presenter">발표자</option>
-                                    <option value="participant">참가자</option>
-                                    <option value="observer">참관자</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="attendeeRequired">
-                                    필수 참석자
-                                </label>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" onclick="closeModal()">취소</button>
-                            <button type="button" class="btn btn-primary" onclick="addAttendee()">추가</button>
+                <div class="info-group">
+                    <div class="info-label">
+                        이벤트명
+                        <span class="readonly-badge">수정 불가</span>
+                    </div>
+                    <div class="info-content">2024 모던 웹 개발 컨퍼런스</div>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-label">
+                        발표자 정보
+                        <span style="color: #007AFF; font-size: 13px; margin-left: 8px;">발표자 관리 메뉴에서 추가/수정 가능합니다.</span>
+                    </div>
+                    <div class="speaker-info">
+                        <img src="https://api.a0.dev/assets/image?text=professional%20speaker%20portrait" alt="발표자 프로필"
+                            class="speaker-image">
+                        <div class="speaker-details">
+                            <div class="speaker-name">김서연</div>
+                            <div class="speaker-title">ABC 기술연구소 수석 연구원</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="form-section">
-                    <h2 class="section-title">알림 설정</h2>
-                    <div class="notification-group">
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" checked>
-                                이메일 알림
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" checked>
-                                SMS 알림
-                            </label>
+                <div class="info-group">
+                    <div class="info-label">
+                        상세 설명
+                        <span style="color: #007AFF; font-size: 13px; margin-left: 8px;">수정 가능</span>
+                    </div>
+                    <textarea class="editable-content">최신 웹 개발 트렌드와 미래 기술에 대해 알아보는 컨퍼런스입니다.
+    
+    • React와 Next.js 최신 업데이트 소개
+    • 웹 개발의 미래 전망
+    • 실제 프로젝트 사례 공유
+    • Q&A 세션
+    
+    현장에서 다양한 개발자들과 네트워킹할 수 있는 기회도 제공됩니다.</textarea>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="info-label">
+                            일정
+                            <span class="readonly-badge">수정 불가</span>
                         </div>
+                        <div class="stat-value">2024.03.15</div>
                     </div>
 
-                    <div class="form-group" style="margin-top: 16px;">
-                        <label class="form-label">알림 시간</label>
-                        <select class="form-select">
-                            <option value="10">10분 전</option>
-                            <option value="30">30분 전</option>
-                            <option value="60">1시간 전</option>
-                            <option value="1440">1일 전</option>
-                        </select>
+                    <div class="stat-box">
+                        <div class="info-label">
+                            참가자 수
+                            <span class="readonly-badge">수정 불가</span>
+                        </div>
+                        <div class="stat-value">156/200</div>
+                    </div>
+
+                    <div class="stat-box">
+                        <div class="info-label">
+                            상태
+                            <span class="readonly-badge">수정 불가</span>
+                        </div>
+                        <div class="stat-value">판매중</div>
                     </div>
                 </div>
 
-                <div class="form-actions">
-                    <button type="button" class="btn btn-secondary">취소</button>
-                    <button type="submit" class="btn btn-primary">일정 추가</button>
+                <div class="button-group">
+                    <button class="btn btn-save">변경하기</button>
+                    <button class="btn btn-cancel">취소</button>
                 </div>
-            </form>
+            </div>
         </div>
+
+
+        <!-- footer start -->
         <div class="footer">
             <div class="container">
                 <div class="row">
@@ -310,8 +282,8 @@
                             <a href="#"><span><i class="fa fa-google-plus"></i></span></a>
                             <a href="#"><span class="active"><i class="fa fa-twitter"></i></span></a>
                             <!-- <a href="#"><span><i class="fa fa-instagram"></i></span></a>
-                            <a href="#"><span><i class="fa fa-pinterest"></i></span></a>
-                            <a href="#"><span><i class="fa fa-linkedin"></i></span></a> -->
+                        <a href="#"><span><i class="fa fa-pinterest"></i></span></a>
+                        <a href="#"><span><i class="fa fa-linkedin"></i></span></a> -->
                         </div>
                     </div>
                 </div>
@@ -328,7 +300,7 @@
         <script type="text/javascript" src="../../../../../static/js/sticky-header.js"></script>
         <script type="text/javascript" src="../../../../../static/js/owl.carousel.min.js"></script>
         <script type="text/javascript" src="../../../../../static/js/slider.js"></script>
-        <script type="text/javascript" src="../../../../../static/js/organizer/event-manage/create-form.js"></script>
+        <script type="text/javascript" src="../../../../../static/js/organizer/event-manage/list.js"></script>
 </body>
 
 </html>

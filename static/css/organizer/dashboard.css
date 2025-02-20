@@ -103,7 +103,6 @@ organizer-introduce-input button {
 .organizer-container {
     height: 1000px;
     background-color: var(--background-color);
-    padding: 24px;
 }
 
 /* 네비게이션 */
@@ -144,6 +143,11 @@ organizer-introduce-input button {
 .menu a:hover {
     color: var(--primary-color);
     background: linear-gradient(to right, rgba(37, 99, 235, 0.1), transparent);
+}
+
+.organizer-nav > .container {
+    margin: auto;
+    max-width: 1200px !important;
 }
 
 /* 서브메뉴 */
