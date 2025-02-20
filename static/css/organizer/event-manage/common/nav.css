@@ -11,12 +11,6 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 전체 컨테이너 */
-.organizer-container {
-    height: 1000px;
-    background-color: var(--background-color);
-}
-
 /* 네비게이션 */
 .organizer-nav {
     background: var(--surface-color);

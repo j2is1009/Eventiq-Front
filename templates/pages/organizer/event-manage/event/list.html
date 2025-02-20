@@ -31,53 +31,10 @@
     <![endif]-->
     <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/event/list.css">
     <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/common/nav.css">
+    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/common/pagination.css">
 </head>
 
 <body>
-    <div class="header-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-sm-4 col-md-2 col-xs-12">
-                    <div class="logo">
-                        <a href="index.html"><img src="../../../static/images/logo.png" class="img-responsive"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-10 col-sm-8 col-xs-12">
-                    <div class="navigation-wrapper">
-                        <div id="navigation">
-                            <ul>
-                                <li class="active"><a href="index.html" title="">Home</a></li>
-                                <li><a href="about.html" title="">About</a> </li>
-                                <li class="has-sub"><a href="#" title="">Courses</a>
-                                    <ul>
-                                        <li><a href="courses.html" title="">Courses</a></li>
-                                        <li><a href="courses-single.html" title="">Courses Single </a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub"><a href="#" title="">Blog</a>
-                                    <ul>
-                                        <li><a href="blog-default.html" title="">Blog Default</a></li>
-                                        <li><a href="blog-single.html" title="">Blog Single</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub"><a href="#" title="">Features</a>
-                                    <ul>
-                                        <li><a href="testimonials.html" title="">Testimonials</a></li>
-                                        <li><a href="404-error.html" title="">404 error</a></li>
-                                        <li><a href="styleguide.html" title="">Styleguide</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html" title="">Contact</a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 hidden-md hidden-sm hidden-xs"> <a href="#" class="btn btn-primary">로그인</a> </div>
-            </div>
-        </div>
-    </div>
-    <!-- header-close -->
     <div class="organizer-container">
         <div class="organizer-nav">
             <div class="container">
@@ -208,8 +165,99 @@
                             <td class="participants">120/120</td>
                             <td><span class="status-badge status-ended">이벤트 종료</span></td>
                         </tr>
+                        <tr onclick="location.href='event-detail.html?id=4'">
+                            <td>5</td>
+                            <td><span class="category-badge">네트워킹</span></td>
+                            <td>
+                                <img src="https://api.a0.dev/assets/image?text=networking%20event" class="event-image" alt="Networking Event">
+                            </td>
+                            <td>
+                                <div class="event-name">IT 네트워킹 밋업</div>
+                                <div class="event-date">서울 서초구</div>
+                            </td>
+                            <td>
+                                <div>2024.03.10</div>
+                                <div class="event-date">19:00 - 21:00</div>
+                            </td>
+                            <td class="participants">120/120</td>
+                            <td><span class="status-badge status-ended">이벤트 종료</span></td>
+                        </tr>
+                        <tr onclick="location.href='event-detail.html?id=4'">
+                            <td>6</td>
+                            <td><span class="category-badge">네트워킹</span></td>
+                            <td>
+                                <img src="https://api.a0.dev/assets/image?text=networking%20event" class="event-image" alt="Networking Event">
+                            </td>
+                            <td>
+                                <div class="event-name">IT 네트워킹 밋업</div>
+                                <div class="event-date">서울 서초구</div>
+                            </td>
+                            <td>
+                                <div>2024.03.10</div>
+                                <div class="event-date">19:00 - 21:00</div>
+                            </td>
+                            <td class="participants">120/120</td>
+                            <td><span class="status-badge status-ended">이벤트 종료</span></td>
+                        </tr>
+                        <tr onclick="location.href='event-detail.html?id=4'">
+                            <td>7</td>
+                            <td><span class="category-badge">네트워킹</span></td>
+                            <td>
+                                <img src="https://api.a0.dev/assets/image?text=networking%20event" class="event-image" alt="Networking Event">
+                            </td>
+                            <td>
+                                <div class="event-name">IT 네트워킹 밋업</div>
+                                <div class="event-date">서울 서초구</div>
+                            </td>
+                            <td>
+                                <div>2024.03.10</div>
+                                <div class="event-date">19:00 - 21:00</div>
+                            </td>
+                            <td class="participants">120/120</td>
+                            <td><span class="status-badge status-ended">이벤트 종료</span></td>
+                        </tr>
                     </tbody>
                 </table>
+                <div class="pagination-container">
+                    <div class="pagination-info">
+                        총 156명 중 1-10명
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="page-btn" disabled>
+                            <span class="page-icon">◀◀</span>
+                            처음
+                        </button>
+                        <button class="page-btn" disabled>
+                            <span class="page-icon">◀</span>
+                            이전
+                        </button>
+                        <div class="page-numbers">
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">4</button>
+                            <button class="page-btn">5</button>
+                            <span class="page-ellipsis">...</span>
+                            <button class="page-btn">16</button>
+                        </div>
+                        <button class="page-btn">
+                            다음
+                            <span class="page-icon">▶</span>
+                        </button>
+                        <button class="page-btn">
+                            마지막
+                            <span class="page-icon">▶▶</span>
+                        </button>
+                    </div>
+                    <div class="page-size-selector">
+                        <select class="page-size-select">
+                            <option value="10">10개씩 보기</option>
+                            <option value="20">20개씩 보기</option>
+                            <option value="50">50개씩 보기</option>
+                            <option value="100">100개씩 보기</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer">

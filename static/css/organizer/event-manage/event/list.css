@@ -33,7 +33,7 @@ body {
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 700;
     color: var(--text-primary);
 }
@@ -140,3 +140,4 @@ tr:hover {
 .participants {
     font-weight: 500;
 }
+

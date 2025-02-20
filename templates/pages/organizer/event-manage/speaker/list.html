@@ -29,55 +29,12 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/common/nav.css">
     <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/speaker/list.css">
-    <link rel="stylesheet" href="../../../../../static/css/organizer/dashboard.css">
+    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/common/pagination.css">
 </head>
 
 <body>
-    <div class="header-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-sm-4 col-md-2 col-xs-12">
-                    <div class="logo">
-                        <a href="index.html"><img src="../../../static/images/logo.png" class="img-responsive"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-10 col-sm-8 col-xs-12">
-                    <div class="navigation-wrapper">
-                        <div id="navigation">
-                            <ul>
-                                <li class="active"><a href="index.html" title="">Home</a></li>
-                                <li><a href="about.html" title="">About</a> </li>
-                                <li class="has-sub"><a href="#" title="">Courses</a>
-                                    <ul>
-                                        <li><a href="courses.html" title="">Courses</a></li>
-                                        <li><a href="courses-single.html" title="">Courses Single </a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub"><a href="#" title="">Blog</a>
-                                    <ul>
-                                        <li><a href="blog-default.html" title="">Blog Default</a></li>
-                                        <li><a href="blog-single.html" title="">Blog Single</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub"><a href="#" title="">Features</a>
-                                    <ul>
-                                        <li><a href="testimonials.html" title="">Testimonials</a></li>
-                                        <li><a href="404-error.html" title="">404 error</a></li>
-                                        <li><a href="styleguide.html" title="">Styleguide</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html" title="">Contact</a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 hidden-md hidden-sm hidden-xs"> <a href="#" class="btn btn-primary">로그인</a> </div>
-            </div>
-        </div>
-    </div>
-    <!-- header-close -->
     <div class="organizer-container">
         <div class="organizer-nav">
             <div class="container">
@@ -117,51 +74,183 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="container">
             <div class="header">
-                <h1 class="title">발표자 목록</h1>
-                <button class="add-button" onclick="location.href='./create.html'">
-                    <span>+</span>
-                    발표자 추가
-                </button>
+                <h1 class="title">발표자 명단</h1>
+                <div class="event-selector">
+                    <select class="event-select">
+                        <option value="">이벤트를 선택해주세요</option>
+                        <option value="1" selected>2024 모던 웹 개발 컨퍼런스</option>
+                        <option value="2">프론트엔드 개발자 밋업</option>
+                        <option value="3">React Native 워크샵</option>
+                        <option value="4">디자인 시스템 컨퍼런스</option>
+                    </select>
+                </div>
             </div>
     
-            <div class="speaker-list">
-                <div class="speaker-card" onclick="location.href='./detail.html'">
-                    <div class="number">1</div>
-                    <img class="profile-image" src="https://api.a0.dev/assets/image?text=professional%20asian%20software%20developer%20profile%20photo&aspect=1:1" alt="김민수">
-                    <div class="speaker-info">
-                        <h2 class="speaker-name">김민수</h2>
-                        <p class="speaker-event-name">2024 개발자 컨퍼런스</p>
-                        <p class="speaker-topic">React Native 성능 최적화 전략</p>
-                    </div>
-                    <span class="arrow">→</span>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-label">총 발표자</div>
+                    <div class="stat-value">13명</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">발표 대기</div>
+                    <div class="stat-value">4명</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">발표 완료</div>
+                    <div class="stat-value">5명</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">발표 취소</div>
+                    <div class="stat-value">4명</div>
+                </div>
+            </div>
+    
+            <div class="tools-container">
+                <div class="search-filter">
+                    <select class="filter-select">
+                        <option value="all">모든 상태</option>
+                        <option value="confirmed">참가 확정</option>
+                        <option value="pending">환불</option>
+                        <option value="cancelled">취소</option>
+                    </select>
+                    <input type="text" class="search-input" placeholder="이름 또는 이메일로 검색">
+                    <button class="export-button">
+                        검색
+                    </button>
+                </div>
+            </div>
+    
+            <div class="participant-list">
+                <div class="list-header">
+                    <div class="participant-number">No</div>
+                    <div>참가자</div>
+                    <div class="hide-mobile">이벤트명</div>
+                    <div class="hide-mobile">발표일</div>
+                    <div>상태</div>
+                    <div>관리</div>
                 </div>
     
-                <div class="speaker-card">
-                    <div class="number">2</div>
-                    <img class="profile-image" src="https://api.a0.dev/assets/image?text=confident%20female%20tech%20speaker%20profile%20photo&aspect=1:1" alt="이지연">
-                    <div class="speaker-info">
-                        <h2 class="speaker-name">이지연</h2>
-                        <p class="speaker-event-name">2024 개발자 컨퍼런스</p>
-                        <p class="speaker-topic">모던 앱 디자인 트렌드 2025</p>
+                <!-- 참가자 항목 반복 -->
+                <div class="participant-item">
+                    <div class="participant-number">1</div>
+                    <div class="participant-info">
+                        <img src="https://api.a0.dev/assets/image?text=user1" alt="프로필" class="participant-image">
+                        <div>
+                            <div class="participant-name">김지훈</div>
+                            <div class="participant-email">kim@example.com</div>
+                        </div>
                     </div>
-                    <span class="arrow">→</span>
+                    <div class="hide-mobile">2024 개발자 컨퍼런스</div>
+                    <div class="hide-mobile">2024.02.15</div>
+                    <div><span class="status-badge status-confirmed">발표 완료</span></div>
+                    <div><button class="action-button" onclick="location.href='./detail.html'">상세</button></div>
                 </div>
     
-                <div class="speaker-card">
-                    <div class="number">3</div>
-                    <img class="profile-image" src="https://api.a0.dev/assets/image?text=young%20korean%20mobile%20developer%20profile%20photo&aspect=1:1" alt="박준호">
-                    <div class="speaker-info">
-                        <h2 class="speaker-name">박준호</h2>
-                        <p class="speaker-event-name">2024 개발자 컨퍼런스</p>
-                        <p class="speaker-topic">크로스 플랫폼 개발의 미래</p>
+                <div class="participant-item">
+                    <div class="participant-number">2</div>
+                    <div class="participant-info">
+                        <img src="https://api.a0.dev/assets/image?text=user2" alt="프로필" class="participant-image">
+                        <div>
+                            <div class="participant-name">이미란</div>
+                            <div class="participant-email">lee@example.com</div>
+                        </div>
                     </div>
-                    <span class="arrow">→</span>
+                    <div class="hide-mobile">2024 개발자 컨퍼런스</div>
+                    <div class="hide-mobile">2024.02.15</div>
+                    <div><span class="status-badge status-pending">발표 대기</span></div>
+                    <div><button class="action-button" onclick="location.href='./detail.html'">상세</button></div>
+                </div>
+    
+                <div class="participant-item">
+                    <div class="participant-number">3</div>
+                    <div class="participant-info">
+                        <img src="https://api.a0.dev/assets/image?text=user3" alt="프로필" class="participant-image">
+                        <div>
+                            <div class="participant-name">박서준</div>
+                            <div class="participant-email">park@example.com</div>
+                        </div>
+                    </div>
+                    <div class="hide-mobile">2024 개발자 컨퍼런스</div>
+                    <div class="hide-mobile">2024.02.15</div>
+                    <div><span class="status-badge status-cancelled">발표 취소</span></div>
+                    <div><button class="action-button">상세</button></div>
+                </div>
+                <div class="participant-item">
+                    <div class="participant-number">4</div>
+                    <div class="participant-info">
+                        <img src="https://api.a0.dev/assets/image?text=user3" alt="프로필" class="participant-image">
+                        <div>
+                            <div class="participant-name">박서준</div>
+                            <div class="participant-email">park@example.com</div>
+                        </div>
+                    </div>
+                    <div class="hide-mobile">2024 개발자 컨퍼런스</div>
+                    <div class="hide-mobile">2024.02.15</div>
+                    <div><span class="status-badge status-cancelled">발표 취소</span></div>
+                    <div><button class="action-button">상세</button></div>
+                </div>
+                <div class="participant-item">
+                    <div class="participant-number">5</div>
+                    <div class="participant-info">
+                        <img src="https://api.a0.dev/assets/image?text=user3" alt="프로필" class="participant-image">
+                        <div>
+                            <div class="participant-name">박서준</div>
+                            <div class="participant-email">park@example.com</div>
+                        </div>
+                    </div>
+                    <div class="hide-mobile">2024 개발자 컨퍼런스</div>
+                    <div class="hide-mobile">2024.02.15</div>
+                    <div><span class="status-badge status-cancelled">발표 취소</span></div>
+                    <div><button class="action-button">상세</button></div>
+                </div>
+                <div class="pagination-container">
+                    <div class="pagination-info">
+                        총 156명 중 1-10명
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="page-btn" disabled>
+                            <span class="page-icon">◀◀</span>
+                            처음
+                        </button>
+                        <button class="page-btn" disabled>
+                            <span class="page-icon">◀</span>
+                            이전
+                        </button>
+                        <div class="page-numbers">
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">4</button>
+                            <button class="page-btn">5</button>
+                            <span class="page-ellipsis">...</span>
+                            <button class="page-btn">16</button>
+                        </div>
+                        <button class="page-btn">
+                            다음
+                            <span class="page-icon">▶</span>
+                        </button>
+                        <button class="page-btn">
+                            마지막
+                            <span class="page-icon">▶▶</span>
+                        </button>
+                    </div>
+                    <div class="page-size-selector">
+                        <select class="page-size-select">
+                            <option value="10">10개씩 보기</option>
+                            <option value="20">20개씩 보기</option>
+                            <option value="50">50개씩 보기</option>
+                            <option value="100">100개씩 보기</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
+
+
+        <!-- footer start -->
         <div class="footer">
             <div class="container">
                 <div class="row">
@@ -229,8 +318,8 @@
                             <a href="#"><span><i class="fa fa-google-plus"></i></span></a>
                             <a href="#"><span class="active"><i class="fa fa-twitter"></i></span></a>
                             <!-- <a href="#"><span><i class="fa fa-instagram"></i></span></a>
-                            <a href="#"><span><i class="fa fa-pinterest"></i></span></a>
-                            <a href="#"><span><i class="fa fa-linkedin"></i></span></a> -->
+                        <a href="#"><span><i class="fa fa-pinterest"></i></span></a>
+                        <a href="#"><span><i class="fa fa-linkedin"></i></span></a> -->
                         </div>
                     </div>
                 </div>

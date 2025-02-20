@@ -20,7 +20,7 @@ body {
 }
 
 .schedule-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 32px auto;
     padding: 0 24px;
 }
@@ -33,6 +33,7 @@ body {
 }
 
 .schedule-title {
+    font-size: 32px;
     font-weight: 700;
     color: var(--text-primary);
 }
@@ -79,7 +80,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
 }
 
 .calendar-header small {
@@ -266,4 +267,5 @@ body {
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;
+    font-size: 2.0rem;
 }
