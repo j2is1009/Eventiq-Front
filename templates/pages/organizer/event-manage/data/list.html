@@ -29,7 +29,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/speaker/detail.css">
+    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/data/list.css">
     <link rel="stylesheet" href="../../../../../static/css/organizer/dashboard.css">
 </head>
 
@@ -92,7 +92,7 @@
                                     <li><a href="../schedule/list.html">일정 관리</a></li>
                                     <li><a href="../speaker/list.html">발표자 관리</a></li>
                                     <li><a href="../participant/list.html">참가자 관리</a></li>
-                                    <li><a href="../data/list.html">자료 관리</a></li>
+                                    <li><a href="#">자료 관리</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu col-lg-3">
@@ -118,56 +118,97 @@
             </div>
         </div>
         <div class="container">
-            <div class="profile-card">
-                <div class="profile-header">
-                    <img src="https://api.a0.dev/assets/image?text=professional%20portrait%20modern%20tech%20speaker"
-                        alt="프로필 사진" class="profile-image">
-                    <div class="profile-title">
-                        <h1 class="profile-name">김서연</h1>
-                        <p class="profile-nickname">커뮤니티 활동 닉네임</p>
+            <div class="header">
+                <h1 class="title">자료 관리</h1>
+                <p class="subtitle">행사 관련 자료를 업로드하고 관리할 수 있습니다.</p>
+            </div>
+    
+            <div class="upload-section">
+                <div class="upload-header">
+                    <h2 class="upload-title">파일 업로드</h2>
+                </div>
+                <div class="upload-area">
+                    <div class="upload-icon">📁</div>
+                    <p class="upload-text">클릭하여 파일을 업로드하거나 드래그앤드롭하세요</p>
+                    <p class="upload-format">지원 형식: PDF, PPT, PPTX, DOC, DOCX (최대 100MB)</p>
+                </div>
+            </div>
+    
+            <div class="filter-section">
+                <select class="filter-select">
+                    <option value="">모든 이벤트</option>
+                    <option value="1">2024 모던 웹 개발 컨퍼런스</option>
+                    <option value="2">프론트엔드 개발자 밋업</option>
+                </select>
+                <select class="filter-select">
+                    <option value="">모든 유형</option>
+                    <option value="presentation">발표자료</option>
+                    <option value="document">문서</option>
+                    <option value="photo">사진</option>
+                </select>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="파일명으로 검색">
+                    <button class="search-button">
+                        <span class="search-icon">🔍</span>
+                        검색
+                    </button>
+                </div>
+            </div>
+            
+    
+            <div class="files-grid">
+                <div class="file-card">
+                    <div class="file-preview">
+                        <div class="file-icon">📄</div>
+                    </div>
+                    <div class="file-info">
+                        <h3 class="file-name">2024 모던 웹 개발 트렌드 발표자료.pdf</h3>
+                        <div class="file-meta">
+                            <span>2024.02.15</span>
+                            <span class="file-type">PDF</span>
+                        </div>
+                    </div>
+                    <div class="file-actions">
+                        <button class="file-button btn-download">다운로드</button>
+                        <button class="file-button btn-delete">삭제</button>
                     </div>
                 </div>
-
-                <div class="section">
-                    <h2 class="section-title">발표할 이벤트</h2>
-                    <p class="section-content">
-                        2024 개발자 컨퍼런스
-                    </p>
+    
+                <div class="file-card">
+                    <div class="file-preview">
+                        <div class="file-icon">📊</div>
+                    </div>
+                    <div class="file-info">
+                        <h3 class="file-name">React와 Next.js 실습 자료.pptx</h3>
+                        <div class="file-meta">
+                            <span>2024.02.14</span>
+                            <span class="file-type">PPTX</span>
+                        </div>
+                    </div>
+                    <div class="file-actions">
+                        <button class="file-button btn-download">다운로드</button>
+                        <button class="file-button btn-delete">삭제</button>
+                    </div>
                 </div>
-                <div class="section">
-                    <h2 class="section-title">발표 주제</h2>
-                    <p class="section-content">
-                        모던 웹 개발의 트렌드와 미래 전망: React와 Next.js를 중심으로
-                    </p>
-                </div>
-
-                <div class="section">
-                    <h2 class="section-title">경력 사항</h2>
-                    <p class="section-content">
-                        • 현) ABC 기술연구소 수석 연구원<br>
-                        • 전) XYZ 소프트웨어 프론트엔드 리드 개발자<br>
-                        • 전) DEF 스타트업 풀스택 개발자<br>
-                        • 컴퓨터공학 박사 (한국대학교)
-                    </p>
-                </div>
-
-                <div class="section">
-                    <h2 class="section-title">설명</h2>
-                    <p class="section-content">
-                        10년 이상의 웹 개발 경력을 보유한 프론트엔드 전문가입니다.
-                        현재는 ABC 기술연구소에서 차세대 웹 기술 연구와 개발을 담당하고 있으며,
-                        다수의 기술 컨퍼런스에서 연사로 활동해왔습니다.
-                        웹 개발 커뮤니티에서 활발히 활동하며 후진 양성에도 힘쓰고 있습니다.
-                    </p>
-                </div>
-
-                <div class="button-group">
-                    <button class="btn btn-edit">정보 수정</button>
-                    <button class="btn btn-delete">삭제</button>
+    
+                <div class="file-card">
+                    <div class="file-preview">
+                        <div class="file-icon">📝</div>
+                    </div>
+                    <div class="file-info">
+                        <h3 class="file-name">행사 진행 가이드라인.docx</h3>
+                        <div class="file-meta">
+                            <span>2024.02.13</span>
+                            <span class="file-type">DOCX</span>
+                        </div>
+                    </div>
+                    <div class="file-actions">
+                        <button class="file-button btn-download">다운로드</button>
+                        <button class="file-button btn-delete">삭제</button>
+                    </div>
                 </div>
             </div>
         </div>
-
         <div class="footer">
             <div class="container">
                 <div class="row">
