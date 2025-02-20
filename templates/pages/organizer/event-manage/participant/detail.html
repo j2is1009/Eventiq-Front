@@ -29,8 +29,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/speaker/create.css">
     <link rel="stylesheet" href="../../../../../static/css/organizer/dashboard.css">
+    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/participant/detail.css">
 </head>
 
 <body>
@@ -119,101 +119,92 @@
         </div>
 
         <div class="container">
-            <div class="header">
-                <h1 class="title">발표자 추가</h1>
-                <p class="subtitle">새로운 발표자의 정보를 입력해주세요.</p>
+            <div class="participant-header">
+                <img src="https://api.a0.dev/assets/image?text=participant" 
+                     alt="프로필 이미지" 
+                     class="profile-image">
+                <div class="profile-info">
+                    <h1 class="profile-name">김지훈</h1>
+                    <div class="profile-email">kim@example.com</div>
+                    <span class="status-badge status-confirmed">참가 확정</span>
+                </div>
             </div>
-
-            <form class="form-container">
-                <div class="form-group">
-                    <label class="form-label">프로필 사진<span class="required">*</span></label>
-                    <div class="image-upload">
-                        <div class="upload-icon">📸</div>
-                        <p class="upload-text">클릭하여 이미지를 업로드하거나 드래그앤드롭하세요</p>
-                        <p class="help-text">권장 크기: 400x400px, 최대 2MB</p>
+    
+            <div class="info-grid">
+                <div class="info-card">
+                    <h2 class="card-title">
+                        📋 신청 정보
+                    </h2>
+                    <div class="info-row">
+                        <span class="info-label">신청일시</span>
+                        <span class="info-value">2024.02.15 14:30</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">이벤트</span>
+                        <span class="info-value">2024 모던 웹 개발 컨퍼런스</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">티켓 종류</span>
+                        <span class="info-value">일반 티켓</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">연락처</span>
+                        <span class="info-value">010-1234-5678</span>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label class="form-label">이름<span class="required">*</span></label>
-                    <input type="text" class="form-input" placeholder="실명을 입력하세요" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">커뮤니티 활동 닉네임</label>
-                    <input type="text" class="form-input" placeholder="커뮤니티에서 사용하는 닉네임을 입력하세요">
-                    <p class="help-text">선택사항입니다. 없으시다면 비워두세요.</p>
-                </div>
-
-                <!-- 발표할 이벤트 입력 부분 수정 -->
-                <div class="form-group">
-                    <label class="form-label">발표할 이벤트<span class="required">*</span></label>
-                    <div class="search-input-container">
-                        <input type="text" class="form-input" id="eventInput" placeholder="발표할 이벤트명을 입력하세요" required
-                            readonly>
-                        <button type="button" class="search-button" onclick="openModal()">
-                            <span class="search-icon">🔍</span> 검색
-                        </button>
+    
+                <div class="info-card">
+                    <h2 class="card-title">
+                        💳 결제 정보
+                    </h2>
+                    <div class="info-row">
+                        <span class="info-label">결제 상태</span>
+                        <span class="info-value">결제 완료</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">결제 금액</span>
+                        <span class="info-value">88,000원</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">결제 수단</span>
+                        <span class="info-value">신용카드</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">결제일시</span>
+                        <span class="info-value">2024.02.15 14:35</span>
                     </div>
                 </div>
-
-                <!-- 모달 추가 -->
-                <div id="eventSearchModal" class="modal">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2>이벤트 검색</h2>
-                            <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+    
+            <div class="info-card">
+                <h2 class="card-title">
+                    📅 참가 이력
+                </h2>
+                <div class="history-list">
+                    <div class="history-item">
+                        <div class="history-date">2023.12.10</div>
+                        <div class="history-event">
+                            <div class="history-event-name">2023 프론트엔드 컨퍼런스</div>
+                            <div class="history-event-detail">일반 티켓 / 참가 완료</div>
                         </div>
-                        <div class="search-container">
-                            <input type="text" class="search-input" placeholder="이벤트명을 입력하세요">
-                            <button class="search-submit">검색</button>
-                        </div>
-                        <div class="event-list">
-                            <div class="event-item" onclick="selectEvent(this)">
-                                <img src="https://api.a0.dev/assets/image?text=tech%20conference%201" alt="이벤트 이미지"
-                                    class="event-image">
-                                <div class="event-details">
-                                    <h3>2024 모던 웹 개발 컨퍼런스</h3>
-                                    <p class="event-date">2024.03.15</p>
-                                    <span class="event-status status-active">진행예정</span>
-                                </div>
-                            </div>
-                            <div class="event-item" onclick="selectEvent(this)">
-                                <img src="https://api.a0.dev/assets/image?text=tech%20conference%202" alt="이벤트 이미지"
-                                    class="event-image">
-                                <div class="event-details">
-                                    <h3>프론트엔드 개발자 밋업</h3>
-                                    <p class="event-date">2024.04.20</p>
-                                    <span class="event-status status-active">진행예정</span>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-date">2023.08.25</div>
+                        <div class="history-event">
+                            <div class="history-event-name">React 워크샵</div>
+                            <div class="history-event-detail">VIP 티켓 / 참가 완료</div>
                         </div>
                     </div>
                 </div>
-
-
-                <div class="form-group">
-                    <label class="form-label">발표 주제<span class="required">*</span></label>
-                    <input type="text" class="form-input" placeholder="발표하실 주제를 입력하세요" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">경력 사항<span class="required">*</span></label>
-                    <textarea class="form-input" placeholder="주요 경력을 입력하세요&#13;&#10;예) 이벤티큐 프론트엔드 개발자 (5년)"
-                        required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">설명</label>
-                    <textarea class="form-input" placeholder="발표자 소개나 발표 내용에 대한 설명을 자유롭게 작성해주세요"></textarea>
-                </div>
-
-                <div class="form-buttons">
-                    <button type="submit" class="submit-button">등록하기</button>
-                    <button type="button" class="cancel-button" onclick="history.back()">취소</button>
-                </div>
-            </form>
+            </div>
+    
+            <div class="action-buttons">
+                <button class="action-button button-secondary" onclick="history.back()">목록</button>
+            </div>
         </div>
+
+
+        <!-- footer start -->
         <div class="footer">
             <div class="container">
                 <div class="row">
@@ -281,8 +272,8 @@
                             <a href="#"><span><i class="fa fa-google-plus"></i></span></a>
                             <a href="#"><span class="active"><i class="fa fa-twitter"></i></span></a>
                             <!-- <a href="#"><span><i class="fa fa-instagram"></i></span></a>
-                            <a href="#"><span><i class="fa fa-pinterest"></i></span></a>
-                            <a href="#"><span><i class="fa fa-linkedin"></i></span></a> -->
+                        <a href="#"><span><i class="fa fa-pinterest"></i></span></a>
+                        <a href="#"><span><i class="fa fa-linkedin"></i></span></a> -->
                         </div>
                     </div>
                 </div>
@@ -299,7 +290,6 @@
         <script type="text/javascript" src="../../../../../static/js/sticky-header.js"></script>
         <script type="text/javascript" src="../../../../../static/js/owl.carousel.min.js"></script>
         <script type="text/javascript" src="../../../../../static/js/slider.js"></script>
-        <script type="text/javascript" src="../../../../../static/js/organizer/event-manage/speaker/create.js"></script>
 </body>
 
 </html>
