@@ -201,59 +201,60 @@ body {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.filter-chip:hover, .filter-chip.active {
+.filter-chip:hover,
+.filter-chip.active {
     background-color: var(--primary-color);
     color: white;
 }
 
 .calendar-stats {
-display: flex;
-justify-content: space-around;
-padding: 20px 10px;
-margin: 20px 0;
-border-radius: 12px;
-background: rgba(37, 99, 235, 0.03);
-border: 1px solid rgba(37, 99, 235, 0.1);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 10px;
+    margin: 20px 0;
+    border-radius: 12px;
+    background: rgba(37, 99, 235, 0.03);
+    border: 1px solid rgba(37, 99, 235, 0.1);
 }
 
 .stat-item {
-text-align: center;
+    text-align: center;
 }
 
 .stat-value {
-display: flex;
-align-items: center;
-gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .stat-dot {
-width: 8px;
-height: 8px;
-border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
 }
 
 .stat-dot.upcoming {
-background-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 
 .stat-dot.in-progress {
-background-color: var(--success-color);
+    background-color: var(--success-color);
 }
 
 .stat-dot.completed {
-background-color: var(--error-color);
+    background-color: var(--error-color);
 }
 
 .stat-number {
-font-weight: 700;
-color: var(--text-primary);
+    font-weight: 700;
+    color: var(--text-primary);
 }
 
 .stat-label {
-color: var(--text-secondary);
+    color: var(--text-secondary);
 }
 
-.calendar-header:hover  {
+.calendar-header:hover {
     margin-bottom: 16px;
     border-radius: 12px;
     padding-left: 10px;
@@ -262,7 +263,7 @@ color: var(--text-secondary);
 }
 
 .calendar-header h2 {
-font-weight: 700;
-color: var(--text-primary);
-margin: 0;
-    }
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}

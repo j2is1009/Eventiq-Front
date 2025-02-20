@@ -82,11 +82,12 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <ul class="menu">
-                            <li class="col-lg-3"><a href="#">대시보드</a></li>
+                            <li class="col-lg-3"><a href="../../dashboard.html">대시보드</a></li>
                             <li class="has-submenu col-lg-3">
                                 <a href="#">이벤트 관리</a>
                                 <ul class="submenu">
-                                    <li><a href="#">일정 관리</a></li>
+                                    <li><a href="#">이벤트 관리</a></li>
+                                    <li><a href="./list.html">일정 관리</a></li>
                                     <li><a href="#">발표자 관리</a></li>
                                     <li><a href="#">참가자 관리</a></li>
                                     <li><a href="#">자료 관리</a></li>
@@ -119,7 +120,7 @@
                 <div class="schedule-header">
                     <h1 class="schedule-title">일정 관리</h1>
                     <div class="schedule-actions">
-                        <button class="btn btn-primary">+ 새 일정 추가</button>
+                        <button class="btn btn-primary" id="schedule-create-button">+ 새 일정 추가</button>
                     </div>
                 </div>
         
@@ -199,7 +200,7 @@
                         </div>
         
                         <div class="schedule-cards">
-                            <div class="schedule-card">
+                            <div class="schedule-card" onclick="location.href='./edit-form.html'">
                                 <div class="schedule-card-header">
                                     <h3>디자인 워크샵</h3>
                                     <span class="schedule-status status-upcoming">예정</span>
@@ -321,5 +322,6 @@
     <script type="text/javascript" src="../../../../../static/js/sticky-header.js"></script>
     <script type="text/javascript" src="../../../../../static/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../../../../static/js/slider.js"></script>
+    <script type="text/javascript" src="../../../../../static/js/organizer/event-manage/list.js"></script>
 </body>
 </html>
