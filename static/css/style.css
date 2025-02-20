@@ -893,6 +893,8 @@ hr,.post-hr{border-bottom: 1px solid #e6e7e9;
 }
 
 
- }
-
-
+@media (min-width: 1200px) {
+    .container {
+        width: 1300px;
+    }
+}

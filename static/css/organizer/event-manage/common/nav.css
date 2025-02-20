@@ -1,0 +1,91 @@
+/* 글로벌 변수 설정 */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #3b82f6;
+    --accent-color: #60a5fa;
+    --background-color: #f1f5f9;
+    --surface-color: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-radius: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 전체 컨테이너 */
+.organizer-container {
+    height: 1000px;
+    background-color: var(--background-color);
+}
+
+/* 네비게이션 */
+.organizer-nav {
+    background: var(--surface-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    margin-bottom: 24px;
+}
+
+/* 메인 메뉴 */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 12px 24px;
+    color: var(--text-primary);
+    font-weight: 600;
+    transition: var(--transition);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+    background: linear-gradient(to right, rgba(37, 99, 235, 0.1), transparent);
+}
+
+.organizer-nav > .container {
+    margin: auto;
+    max-width: 1200px !important;
+}
+
+/* 서브메뉴 */
+.has-submenu .submenu {
+    display: none;
+    position: absolute;
+    background: var(--surface-color);
+    list-style: none;
+    padding: 16px;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.submenu a {
+    padding: 12px 20px;
+    margin: 4px 0;
+    border-radius: 8px;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+    z-index: 1;
+}
