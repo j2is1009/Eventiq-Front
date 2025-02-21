@@ -41,3 +41,73 @@ window.onclick = function(event) {
         closeShippingModal();
     }
 }
+
+// 수령인 검색 모달 제어
+function openRecipientModal() {
+    document.getElementById('recipientModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeRecipientModal() {
+    document.getElementById('recipientModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// 검색 처리
+function handleSearch(event) {
+    if (event.key === 'Enter') {
+        searchRecipients();
+    }
+}
+
+function searchRecipients() {
+    const searchInput = document.getElementById('searchInput').value;
+    const searchType = document.querySelector('input[name="searchType"]:checked').value;
+    
+    // 검색 로직 구현
+    console.log(`Searching for ${searchInput} by ${searchType}`);
+}
+
+// 수령인 선택 처리
+function selectRecipient(index) {
+    // 예시 데이터
+    const recipients = [
+        {
+            name: '홍길동',
+            phone: '010-1234-5678',
+            zipcode: '12345',
+            address1: '서울시 강남구 테헤란로 123',
+            address2: '456호'
+        },
+        {
+            name: '김영희',
+            phone: '010-9876-5432',
+            zipcode: '54321',
+            address1: '서울시 서초구 서초대로 456',
+            address2: '789호'
+        }
+    ];
+
+    const selected = recipients[index];
+    
+    // 선택된 수령인 정보 표시
+    document.getElementById('recipientInfo').value = selected.name;
+    document.getElementById('recipientName').value = selected.name;
+    document.getElementById('recipientPhone').value = selected.phone;
+    document.getElementById('recipientZipcode').value = selected.zipcode;
+    document.getElementById('recipientAddress1').value = selected.address1;
+    document.getElementById('recipientAddress2').value = selected.address2;
+    
+    // 상세 정보 표시
+    document.getElementById('recipientDetails').style.display = 'block';
+    
+    closeRecipientModal();
+}
+
+// 모달 외부 클릭 시 닫기
+window.onclick = function(event) {
+    if (event.target.className === 'modal') {
+        event.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}

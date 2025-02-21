@@ -117,30 +117,115 @@
                     <!-- 수령인 정보 -->
                     <div class="form-section">
                         <h3 class="section-title">수령인 정보</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>받는 사람 *</label>
-                                <input type="text" required placeholder="받는 사람 이름">
-                            </div>
-                            <div class="form-group">
-                                <label>연락처 *</label>
-                                <input type="tel" required placeholder="010-0000-0000">
-                            </div>
-                        </div>
                         <div class="form-group">
-                            <label>우편번호 *</label>
                             <div class="input-with-button">
-                                <input type="text" id="zipcode" required readonly>
-                                <button type="button" class="btn btn-secondary" onclick="searchAddress()">주소 검색</button>
+                                <input type="text" id="recipientInfo" readonly placeholder="수령인을 검색하세요" required>
+                                <button type="button" class="btn btn-secondary" onclick="openRecipientModal()">수령인 검색</button>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label>기본주소 *</label>
-                            <input type="text" id="address1" required readonly>
+                        <div class="recipient-details" id="recipientDetails" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>받는 사람</label>
+                                    <input type="text" id="recipientName" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>연락처</label>
+                                    <input type="tel" id="recipientPhone" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>우편번호</label>
+                                <input type="text" id="recipientZipcode" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>기본주소</label>
+                                <input type="text" id="recipientAddress1" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>상세주소</label>
+                                <input type="text" id="recipientAddress2" readonly>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>상세주소 *</label>
-                            <input type="text" id="address2" required placeholder="상세주소를 입력하세요">
+                    </div>
+
+                    <div class="modal" id="recipientModal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title">수령인 검색</h2>
+                            </div>
+                            <div class="alert alert-warning">
+                                ⚠️ 이름 검색 시 동명이인이 있을 수 있습니다. 이메일을 함께 확인해주세요.
+                            </div>
+                            
+                            <div class="modal-body">
+                                <!-- 검색 필터 -->
+                                <div class="search-filters">
+                                    <div class="search-input">
+                                        <input type="text" 
+                                               id="searchInput" 
+                                               placeholder="이름 또는 이메일로 검색"
+                                               onkeyup="handleSearch(event)">
+                                        <button class="btn btn-primary" onclick="searchRecipients()">
+                                            검색
+                                        </button>
+                                    </div>
+                                    <div class="filter-options">
+                                        <label class="radio-button">
+                                            <input type="radio" name="searchType" value="nickname" checked>
+                                            <span>이름</span>
+                                        </label>
+                                        <label class="radio-button">
+                                            <input type="radio" name="searchType" value="email">
+                                            <span>이메일</span>
+                                        </label>
+                                    </div>
+                                </div>
+                    
+                                <!-- 검색 결과 테이블 -->
+                                <div class="search-results">
+                                    <table class="recipient-table">
+                                        <thead>
+                                            <tr>
+                                                <th>이름</th>
+                                                <th>이메일</th>
+                                                <th>연락처</th>
+                                                <th>주소</th>
+                                                <th>선택</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>홍길동</td>
+                                                <td>hong@example.com</td>
+                                                <td>010-1234-5678</td>
+                                                <td>서울시 강남구 테헤란로 123</td>
+                                                <td>
+                                                    <button class="btn btn-small" onclick="selectRecipient(0)">선택</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>김영희</td>
+                                                <td>kim@example.com</td>
+                                                <td>010-9876-5432</td>
+                                                <td>서울시 서초구 서초대로 456</td>
+                                                <td>
+                                                    <button class="btn btn-small" onclick="selectRecipient(1)">선택</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                    
+                                <!-- 페이지네이션 -->
+                                <div class="pagination">
+                                    <button class="page-button">&lt;</button>
+                                    <button class="page-button active">1</button>
+                                    <button class="page-button">2</button>
+                                    <button class="page-button">3</button>
+                                    <button class="page-button">&gt;</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
