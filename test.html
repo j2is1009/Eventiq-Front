@@ -3,262 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주최자 대시보드</title>
+    <title>그룹 멤버 상세 정보</title>
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --surface-color: #ffffff;
-            --background-color: #f8fafc;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --border-radius: 12px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-primary);
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 24px;
-        }
-
-        /* 네비게이션 */
-        .nav {
-            background: var(--surface-color);
-            padding: 16px 0;
-            box-shadow: var(--shadow-sm);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* 프로필 카드 */
-        .profile-card {
-            background: var(--surface-color);
-            border-radius: var(--border-radius);
+        /* 기존 스타일 유지 */
+        
+        /* 프로필 섹션 스타일 추가 */
+        .profile-section {
             padding: 32px;
-            margin: 24px 0;
-            box-shadow: var(--shadow-md);
-            display: grid;
-            grid-template-columns: auto 1fr;
+            display: flex;
             gap: 32px;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
         }
 
         .profile-image {
-            width: 120px;
-            height: 120px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
+            border: 1px solid var(--border-color);
         }
 
         .profile-info {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+            flex: 1;
         }
 
-        /* 통계 카드 */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            margin: 24px 0;
+        .profile-header {
+            margin-bottom: 24px;
         }
 
-        .stat-card {
-            background: var(--surface-color);
-            padding: 24px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-md);
-            text-align: center;
+        .member-name {
+            font-size: 24px;
+            color: var(--text-primary);
+            margin: 0 0 8px 0;
         }
 
-        /* 리스트 섹션 */
-        .list-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin: 24px 0;
-        }
-
-        .list-card {
-            background: var(--surface-color);
-            padding: 24px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-md);
-        }
-
-        .list-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-
-        /* 테이블 스타일 */
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        th {
-            background-color: #f8fafc;
+        .member-role {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #e0f2fe;
+            color: #0369a1;
+            border-radius: 20px;
+            font-size: 14px;
             font-weight: 600;
         }
 
-        /* 버튼 스타일 */
-        .btn {
-            padding: 8px 16px;
-            border-radius: 6px;
-            border: none;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .btn-primary:hover {
-            opacity: 0.9;
+        .info-label {
+            font-size: 14px;
+            color: var(--text-secondary);
         }
 
-        /* 반응형 */
+        .info-value {
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        /* 권한 섹션 수정 */
+        .permissions-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding: 24px 24px 0 24px;
+        }
+
+        .permissions-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .permissions-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .subscription-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .subscription-badge.free {
+            background: #f1f5f9;
+            color: #64748b;
+        }
+
+        .subscription-badge.premium {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
         @media (max-width: 768px) {
-            .profile-card {
-                grid-template-columns: 1fr;
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
                 text-align: center;
+                padding: 24px;
             }
 
-            .profile-image {
-                margin: 0 auto;
+            .profile-info {
+                width: 100%;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-content">
-            <h1>주최자 대시보드</h1>
-            <button class="btn btn-primary">로그아웃</button>
+    <div class="container">
+        <!-- 페이지 헤더 -->
+        <div class="page-header">
+            <h1 class="page-title">그룹 멤버 상세 정보</h1>
+            <button class="back-button" onclick="history.back()">
+                ← 목록으로 돌아가기
+            </button>
         </div>
-    </nav>
 
-    <main class="container">
-        <section class="profile-card">
-            <img src="https://api.a0.dev/assets/image?text=profile%20image&aspect=1:1" alt="프로필 이미지" class="profile-image">
-            <div class="profile-info">
-                <div>
-                    <h2>홍길동</h2>
-                    <p>이벤트 그룹임 | islandtim@naver.com | 010-1234-1234</p>
+        <!-- 프로필 카드 -->
+        <div class="content-card">
+            <!-- 프로필 섹션 -->
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="https://api.a0.dev/assets/image?text=profile%20picture&aspect=1:1" 
+                         alt="프로필 이미지" 
+                         class="profile-image">
                 </div>
-                <div>
-                    <h3>주최자 소개</h3>
-                    <textarea rows="4" placeholder="주최자 소개를 입력해주세요..." style="width: 100%; margin: 8px 0;"></textarea>
-                    <button class="btn btn-primary">저장</button>
+                <div class="profile-info">
+                    <div class="profile-header">
+                        <h2 class="member-name">홍길동</h2>
+                        <span class="member-role">오거나이저</span>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">아이디</span>
+                            <span class="info-value">user123</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">이메일</span>
+                            <span class="info-value">hong@example.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">휴대전화</span>
+                            <span class="info-value">010-1234-5678</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">가입일</span>
+                            <span class="info-value">2024.02.21</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="stats-grid">
-            <div class="stat-card">
-                <h3>종료된 이벤트</h3>
-                <p>1</p>
-            </div>
-            <div class="stat-card">
-                <h3>진행중인 이벤트</h3>
-                <p>1</p>
-            </div>
-            <div class="stat-card">
-                <h3>판매된 티켓</h3>
-                <p>5</p>
-            </div>
-            <div class="stat-card">
-                <h3>남은 티켓</h3>
-                <p>95</p>
-            </div>
-            <div class="stat-card">
-                <h3>매출 통계</h3>
-                <p>50,000원</p>
-            </div>
-        </section>
-
-        <section class="list-section">
-            <div class="list-card">
-                <div class="list-header">
-                    <h3>진행중인 이벤트</h3>
-                    <a href="#" class="btn">더보기</a>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>구분</th>
-                            <th>이벤트명</th>
-                            <th>마감일</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>오프라인/유료</td>
-                            <td>데이터독 한국 사용자 모임 4회</td>
-                            <td>2024-02-20</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
 
-            <div class="list-card">
-                <div class="list-header">
-                    <h3>종료된 이벤트</h3>
-                    <a href="#" class="btn">더보기</a>
+            <!-- 권한 설정 섹션 -->
+            <div class="permissions-header">
+                <div class="permissions-title-group">
+                    <h2 class="section-title">권한 설정</h2>
+                    <span class="subscription-badge premium">Premium</span>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>구분</th>
-                            <th>이벤트명</th>
-                            <th>종료일</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>온라인/무료</td>
-                            <td>5-7년 차 미들레벨을 위한 성공</td>
-                            <td>2024-02-20</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="permissions-controls">
+                    <button class="btn btn-primary" id="editPermissionBtn">
+                        권한 변경
+                    </button>
+                </div>
             </div>
-        </section>
-    </main>
+
+            <div class="permissions-section">
+                <!-- 이벤트 관리 권한 -->
+                <div class="permission-group">
+                    <div class="group-header">
+                        <h3 class="group-title">이벤트 관리</h3>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="group-toggle">
+                            전체 선택
+                        </label>
+                    </div>
+                    <div class="permission-items">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="event_read">
+                            조회
+                        </label>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="event_write">
+                            등록
+                        </label>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="event_modify">
+                            수정
+                        </label>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="event_delete">
+                            삭제
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 참가자 관리 권한 -->
+                <div class="permission-group">
+                    <div class="group-header">
+                        <h3 class="group-title">참가자 관리</h3>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="group-toggle">
+                            전체 선택
+                        </label>
+                    </div>
+                    <div class="permission-items">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="participant_read">
+                            조회
+                        </label>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="participant_write">
+                            등록
+                        </label>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="participant_modify">
+                            수정
+                        </label>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="participant_delete">
+                            삭제
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 자료 관리 권한 -->
+                <div class="permission-group">
+                    <div class="group-header">
+                        <h3 class="group-title">자료 관리</h3>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="group-toggle">
+                            전체 선택
+                        </label>
+                    </div>
+                    <div class="permission-items">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="material_read">
+                            조회
+                        </label>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="material_write">
+                            등록
+                        </label>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="material_modify">
+                            수정
+                        </label>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" name="material_delete">
+                            삭제
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 하단 버튼 영역 -->
+        <div class="page-actions">
+            <button class="btn btn-danger" id="removeUserBtn">그룹에서 내보내기</button>
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="savePermissions()">변경사항 저장</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 권한 상태 업데이트 함수
+        function updatePermissionControls(isPremium, isHost) {
+            const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+            const editPermissionBtn = document.getElementById('editPermissionBtn');
+            const removeUserBtn = document.getElementById('removeUserBtn');
+            const subscriptionBadge = document.querySelector('.subscription-badge');
+
+            // 권한 변경 버튼 상태 설정
+            editPermissionBtn.disabled = !isPremium;
+            editPermissionBtn.style.opacity = isPremium ? '1' : '0.5';
+
+            // 체크박스 상태 설정
+            allCheckboxes.forEach(checkbox => {
+                checkbox.disabled = !isPremium || !isHost;
+            });
+
+            // 내보내기 버튼 표시 설정
+            removeUserBtn.style.display = isHost ? 'block' : 'none';
+
+            // 구독 상태 배지 업데이트
+            if (isPremium) {
+                subscriptionBadge.className = 'subscription-badge premium';
+                subscriptionBadge.textContent = 'Premium';
+            } else {
+                subscriptionBadge.className = 'subscription-badge free';
+                subscriptionBadge.textContent = 'Free';
+            }
+        }
+
+        // 그룹 전체 선택 토글
+        document.querySelectorAll('.group-toggle').forEach(toggle => {
+            toggle.addEventListener('change', (e) => {
+                const group = e.target.closest('.permission-group');
+                const checkboxes = group.querySelectorAll('input[type="checkbox"]:not(.group-toggle)');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = e.target.checked;
+                });
+            });
+        });
+
+        // 권한 저장
+        function savePermissions() {
+            // 권한 저장 로직 구현
+            alert('권한이 저장되었습니다.');
+        }
+
+        // 그룹에서 내보내기
+        document.getElementById('removeUserBtn').addEventListener('click', () => {
+            if (confirm('정말로 이 멤버를 그룹에서 내보내시겠습니까?')) {
+                // 내보내기 로직 구현
+                alert('멤버가 그룹에서 제외되었습니다.');
+                history.back();
+            }
+        });
+
+        // 초기 권한 상태 설정 (예시)
+        updatePermissionControls(true, true); // Premium 사용자이면서 주최자인 경우
+    </script>
 </body>
 </html>
