@@ -15,9 +15,54 @@
 .organizer-nav {
     background: var(--surface-color);
     padding: 20px;
-    border-radius: var(--border-radius);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     margin-bottom: 24px;
+    
+}
+
+.nav-container {
+    padding: 0 20px;
+    width:100%;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 로고 영역 */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;  /* 로고 영역이 줄어들지 않도록 설정 */
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.company-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.company-page-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* 네비게이션 메뉴 */
+.nav-menu {
+    flex-grow: 1;  /* 남은 공간을 모두 차지하도록 설정 */
+    display: flex;
+    justify-content: center;  /* 중앙 정렬 */
 }
 
 /* 메인 메뉴 */
@@ -26,7 +71,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 40px;
+    gap: 32px;
     align-items: center;
 }
 
@@ -44,16 +89,12 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;  /* 텍스트가 줄바꿈되지 않도록 설정 */
 }
 
 .menu a:hover {
     color: var(--primary-color);
     background: linear-gradient(to right, rgba(37, 99, 235, 0.1), transparent);
-}
-
-.organizer-nav > .container {
-    margin: auto;
-    max-width: 1200px !important;
 }
 
 /* 서브메뉴 */
@@ -65,7 +106,8 @@
     padding: 16px;
     margin: 0;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);  /* 중앙 정렬을 위해 추가 */
     min-width: 240px;
     border-radius: var(--border-radius);
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -82,4 +124,36 @@
 .has-submenu:hover .submenu {
     display: block;
     z-index: 1;
+}
+
+/* 사용자 페이지 버튼 */
+.user-page-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #f8fafc;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: var(--transition);
+    flex-shrink: 0;  /* 버튼이 줄어들지 않도록 설정 */
+    white-space: nowrap;  /* 텍스트가 줄바꿈되지 않도록 설정 */
+}
+
+.user-page-btn:hover {
+    background-color: #f1f5f9;
+}
+
+/* 아이콘 스타일 */
+.chevron-down::after {
+    content: "▼";
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.arrow-forward::after {
+    content: "→";
+    margin-left: 4px;
 }

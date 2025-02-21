@@ -35,13 +35,20 @@
     
     <div class="organizer-container">
         <div class="organizer-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
+            <div class="nav-container">
+                <div class="nav-wrapper">
+                    <!-- 로고 영역 -->
+                    <div class="logo-area">
+                        <img src="https://api.a0.dev/assets/image?text=modern%20minimal%20company%20logo&aspect=1:1" alt="로고" class="logo">
+                        <span class="company-name">EventiQ <br><small class="company-page-name">주최자 페이지</small></span>
+                    </div>
+        
+                    <!-- 메뉴 영역 -->
+                    <nav class="nav-menu">
                         <ul class="menu">
-                            <li class="col-lg-3"><a href="../../dashboard.html">대시보드</a></li>
-                            <li class="has-submenu col-lg-3">
-                                <a href="#">이벤트 관리</a>
+                            <li><a href="../../dashboard.html">대시보드</a></li>
+                            <li class="has-submenu">
+                                <a href="#">이벤트 관리 <i class="chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="../event/list.html">이벤트 관리</a></li>
                                     <li><a href="../schedule/list.html">일정 관리</a></li>
@@ -50,8 +57,8 @@
                                     <li><a href="../data/list.html">자료 관리</a></li>
                                 </ul>
                             </li>
-                            <li class="has-submenu col-lg-3">
-                                <a href="#">운영 관리</a>
+                            <li class="has-submenu">
+                                <a href="#">운영 관리 <i class="chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="#">문의 관리</a></li>
                                     <li><a href="#">그룹 관리</a></li>
@@ -60,15 +67,21 @@
                                     <li><a href="#">사은품 발송 관리</a></li>
                                 </ul>
                             </li>
-                            <li class="has-submenu col-lg-3">
-                                <a href="#">유료 서비스</a>
+                            <li class="has-submenu">
+                                <a href="#">유료 서비스 <i class="chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="#">유료 서비스 관리</a></li>
                                 </ul>
                             </li>
-                            <li class="col-lg-3"><a href="#">데이터 분석</a></li>
+                            <li><a href="#">데이터 분석</a></li>
                         </ul>
-                    </div>
+                    </nav>
+        
+                    <!-- 사용자 페이지 버튼 -->
+                    <a href="#" class="user-page-btn">
+                        사용자 페이지로 돌아가기
+                        <i class="arrow-forward"></i>
+                    </a>
                 </div>
             </div>
         </div>

@@ -221,6 +221,10 @@ white-space: nowrap;
     padding: 16px;
 }
 
+.file-name-div {
+    height: 49px;
+}
+
 .file-name {
     font-weight: 600;
     margin-bottom: 8px;
