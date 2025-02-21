@@ -27,6 +27,12 @@ section {
     margin-bottom: 32px;
 }
 
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
 /* 뱃지 스타일 */
 .role-badge {
     padding: 6px 12px;
@@ -61,8 +67,8 @@ section {
 /* 그룹 초대 스타일 */
 .top-section {
     display:flex;
-    flex-direction: row-reverse;
     margin-bottom: 10px;
+    justify-content: space-between;
 }
 
 /* 그룹명 설정 스타일 */

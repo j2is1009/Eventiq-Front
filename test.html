@@ -3,351 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>그룹 멤버 상세 정보</title>
+    <title>정산 관리</title>
     <style>
-        /* 기존 스타일 유지 */
-        
-        /* 프로필 섹션 스타일 추가 */
-        .profile-section {
-            padding: 32px;
-            display: flex;
-            gap: 32px;
-            align-items: flex-start;
-            border-bottom: 1px solid var(--border-color);
+        :root {
+            --primary-color: #2563eb;
+            --warning-color: #f97316;
+            --success-color: #10b981;
+            --pending-color: #f59e0b;
+            --hold-color: #6b7280;
+            --border-color: #e2e8f0;
+            --background-color: #f1f5f9;
         }
 
-        .profile-image-container {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            flex-shrink: 0;
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid var(--border-color);
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .profile-info {
-            flex: 1;
-        }
-
-        .profile-header {
+        /* 페이지 헤더 */
+        .page-header {
             margin-bottom: 24px;
         }
 
-        .member-name {
+        .page-title {
             font-size: 24px;
-            color: var(--text-primary);
+            color: #1e293b;
             margin: 0 0 8px 0;
         }
 
-        .member-role {
-            display: inline-block;
-            padding: 6px 12px;
-            background: #e0f2fe;
-            color: #0369a1;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
+        /* 계좌 정보 섹션 */
+        .account-section {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        .info-grid {
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .account-form {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+            margin-bottom: 16px;
         }
 
-        .info-item {
+        .form-group {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
 
-        .info-label {
+        .form-group label {
             font-size: 14px;
-            color: var(--text-secondary);
+            color: #64748b;
         }
 
-        .info-value {
-            font-size: 16px;
-            color: var(--text-primary);
+        .form-group input {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 15px;
         }
 
-        /* 권한 섹션 수정 */
-        .permissions-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-            padding: 24px 24px 0 24px;
+        .form-group input:disabled {
+            background: #f8fafc;
+            cursor: not-allowed;
         }
 
-        .permissions-title-group {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .warning-message {
+            padding: 12px 16px;
+            background: #fff7ed;
+            border-left: 4px solid var(--warning-color);
+            color: #9a3412;
+            font-size: 14px;
+            border-radius: 4px;
         }
 
-        .permissions-controls {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        /* 정산 정보 섹션 */
+        .settlement-section {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        .subscription-badge {
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .info-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .info-card-header {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .info-card-value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .info-card-detail {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* 티켓 판매 현황 */
+        .ticket-sales {
+            margin-bottom: 32px;
+        }
+
+        .ticket-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .ticket-table th,
+        .ticket-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .ticket-table th {
+            background: #f8fafc;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* 정산 상태 배지 */
+        .status-badge {
+            display: inline-block;
             padding: 6px 12px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
         }
 
-        .subscription-badge.free {
-            background: #f1f5f9;
-            color: #64748b;
+        .status-pending {
+            background: #fef3c7;
+            color: var(--pending-color);
         }
 
-        .subscription-badge.premium {
-            background: #fef3c7;
-            color: #b45309;
+        .status-complete {
+            background: #d1fae5;
+            color: var(--success-color);
+        }
+
+        .status-hold {
+            background: #f1f5f9;
+            color: var(--hold-color);
         }
 
         @media (max-width: 768px) {
-            .profile-section {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding: 24px;
-            }
-
-            .profile-info {
-                width: 100%;
+            .account-form {
+                grid-template-columns: 1fr;
             }
 
             .info-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .ticket-table {
+                display: block;
+                overflow-x: auto;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 페이지 헤더 -->
         <div class="page-header">
-            <h1 class="page-title">그룹 멤버 상세 정보</h1>
-            <button class="back-button" onclick="history.back()">
-                ← 목록으로 돌아가기
-            </button>
+            <h1 class="page-title">정산 관리</h1>
         </div>
 
-        <!-- 프로필 카드 -->
-        <div class="content-card">
-            <!-- 프로필 섹션 -->
-            <div class="profile-section">
-                <div class="profile-image-container">
-                    <img src="https://api.a0.dev/assets/image?text=profile%20picture&aspect=1:1" 
-                         alt="프로필 이미지" 
-                         class="profile-image">
+        <!-- 계좌 정보 섹션 -->
+        <section class="account-section">
+            <div class="section-header">
+                <h2 class="section-title">계좌 정보</h2>
+                <button class="btn btn-primary" id="editAccountBtn" onclick="toggleAccountEdit()">정보 수정</button>
+            </div>
+
+            <div class="account-form">
+                <div class="form-group">
+                    <label>은행명</label>
+                    <input type="text" value="신한은행" disabled>
                 </div>
-                <div class="profile-info">
-                    <div class="profile-header">
-                        <h2 class="member-name">홍길동</h2>
-                        <span class="member-role">오거나이저</span>
-                    </div>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="info-label">아이디</span>
-                            <span class="info-value">user123</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">이메일</span>
-                            <span class="info-value">hong@example.com</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">휴대전화</span>
-                            <span class="info-value">010-1234-5678</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">가입일</span>
-                            <span class="info-value">2024.02.21</span>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label>계좌번호</label>
+                    <input type="text" value="110-123-456789" disabled>
+                </div>
+                <div class="form-group">
+                    <label>예금주</label>
+                    <input type="text" value="홍길동" disabled>
                 </div>
             </div>
 
-            <!-- 권한 설정 섹션 -->
-            <div class="permissions-header">
-                <div class="permissions-title-group">
-                    <h2 class="section-title">권한 설정</h2>
-                    <span class="subscription-badge premium">Premium</span>
+            <div class="warning-message">
+                ⚠️ 계좌 정보 오기입 시 잘못된 계좌로 정산금이 지급될 수 있으니 반드시 정확한 정보를 입력해주세요.
+            </div>
+        </section>
+
+        <!-- 정산 정보 섹션 -->
+        <section class="settlement-section">
+            <h2 class="section-title">정산 정보</h2>
+
+            <!-- 판매 현황 요약 -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-card-header">총 판매 금액</div>
+                    <div class="info-card-value">2,500,000원</div>
+                    <div class="info-card-detail">할인/쿠폰 적용 후 금액</div>
                 </div>
-                <div class="permissions-controls">
-                    <button class="btn btn-primary" id="editPermissionBtn">
-                        권한 변경
-                    </button>
+                <div class="info-card">
+                    <div class="info-card-header">정산 예정 금액</div>
+                    <div class="info-card-value">2,275,000원</div>
+                    <div class="info-card-detail">수수료 제외 금액</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-header">할인/쿠폰 금액</div>
+                    <div class="info-card-value">150,000원</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-header">총 수수료</div>
+                    <div class="info-card-value">225,000원</div>
+                    <div class="info-card-detail">PG사 수수료: 75,000원<br>플랫폼 수수료: 150,000원</div>
                 </div>
             </div>
 
-            <div class="permissions-section">
-                <!-- 이벤트 관리 권한 -->
-                <div class="permission-group">
-                    <div class="group-header">
-                        <h3 class="group-title">이벤트 관리</h3>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="group-toggle">
-                            전체 선택
-                        </label>
-                    </div>
-                    <div class="permission-items">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="event_read">
-                            조회
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="event_write">
-                            등록
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="event_modify">
-                            수정
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="event_delete">
-                            삭제
-                        </label>
-                    </div>
-                </div>
+            <!-- 티켓 판매 현황 -->
+            <div class="ticket-sales">
+                <h3 class="section-title">티켓 판매 현황</h3>
+                <table class="ticket-table">
+                    <thead>
+                        <tr>
+                            <th>티켓 종류</th>
+                            <th>판매 수량</th>
+                            <th>단가</th>
+                            <th>총 금액</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>얼리버드 티켓</td>
+                            <td>50매</td>
+                            <td>30,000원</td>
+                            <td>1,500,000원</td>
+                        </tr>
+                        <tr>
+                            <td>일반 티켓</td>
+                            <td>25매</td>
+                            <td>40,000원</td>
+                            <td>1,000,000원</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <!-- 참가자 관리 권한 -->
-                <div class="permission-group">
-                    <div class="group-header">
-                        <h3 class="group-title">참가자 관리</h3>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="group-toggle">
-                            전체 선택
-                        </label>
-                    </div>
-                    <div class="permission-items">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="participant_read">
-                            조회
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="participant_write">
-                            등록
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="participant_modify">
-                            수정
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="participant_delete">
-                            삭제
-                        </label>
-                    </div>
+            <!-- 정산 상태 정보 -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-card-header">지급 예정일</div>
+                    <div class="info-card-value">2024.03.01</div>
+                    <div class="info-card-detail">이벤트 종료 후 영업일 기준 7일</div>
                 </div>
-
-                <!-- 자료 관리 권한 -->
-                <div class="permission-group">
-                    <div class="group-header">
-                        <h3 class="group-title">자료 관리</h3>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="group-toggle">
-                            전체 선택
-                        </label>
-                    </div>
-                    <div class="permission-items">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="material_read">
-                            조회
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="material_write">
-                            등록
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="material_modify">
-                            수정
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="material_delete">
-                            삭제
-                        </label>
+                <div class="info-card">
+                    <div class="info-card-header">정산 상태</div>
+                    <div class="info-card-value">
+                        <span class="status-badge status-pending">대기</span>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- 하단 버튼 영역 -->
-        <div class="page-actions">
-            <button class="btn btn-danger" id="removeUserBtn">그룹에서 내보내기</button>
-            <div class="action-buttons">
-                <button class="btn btn-primary" onclick="savePermissions()">변경사항 저장</button>
-            </div>
-        </div>
+        </section>
     </div>
 
     <script>
-        // 권한 상태 업데이트 함수
-        function updatePermissionControls(isPremium, isHost) {
-            const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-            const editPermissionBtn = document.getElementById('editPermissionBtn');
-            const removeUserBtn = document.getElementById('removeUserBtn');
-            const subscriptionBadge = document.querySelector('.subscription-badge');
-
-            // 권한 변경 버튼 상태 설정
-            editPermissionBtn.disabled = !isPremium;
-            editPermissionBtn.style.opacity = isPremium ? '1' : '0.5';
-
-            // 체크박스 상태 설정
-            allCheckboxes.forEach(checkbox => {
-                checkbox.disabled = !isPremium || !isHost;
-            });
-
-            // 내보내기 버튼 표시 설정
-            removeUserBtn.style.display = isHost ? 'block' : 'none';
-
-            // 구독 상태 배지 업데이트
-            if (isPremium) {
-                subscriptionBadge.className = 'subscription-badge premium';
-                subscriptionBadge.textContent = 'Premium';
+        // 계좌 정보 수정 토글
+        function toggleAccountEdit() {
+            const inputs = document.querySelectorAll('.account-form input');
+            const editButton = document.getElementById('editAccountBtn');
+            
+            if (inputs[0].disabled) {
+                // 수정 모드 활성화
+                inputs.forEach(input => input.disabled = false);
+                editButton.textContent = '저장';
             } else {
-                subscriptionBadge.className = 'subscription-badge free';
-                subscriptionBadge.textContent = 'Free';
+                // 저장 및 수정 모드 비활성화
+                if (confirm('변경된 계좌 정보를 저장하시겠습니까?')) {
+                    inputs.forEach(input => input.disabled = true);
+                    editButton.textContent = '정보 수정';
+                    alert('계좌 정보가 저장되었습니다.');
+                }
             }
         }
 
-        // 그룹 전체 선택 토글
-        document.querySelectorAll('.group-toggle').forEach(toggle => {
-            toggle.addEventListener('change', (e) => {
-                const group = e.target.closest('.permission-group');
-                const checkboxes = group.querySelectorAll('input[type="checkbox"]:not(.group-toggle)');
-                checkboxes.forEach(checkbox => {
-                    checkbox.checked = e.target.checked;
-                });
-            });
-        });
-
-        // 권한 저장
-        function savePermissions() {
-            // 권한 저장 로직 구현
-            alert('권한이 저장되었습니다.');
+        // 주최자 권한 체크
+        function checkHostPermission() {
+            const isHost = true; // 실제 구현 시 권한 체크 로직 필요
+            const editButton = document.getElementById('editAccountBtn');
+            editButton.style.display = isHost ? 'block' : 'none';
         }
 
-        // 그룹에서 내보내기
-        document.getElementById('removeUserBtn').addEventListener('click', () => {
-            if (confirm('정말로 이 멤버를 그룹에서 내보내시겠습니까?')) {
-                // 내보내기 로직 구현
-                alert('멤버가 그룹에서 제외되었습니다.');
-                history.back();
-            }
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            checkHostPermission();
         });
-
-        // 초기 권한 상태 설정 (예시)
-        updatePermissionControls(true, true); // Premium 사용자이면서 주최자인 경우
     </script>
 </body>
 </html>
