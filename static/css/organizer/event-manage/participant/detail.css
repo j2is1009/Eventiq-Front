@@ -67,9 +67,15 @@ body {
 
 .profile-email {
     color: #666;
-    margin-bottom: 12px;
 }
 
+.profile-phone {
+    color: #666;
+}
+.profile-addr {
+    color: #666;
+    margin-bottom: 12px;
+}
 .status-badge {
     display: inline-block;
     padding: 6px 12px;
