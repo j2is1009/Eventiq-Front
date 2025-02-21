@@ -30,7 +30,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/common/nav.css">
-    <link rel="stylesheet" href="../../../../../static/css/organizer/operate-manage/group/manage.css">
+    <link rel="stylesheet" href="../../../../../static/css/organizer/operate-manage/crew/manage.css">
     <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/common/pagination.css">
 </head>
 
@@ -43,7 +43,7 @@
                     <div class="logo-area">
                         <img src="https://api.a0.dev/assets/image?text=modern%20minimal%20company%20logo&aspect=1:1"
                             alt="로고" class="logo">
-                        <span class="company-name">EventiQ <br><small class="company-page-name">주최자 페이지</small></span>
+                        <span class="company-name">EventiQ <br><small class="company-page-name">이벤트 크루</small></span>
                     </div>
 
                     <!-- 메뉴 영역 -->
@@ -64,7 +64,7 @@
                                 <a href="#">운영 관리 <i class="chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="../inquiry/list.html">문의 관리</a></li>
-                                    <li><a href="../group/manage.html">그룹 관리</a></li>
+                                    <li><a href="../crew/manage.html">크루 관리</a></li>
                                     <li><a href="../calculation/info.html">정산 관리</a></li>
                                     <li><a href="../ticket-coupon/manage.html">티켓/쿠폰 관리</a></li>
                                     <li><a href="../sending-free-gift/list.html">사은품 발송 관리</a></li>
@@ -92,9 +92,9 @@
             <div class="container">
                 <!-- 상단 정보 섹션 -->
                 <div class="top-section">
-                    <h1 class="page-title">그룹 관리</h1>
+                    <h1 class="page-title">크루 관리</h1>
                     <button class="btn btn-primary invite-btn" onclick="openModal()">
-                        <i class="plus-icon"></i>그룹 초대
+                        <i class="plus-icon"></i>크루 초대
                     </button>
 
                 </div>
@@ -108,11 +108,11 @@
                             </div>
                         </div>
 
-                        <!-- 그룹명 설정 -->
+                        <!-- 크루명 설정 -->
                         <div class="group-name-setting">
-                            <input type="text" placeholder="그룹명을 설정해주세요" value="테크 컨퍼런스 운영팀" class="group-name-input">
+                            <input type="text" placeholder="크루명을 설정해주세요" value="테크 컨퍼런스 운영팀" class="group-name-input">
                             <button class="btn btn-primary invite-btn">
-                                <i class="plus-icon"></i>그룹명 변경
+                                <i class="plus-icon"></i>크루명 변경
                             </button>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                     <div class="info-messages">
                         <div class="info-message">
                             <i class="info-icon"></i>
-                            <p>초대받은 사람은 마이페이지 → 이벤트 그룹 → 초대받은 이벤트 그룹에서 확인하실 수 있습니다.</p>
+                            <p>초대받은 사람은 마이페이지 → 이벤트 크루 → 초대받은 이벤트 크루에서 확인하실 수 있습니다.</p>
                         </div>
                         <div class="info-message">
                             <i class="info-icon"></i>
@@ -129,12 +129,12 @@
                         </div>
                         <div class="info-message">
                             <i class="info-icon"></i>
-                            <p>세부 권한 설정을 원하실 경우 그룹 서비스를 이용해보세요.</p>
+                            <p>세부 권한 설정을 원하실 경우 이벤트 크루 서비스를 이용해보세요.</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- 그룹 멤버 리스트 -->
+                <!-- 크루 멤버 리스트 -->
                 <div class="participant-list">
                     <div class="list-header">
                         <div class="participant-number">No</div>
@@ -246,14 +246,14 @@
                     </div>
                 </div>
                 <!-- <section class="member-list-section">
-                    <h2>그룹 멤버</h2>
+                    <h2>크루 멤버</h2>
                     <div class="table-container">
                         <table class="member-table">
                             <thead>
                                 <tr>
                                     <th>번호</th>
                                     <th>닉네임</th>
-                                    <th>그룹 등급</th>
+                                    <th>크루 등급</th>
                                     <th>상태</th>
                                     <th>권한</th>
                                     <th>관리</th>
@@ -293,7 +293,7 @@
                     <!-- 설명 텍스트 -->
                     <div class="modal-description">
                         <p>초대할 멤버의 아이디 또는 이메일을 입력해주세요.</p>
-                        <p class="sub-text">초대받은 사람은 마이페이지 → 이벤트 그룹 → 초대받은 이벤트 그룹에서 확인할 수 있습니다.</p>
+                        <p class="sub-text">초대받은 사람은 마이페이지 → 이벤트 크루 → 초대받은 이벤트 크루에서 확인할 수 있습니다.</p>
                     </div>
 
                     <!-- 입력 폼 -->
@@ -304,7 +304,7 @@
                         </div>
                     </div>
 
-                    <!-- 버튼 그룹 -->
+                    <!-- 버튼 크루 -->
                     <div class="modal-footer">
                         <button class="btn btn-secondary" onclick="closeModal()">취소</button>
                         <button class="btn btn-primary" onclick="sendInvite()">초대하기</button>
@@ -330,7 +330,7 @@
                             <span>010-1234-5678</span>
                         </div>
                         <div class="info-row">
-                            <label>그룹 등급</label>
+                            <label>크루 등급</label>
                             <span class="role-badge organizer">오거나이저</span>
                         </div>
 
@@ -359,7 +359,7 @@
                         </div>
 
                         <div class="button-group">
-                            <button class="btn btn-danger">그룹에서 내보내기</button>
+                            <button class="btn btn-danger">크루에서 내보내기</button>
                             <button class="btn btn-secondary">닫기</button>
                         </div>
                     </div>
@@ -454,7 +454,7 @@
         <script type="text/javascript" src="../../../../../static/js/sticky-header.js"></script>
         <script type="text/javascript" src="../../../../../static/js/owl.carousel.min.js"></script>
         <script type="text/javascript" src="../../../../../static/js/slider.js"></script>
-        <script type="text/javascript" src="../../../../../static/js/organizer/operate-manage/group/manage.js"></script>
+        <script type="text/javascript" src="../../../../../static/js/organizer/operate-manage/crew/manage.js"></script>
 </body>
 
 </html>
