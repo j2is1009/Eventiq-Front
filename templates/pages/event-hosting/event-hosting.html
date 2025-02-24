@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
@@ -29,10 +29,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../static/css/home/index.css">
+    <link rel="stylesheet" href="../../../static/css/home/index.css">
+    <link rel="stylesheet" href="../../../static/css/event-hosting/event-hosting.css">
 </head>
 
 <body>
@@ -167,125 +165,128 @@
             </div>
         </div>
     </div>
-    <!-- header-close -->
-    <div class="container">
-        <!-- 상단 배너 슬라이더 -->
-        <div class="banner-slider swiper mainBanner">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%201&aspect=16:9"
-                        alt="Event Banner 1">
+    <div class="event-hosting-container">
+
+        <!-- 프로그레스 바 HTML -->
+        <div class="progress-container">
+            <div class="stepper">
+                <div class="step active">
+                    <div class="step-icon">1</div>
+                    <div class="step-text">이벤트 설정</div>
+                    <div class="step-line"></div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%202&aspect=16:9"
-                        alt="Event Banner 2">
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <div class="step-text">티켓 설정</div>
+                    <div class="step-line"></div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%203&aspect=16:9"
-                        alt="Event Banner 3">
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <div class="step-text">정산 계좌</div>
+                    <div class="step-line"></div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%204&aspect=16:9"
-                        alt="Event Banner 4">
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <div class="step-text">최종 확인</div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
 
-        <!-- Eventiq 추천 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Eventiq 추천 이벤트</h2>
+        <form class="form-container">
+            <div class="form-header">
+                <h1 class="form-title">이벤트 설정</h1>
+                <div class="info-message">
+                    일정, 카테고리는 주최 후 수정이 불가능하니 신중히 작성해주세요.
+                </div>
             </div>
-            <div class="swiper recommendedSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="event-card">
-                            <img class="event-image"
-                                src="https://api.a0.dev/assets/image?text=music%20festival%201&aspect=4:3" alt="Event">
-                            <div class="event-content">
-                                <h3 class="event-title">2024 봄 뮤직 페스티벌</h3>
-                                <p class="event-info">2024.03.15 ~ 2024.03.17</p>
-                                <p class="event-price">88,000원</p>
-                            </div>
-                        </div>
+
+            <!-- 이벤트명 -->
+            <div class="form-group">
+                <label class="form-label required">이벤트명</label>
+                <input type="text" class="form-input" required>
+            </div>
+
+            <!-- 이벤트 대표 이미지 -->
+            <div class="form-group">
+                <label class="form-label required">이벤트 대표 이미지</label>
+                <div class="file-input-container" id="imageUpload">
+                    <input type="file" class="file-input" accept="image/*" required>
+                    <p>클릭하여 이미지를 업로드하세요</p>
+                </div>
+            </div>
+
+            <!-- 발표자 정보 -->
+            <div class="form-group">
+                <label class="form-label">발표자 정보</label>
+                <div class="info-message">발표자 정보는 추후 변경 가능합니다.</div>
+                <div id="speakersContainer"></div>
+                <button type="button" class="btn btn-secondary" onclick="addSpeaker()">발표자 추가</button>
+            </div>
+
+            <!-- 상세 설명 -->
+            <div class="form-group">
+                <label class="form-label required">상세 설명</label>
+                <textarea class="form-input form-textarea" required></textarea>
+                <div class="file-input-container" style="margin-top: 8px;">
+                    <input type="file" class="file-input" accept="image/*" multiple>
+                    <p>이미지 첨부하기 (선택사항)</p>
+                </div>
+            </div>
+
+            <!-- 일정 -->
+            <div class="form-group">
+                <label class="form-label required">일정</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div>
+                        <label class="form-label">시작 일시</label>
+                        <input type="datetime-local" class="form-input" required>
                     </div>
-                    <!-- 추가 6개의 추천 이벤트 -->
-                    <div class="swiper-slide">
-                        <div class="event-card">
-                            <img class="event-image" src="https://api.a0.dev/assets/image?text=concert%202&aspect=4:3"
-                                alt="Event">
-                            <div class="event-content">
-                                <h3 class="event-title">K-POP 슈퍼 콘서트</h3>
-                                <p class="event-info">2024.03.20</p>
-                                <p class="event-price">110,000원</p>
-                            </div>
-                        </div>
+                    <div>
+                        <label class="form-label">종료 일시</label>
+                        <input type="datetime-local" class="form-input" required>
                     </div>
-                    <!-- 추가 이벤트 카드들... -->
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
-        </section>
 
-        <!-- 맞춤 추천 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">홍길동님이 관심 가질만한 이벤트</h2>
-            </div>
-            <div class="swiper personalizedSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 10개의 맞춤 추천 이벤트 -->
+            <!-- 카테고리 -->
+            <div class="form-group">
+                <label class="form-label required">카테고리</label>
+                <div class="category-tags" id="categoryTags">
+                    <!-- 카테고리 태그들은 JavaScript로 동적 생성 -->
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
-        </section>
 
-        <!-- 이번 달 인기 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">3월 가장 인기있는 이벤트</h2>
+            <!-- 유/무료/하이브리드 여부 -->
+            <div class="form-group">
+                <label class="form-label required">이벤트 유형</label>
+                <select class="form-input">
+                    <option value="free">무료</option>
+                    <option value="paid">유료</option>
+                    <option value="hybrid">하이브리드</option>
+                </select>
             </div>
-            <div class="ranking-list">
-                <!-- TOP 10 인기 이벤트 -->
-            </div>
-        </section>
 
-        <!-- 최근 올라온 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">최근 올라온 이벤트</h2>
-            </div>
-            <div class="swiper recentSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 최신 10개 이벤트 -->
+            <!-- 온/오프라인/하이브리드 여부 -->
+            <div class="form-group">
+                <label class="form-label required">진행 방식</label>
+                <select class="form-input" id="eventType" onchange="handleEventTypeChange()">
+                    <option value="online">온라인</option>
+                    <option value="offline">오프라인</option>
+                    <option value="hybrid">하이브리드</option>
+                </select>
+                <div id="addressInput" class="address-input">
+                    <input type="text" class="form-input" placeholder="주소를 입력하세요" style="margin-top: 8px;">
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
-        </section>
 
-        <!-- 마감 임박 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">마감 임박 이벤트</h2>
+            <div class="button-group">
+                <button type="button" class="btn btn-secondary">이전</button>
+                <button type="button" class="btn btn-primary">다음</button>
             </div>
-            <div class="swiper deadlineSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 마감 임박 10개 이벤트 -->
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
+        </form>
     </div>
-
-    <!-- footer start -->
-    <div class="footer">
+       <!-- footer start -->
+       <div class="footer">
         <div class="container">
             <div class="row">
                 <!-- footer-useful links-start -->
@@ -373,6 +374,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <script type="text/javascript" src="../../../static/js/home/swiper-slide.js"></script>
+    <script src="../../../static/js/event-hosting/event-hosting.js"></script>
 </body>
 
 </html>
