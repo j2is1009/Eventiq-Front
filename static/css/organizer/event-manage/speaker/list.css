@@ -1,5 +1,4 @@
 body {
-    line-height: 1.6;
 }
 
 .organizer-container {
@@ -10,6 +9,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 50px;
+    line-height: 1.6;
 }
 
 .header {

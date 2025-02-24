@@ -1,11 +1,8 @@
 
-body {
-    line-height: 1.6;
-}
-
 .container {
     max-width: 800px;
     margin: 40px auto;
+    line-height: 1.6;
 }
 
 .edit-form {
