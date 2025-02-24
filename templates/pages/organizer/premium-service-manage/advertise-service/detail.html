@@ -30,11 +30,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/common/nav.css">
-    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/schedule/create.css">
+    <link rel="stylesheet" href="../../../../../static/css/organizer/operate-manage/inquiry/detail.css">
+    <link rel="stylesheet" href="../../../../../static/css/organizer/event-manage/common/pagination.css">
 </head>
 
 <body>
-    
     <div class="organizer-container">
         <div class="organizer-nav">
             <div class="nav-container">
@@ -52,21 +52,21 @@
                             <li class="has-submenu">
                                 <a href="#">이벤트 관리 <i class="chevron-down"></i></a>
                                 <ul class="submenu">
-                                    <li><a href="../event/list.html">이벤트 관리</a></li>
-                                    <li><a href="../schedule/list.html">일정 관리</a></li>
-                                    <li><a href="../speaker/list.html">발표자 관리</a></li>
-                                    <li><a href="../participant/list.html">참가자 관리</a></li>
-                                    <li><a href="../data/list.html">자료 관리</a></li>
+                                    <li><a href="../../event-manage/event/list.html">이벤트 관리</a></li>
+                                    <li><a href="../../event-manage/schedule/list.html">일정 관리</a></li>
+                                    <li><a href="../../event-manage/speaker/list.html">발표자 관리</a></li>
+                                    <li><a href="../../event-manage/participant/list.html">참가자 관리</a></li>
+                                    <li><a href="../../event-manage/data/list.html">자료 관리</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
                                 <a href="#">운영 관리 <i class="chevron-down"></i></a>
                                 <ul class="submenu">
-                                    <li><a href="../../operate-manage/inquiry/list.html">문의 관리</a></li>
-                                    <li><a href="../../operate-manage/crew/manage.html">크루 관리</a></li>
-                                    <li><a href="../../operate-manage/calculation/info.html">정산 관리</a></li>
-                                    <li><a href="../../operate-manage/ticket-coupon/manage.html">티켓/쿠폰 관리</a></li>
-                                    <li><a href="../../operate-manage/sending-free-gift/list.html">사은품 발송 관리</a></li>
+                                    <li><a href="../inquiry/list.html">문의 관리</a></li>
+                                    <li><a href="../crew/manage.html">크루 관리</a></li>
+                                    <li><a href="../calculation/info.html">정산 관리</a></li>
+                                    <li><a href="../ticket-coupon/manage.html">티켓/쿠폰 관리</a></li>
+                                    <li><a href="../sending-free-gift/list.html">사은품 발송 관리</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
@@ -88,133 +88,60 @@
                 </div>
             </div>
         </div>
-        <div class="new-schedule-container">
-            <form class="form-container">
-                <div class="form-section">
-                    <h2 class="section-title">기본 정보</h2>
-                    <div class="form-group">
-                        <label class="form-label">일정 제목</label>
-                        <input type="text" class="form-input" placeholder="일정 제목을 입력하세요">
-                    </div>
 
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label class="form-label">시작 일시</label>
-                            <input type="datetime-local" class="form-input">
+        <div class="inquiry-detail">
+            <div class="container">
+                <!-- 문의 내용 섹션 -->
+                <section class="inquiry-section">
+                    <div class="section-header">
+                        <h1 class="inquiry-title">이벤트 참가 신청 관련 문의드립니다</h1>
+                        <div><span class="status-badge status-pending">답변 대기</span></div>
+                    </div>
+        
+                    <div class="inquiry-info">
+                        <div class="info-item">
+                            <label>문의자</label>
+                            <span>홍길동</span>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">종료 일시</label>
-                            <input type="datetime-local" class="form-input">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">일정 유형</label>
-                        <select class="form-select">
-                            <option value="">일정 유형을 선택하세요</option>
-                            <option value="meeting">미팅</option>
-                            <option value="event">행사</option>
-                            <option value="task">업무</option>
-                            <option value="other">기타</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-section">
-                    <h2 class="section-title">상세 정보</h2>
-                    <div class="form-group">
-                        <label class="form-label">일정 설명</label>
-                        <textarea class="form-textarea" placeholder="일정에 대한 상세 설명을 입력하세요"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">장소</label>
-                        <input type="text" class="form-input" placeholder="장소를 입력하세요">
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="form-label">참석자</label>
-                    <span class="participant-msg">* 동일한 이벤트 그룹에 소속된 사용자만 초대 가능합니다.</span>
-                    <div class="participant-container">
-                        <span class="participant" onclick="showAddAttendeeModal()">+ 참석자 추가</span>
-                    </div>
-                    <div class="attendee-list" id="attendeeList">
-                    </div>
-                </div>
-
-                <!-- 참석자 추가 모달 -->
-                <div class="modal" id="addAttendeeModal">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>참석자 추가</h3>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label class="form-label">이름 *</label>
-                                <input type="text" class="form-input" id="attendeeName" placeholder="참석자 이름">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">이메일 *</label>
-                                <input type="email" class="form-input" id="attendeeEmail" placeholder="이메일 주소">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">역할</label>
-                                <select class="form-select" id="attendeeRole">
-                                    <option value="organizer">주최자</option>
-                                    <option value="presenter">발표자</option>
-                                    <option value="participant">참가자</option>
-                                    <option value="observer">참관자</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="attendeeRequired">
-                                    필수 참석자
-                                </label>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" onclick="closeModal()">취소</button>
-                            <button type="button" class="btn btn-primary" onclick="addAttendee()">추가</button>
+                        <div class="info-item">
+                            <label>작성일</label>
+                            <span>2024.02.21 14:30</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="form-section">
-                    <h2 class="section-title">알림 설정</h2>
-                    <div class="notification-group">
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" checked>
-                                이메일 알림
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" checked>
-                                SMS 알림
-                            </label>
+        
+                    <div class="content-box">
+                        <p>안녕하세요. 이벤트 참가 신청 관련하여 문의드립니다.
+                           신청 마감일이 지났는데 추가 신청이 가능할까요?
+                           현재 신청 페이지에서는 신청이 되지 않아 문의드립니다.</p>
+                    </div>
+                </section>
+        
+                <!-- 답변 섹션 - 답변이 있는 경우 -->
+                <section class="answer-section" id="hasAnswer" style="display: none;">
+                    <h2>답변 내용</h2>
+                    
+                    <div class="answer-info">
+                        <div class="info-item">
+                            <label>답변자</label>
+                            <span>이벤트 관리자</span>
+                        </div>
+                        <div class="info-item">
+                            <label>답변일</label>
+                            <span>2024.02.21 15:45</span>
                         </div>
                     </div>
-
-                    <div class="form-group" style="margin-top: 16px;">
-                        <label class="form-label">알림 시간</label>
-                        <select class="form-select">
-                            <option value="10">10분 전</option>
-                            <option value="30">30분 전</option>
-                            <option value="60">1시간 전</option>
-                            <option value="1440">1일 전</option>
-                        </select>
+        
+                    <div class="content-box">
+                        <p>안녕하세요. 문의 주셔서 감사합니다.
+                           현재 신청 마감되어 추가 신청은 어렵습니다.
+                           다음 이벤트에 참여 부탁드립니다.</p>
                     </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" class="btn btn-secondary">취소</button>
-                    <button type="submit" class="btn btn-danger">일정 삭제</button>
-                    <button type="submit" class="btn btn-primary">일정 수정</button>
-                </div>
-            </form>
+                </section>
+            </div>
         </div>
+
+
+        <!-- footer start -->
         <div class="footer">
             <div class="container">
                 <div class="row">
@@ -282,8 +209,8 @@
                             <a href="#"><span><i class="fa fa-google-plus"></i></span></a>
                             <a href="#"><span class="active"><i class="fa fa-twitter"></i></span></a>
                             <!-- <a href="#"><span><i class="fa fa-instagram"></i></span></a>
-                            <a href="#"><span><i class="fa fa-pinterest"></i></span></a>
-                            <a href="#"><span><i class="fa fa-linkedin"></i></span></a> -->
+                        <a href="#"><span><i class="fa fa-pinterest"></i></span></a>
+                        <a href="#"><span><i class="fa fa-linkedin"></i></span></a> -->
                         </div>
                     </div>
                 </div>
@@ -300,7 +227,7 @@
         <script type="text/javascript" src="../../../../../static/js/sticky-header.js"></script>
         <script type="text/javascript" src="../../../../../static/js/owl.carousel.min.js"></script>
         <script type="text/javascript" src="../../../../../static/js/slider.js"></script>
-        <script type="text/javascript" src="../../../../../static/js/organizer/event-manage/schedule/create.js"></script>
+        <script type="text/javascript" src="../../../../../static/js/organizer/operate-manage/inquiry/detail.js"></script>
 </body>
 
 </html>
