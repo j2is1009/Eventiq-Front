@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventiq</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        /* 배너 슬라이더 */
+        .banner-slider {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            height: 400px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        /* 섹션 스타일 */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        /* 이벤트 카드 */
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+            height: 100%;
+        }
+
+        .event-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .event-image {
+            width: 100%;
+            height: 200px;
+            background: #e0e0e0;
+            object-fit: cover;
+        }
+
+        .event-content {
+            padding: 16px;
+        }
+
+        .event-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .event-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .event-price {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2196F3;
+        }
+
+        /* 인기 이벤트 랭킹 */
+        .ranking-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .ranking-item {
+            display: flex;
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .ranking-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .ranking-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2196F3;
+            margin-right: 16px;
+            min-width: 32px;
+        }
+
+        .ranking-content {
+            flex: 1;
+        }
+
+        /* 마감 임박 뱃지 */
+        .deadline-badge {
+            background-color: #ff5252;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 8px;
+        }
+
+        /* 슬라이더 네비게이션 커스텀 */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px;
+        }
+
+        .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+
+            .banner-slider {
+                height: 200px;
+                margin-bottom: 32px;
+            }
+
+            .section {
+                margin-bottom: 32px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .ranking-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 상단 배너 슬라이더 -->
+        <div class="banner-slider swiper mainBanner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%201&aspect=16:9" alt="Event Banner 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%202&aspect=16:9" alt="Event Banner 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%203&aspect=16:9" alt="Event Banner 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%204&aspect=16:9" alt="Event Banner 4">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <!-- Eventiq 추천 이벤트 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Eventiq 추천 이벤트</h2>
+            </div>
+            <div class="swiper recommendedSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="event-card">
+                            <img class="event-image" src="https://api.a0.dev/assets/image?text=music%20festival%201&aspect=4:3" alt="Event">
+                            <div class="event-content">
+                                <h3 class="event-title">2024 봄 뮤직 페스티벌</h3>
+                                <p class="event-info">2024.03.15 ~ 2024.03.17</p>
+                                <p class="event-price">88,000원</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 추가 6개의 추천 이벤트 -->
+                    <div class="swiper-slide">
+                        <div class="event-card">
+                            <img class="event-image" src="https://api.a0.dev/assets/image?text=concert%202&aspect=4:3" alt="Event">
+                            <div class="event-content">
+                                <h3 class="event-title">K-POP 슈퍼 콘서트</h3>
+                                <p class="event-info">2024.03.20</p>
+                                <p class="event-price">110,000원</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 추가 이벤트 카드들... -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- 맞춤 추천 이벤트 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">홍길동님이 관심 가질만한 이벤트</h2>
+            </div>
+            <div class="swiper personalizedSwiper">
+                <div class="swiper-wrapper">
+                    <!-- 10개의 맞춤 추천 이벤트 -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- 이번 달 인기 이벤트 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">3월 가장 인기있는 이벤트</h2>
+            </div>
+            <div class="ranking-list">
+                <!-- TOP 10 인기 이벤트 -->
+            </div>
+        </section>
+
+        <!-- 최근 올라온 이벤트 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">최근 올라온 이벤트</h2>
+            </div>
+            <div class="swiper recentSwiper">
+                <div class="swiper-wrapper">
+                    <!-- 최신 10개 이벤트 -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- 마감 임박 이벤트 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">마감 임박 이벤트</h2>
+            </div>
+            <div class="swiper deadlineSwiper">
+                <div class="swiper-wrapper">
+                    <!-- 마감 임박 10개 이벤트 -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // 더미 데이터 생성 함수
+        function generateEvents(count, type) {
+            const events = [];
+            const eventTypes = ['콘서트', '뮤지컬', '연극', '전시회', '페스티벌'];
+            const locations = ['서울', '부산', '대구', '인천', '광주'];
+            
+            for (let i = 0; i < count; i++) {
+                const eventType = eventTypes[Math.floor(Math.random() * eventTypes.length)];
+                const location = locations[Math.floor(Math.random() * locations.length)];
+                const price = Math.floor(Math.random() * 150000 + 30000);
+                const views = Math.floor(Math.random() * 50000 + 1000);
+                const sales = Math.floor(Math.random() * 5000 + 100);
+                
+                events.push({
+                    id: i + 1,
+                    title: `${location} ${eventType} ${type} ${i + 1}`,
+                    image: `https://api.a0.dev/assets/image?text=${eventType}_${i}&aspect=4:3`,
+                    date: '2024.03.15 ~ 2024.03.17',
+                    price: price,
+                    views: views,
+                    sales: sales,
+                    isDeadlineSoon: Math.random() > 0.7
+                });
+            }
+            return events;
+        }
+
+        // 슬라이더 초기화
+        const mainBanner = new Swiper('.mainBanner', {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // 추천 이벤트 슬라이더
+        const recommendedSwiper = new Swiper('.recommendedSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+        });
+
+        // 각 섹션별 데이터 생성 및 렌더링
+        const sections = [
+            { name: 'recommended', count: 7 },
+            { name: 'personalized', count: 10 },
+            { name: 'popular', count: 10 },
+            { name: 'recent', count: 10 },
+            { name: 'deadline', count: 10 }
+        ];
+
+        sections.forEach(section => {
+            const events = generateEvents(section.count, section.name);
+            
+            if (section.name === 'popular') {
+                // 인기 이벤트 랭킹 렌더링
+                const rankingList = document.querySelector('.ranking-list');
+                rankingList.innerHTML = events
+                    .sort((a, b) => b.views - a.views)
+                    .map((event, index) => `
+                        <div class="ranking-item">
+                            <span class="ranking-number">${index + 1}</span>
+                            <div class="ranking-content">
+                                <h3 class="event-title">${event.title}</h3>
+                                <p class="event-info">조회수 ${event.views.toLocaleString()} · 판매 ${event.sales}매</p>
+                            </div>
+                        </div>
+                    `).join('');
+            } else {
+                // 슬라이더 이벤트 렌더링
+                const swiperWrapper = document.querySelector(`.${section.name}Swiper .swiper-wrapper`);
+                if (swiperWrapper) {
+                    swiperWrapper.innerHTML = events.map(event => `
+                        <div class="swiper-slide">
+                            <div class="event-card">
+                                <img class="event-image" src="${event.image}" alt="${event.title}">
+                                <div class="event-content">
+                                    <h3 class="event-title">${event.title}${event.isDeadlineSoon ? '<span class="deadline-badge">마감 임박</span>' : ''}</h3>
+                                    <p class="event-info">${event.date}</p>
+                                    <p class="event-price">${event.price.toLocaleString()}원</p>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+        });
+
+        // 나머지 슬라이더들 초기화
+        const swiperConfigs = {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+        };
+
+        new Swiper('.personalizedSwiper', swiperConfigs);
+        new Swiper('.recentSwiper', swiperConfigs);
+        new Swiper('.deadlineSwiper', swiperConfigs);
+    </script>
+</body>
+</html>
