@@ -87,141 +87,134 @@
     </div>
     <!-- header-close -->
 
-    <!-- mypage-main start -->
-    <section class="mypage-main">
-        <div class="mypage-container">
-            <div class="mypage-title">마이페이지</div>
-            <div class="mypage-content-container">
-                <!-- 메뉴 start -->
-                <div class="mypage-content-menu">
-                    <div class="profile-container">
-                        <div class="user-picture">
-                            <img src="../../../static/images/puppy.jpg"/>
+        <!-- mypage-main start -->
+        <section class="mypage-main">
+            <div class="mypage-container">
+                <div class="mypage-title">마이페이지</div>
+                <div class="mypage-content-container">
+                    <!-- 메뉴 start -->
+                    <div class="mypage-content-menu">
+                        <div class="profile-container">
+                            <div class="user-picture">
+                                <img src="../../../static/images/puppy.jpg"/>
+                            </div>
+                            <div class="user-name">
+                                <p>쿠키</p>
+                            </div>
                         </div>
-                        <div class="user-name">
-                            <p>쿠키</p>
+                        <div class="menu-container">
+                            <ul>
+                                <li class="only-menu">
+                                    <div onclick="location.href='./mypage-main.html'"  class="detail-menu-container">
+                                        <a>프로필 정보</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                            <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="only-menu">
+                                    <div  onclick="location.href='./mypage-like.html'" class="detail-menu-container">
+                                        <a>관심 이벤트</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="only-menu">
+                                    <div class="detail-menu-container">
+                                        <a>참여한 이벤트</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                            <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="only-menu">
+                                    <div class="detail-menu-container">
+                                        <a>이벤트 그룹</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                            <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="several-menu">
+                                    <div class="detail-menu-container">
+                                        <a>문의 내역</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                            <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                        </svg>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li><a>- 상세 문의</a></li>
+                                        <li><a>- 1대1 문의</a></li>
+                                    </ul>
+                                </li>
+                                <li class="only-menu">
+                                    <div class="detail-menu-container">
+                                        <a>로그인 내역</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                            <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                        </svg>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="menu-container">
-                        <ul>
-                            <li class="only-menu">
-                                <div onclick="location.href='./mypage-main.html'"  class="detail-menu-container">
-                                    <a>프로필 정보</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
-                                    </svg>
+                    <!-- 메뉴 close -->
+
+                    <!-- 메인 start -->
+                    <div class="mypage-content">
+                        <div class="main-container-title">관심 이벤트</div>
+                        <hr>
+                        <div class="like-event-list-header">
+                            <span class="event-img-header"></span>
+                            <span class="event-info-header"></span>
+                            <span class="event-category-header">카테고리</span>
+                            <span class="event-end-date-header">판매 종료일</span>
+                            <span class="event-date-header">이벤트 날짜</span>
+                            <span class="event-state-header">상태</span>
+                        </div>
+                        <ul class="like-event-list">
+                            <li>
+                                <div class="like-event-list-container">
+                                    <a class="event-img">
+                                        <img src="../../../static/images/puppy.jpg">
+                                    </a>
+                                    <div class="event-info">
+                                        <span class="event-title">강아지와 함께하는 토크쇼</span>
+                                        <span>10,000 ₩</span>
+                                        <span>10개 남음</span>
+                                    </div>
+                                    <span class="event-category">반려동물</span>
+                                    <span class="event-end">2025-02-22<br>00:00</span>
+                                    <span class="event-date">2025-02-24<br>13:30</span>
+                                    <span class="event-state" id="on-sale">판매중</span>
                                 </div>
                             </li>
-                            <li class="only-menu">
-                                <div  onclick="location.href='./mypage-like.html'" class="detail-menu-container">
-                                    <a>관심 이벤트</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                                    </svg>
-                                </div>
-                            </li>
-                            <li class="only-menu">
-                                <div class="detail-menu-container">
-                                    <a>참여한 이벤트</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
-                                    </svg>
-                                </div>
-                            </li>
-                            <li class="only-menu">
-                                <div class="detail-menu-container">
-                                    <a>이벤트 그룹</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
-                                    </svg>
-                                </div>
-                            </li>
-                            <li class="several-menu">
-                                <div class="detail-menu-container">
-                                    <a>문의 내역</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
-                                    </svg>
-                                </div>
-                                <ul class="sub-menu">
-                                    <li><a>- 상세 문의</a></li>
-                                    <li><a>- 1대1 문의</a></li>
-                                </ul>
-                            </li>
-                            <li class="only-menu">
-                                <div class="detail-menu-container">
-                                    <a>로그인 내역</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
-                                    </svg>
+                            <li>
+                                <div class="like-event-list-container">
+                                    <a class="event-img">
+                                        <img src="../../../static/images/puppy.jpg">
+                                    </a>
+                                    <div class="event-info">
+                                        <span class="event-title">강아지와 함께하는 토크쇼</span>
+                                        <span>10,000 ₩</span>
+                                        <span>10개 남음</span>
+                                    </div>
+                                    <span class="event-category">
+                                        <p>토크쇼</p>
+                                        <p>반려동물</p>
+                                    </span>
+                                    <span class="event-end">2025-02-22<br>00:00</span>
+                                    <span class="event-date">2025-02-24<br>15:00</span>
+                                    <span class="event-state" id="stop-sale">판매종료</span>
                                 </div>
                             </li>
                         </ul>
                     </div>
+                    <!-- 메인 close -->
                 </div>
-                <!-- 메뉴 close -->
-
-                <!-- 메인 start -->
-                <div class="mypage-content">
-                    <div class="main-container-title">관심 이벤트</div>
-                    <hr>
-                    <div class="like-event-list-header">
-                        <span class="event-img-header"></span>
-                        <span class="event-info-header"></span>
-                        <span class="event-category-header">카테고리</span>
-                        <span class="event-end-header">판매 종료일</span>
-                        <span class="event-date-header">이벤트 날짜</span>
-                        <span class="event-state-header">상태</span>
-                        <span class="event-buy-btn-header"></span>
-                    </div>
-                    <ul class="like-event-list">
-                        <li>
-                            <div class="like-event-list-container">
-                                <a class="event-img">
-                                    <img src="../../../static/images/puppy.jpg">
-                                </a>
-                                <div class="event-info">
-                                    <span class="event-title">강아지와 함께하는 토크쇼</span>
-                                    <span>10,000 ₩</span>
-                                    <span>10개 남음</span>
-                                </div>
-                                <span class="event-category">반려동물</span>
-                                <span class="event-end">2025-02-22<br>00:00</span>
-                                <span class="event-date">2025-02-24<br>13:30</span>
-                                <span class="event-state" id="on-sale">판매중</span>
-                                <span class="event-buy-btn">
-                                    <a>구매하기</a>
-                                </span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="like-event-list-container">
-                                <a class="event-img">
-                                    <img src="../../../static/images/puppy.jpg">
-                                </a>
-                                <div class="event-info">
-                                    <span class="event-title">강아지와 함께하는 토크쇼</span>
-                                    <span>10,000 ₩</span>
-                                    <span>10개 남음</span>
-                                </div>
-                                <span class="event-category">
-                                    <p>토크쇼</p>
-                                    <p>반려동물</p>
-                                </span>
-                                <span class="event-end">2025-02-22<br>00:00</span>
-                                <span class="event-date">2025-02-24<br>15:00</span>
-                                <span class="event-state" id="stop-sale">판매종료</span>
-                                <span class="event-buy-btn">
-                                    <a id="stop-sale-btn">구매하기</a>
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- 메인 close -->
             </div>
-        </div>
-    </section>
+        </section>
     <!-- mypage-main close -->
 
     <!--cta-close-->
