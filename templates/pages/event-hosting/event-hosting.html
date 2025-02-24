@@ -168,7 +168,7 @@
     <div class="event-hosting-container">
 
         <!-- 프로그레스 바 HTML -->
-        <div class="progress-container">
+        <div class="progress-container" id="progress">
             <div class="stepper">
                 <div class="step active">
                     <div class="step-icon">1</div>
@@ -193,100 +193,145 @@
         </div>
 
         <form class="form-container">
-            <div class="form-header">
-                <h1 class="form-title">이벤트 설정</h1>
-                <div class="info-message">
-                    일정, 카테고리는 주최 후 수정이 불가능하니 신중히 작성해주세요.
-                </div>
-            </div>
-
-            <!-- 이벤트명 -->
-            <div class="form-group">
-                <label class="form-label required">이벤트명</label>
-                <input type="text" class="form-input" required>
-            </div>
-
-            <!-- 이벤트 대표 이미지 -->
-            <div class="form-group">
-                <label class="form-label required">이벤트 대표 이미지</label>
-                <div class="file-input-container" id="imageUpload">
-                    <input type="file" class="file-input" accept="image/*" required>
-                    <p>클릭하여 이미지를 업로드하세요</p>
-                </div>
-            </div>
-
-            <!-- 발표자 정보 -->
-            <div class="form-group">
-                <label class="form-label">발표자 정보</label>
-                <div class="info-message">발표자 정보는 추후 변경 가능합니다.</div>
-                <div id="speakersContainer"></div>
-                <button type="button" class="btn btn-secondary" onclick="addSpeaker()">발표자 추가</button>
-            </div>
-
-            <!-- 상세 설명 -->
-            <div class="form-group">
-                <label class="form-label required">상세 설명</label>
-                <textarea class="form-input form-textarea" required></textarea>
-                <div class="file-input-container" style="margin-top: 8px;">
-                    <input type="file" class="file-input" accept="image/*" multiple>
-                    <p>이미지 첨부하기 (선택사항)</p>
-                </div>
-            </div>
-
-            <!-- 일정 -->
-            <div class="form-group">
-                <label class="form-label required">일정</label>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                    <div>
-                        <label class="form-label">시작 일시</label>
-                        <input type="datetime-local" class="form-input" required>
-                    </div>
-                    <div>
-                        <label class="form-label">종료 일시</label>
-                        <input type="datetime-local" class="form-input" required>
+            <div id="event-section">
+                <div class="form-header">
+                    <h1 class="form-title">이벤트 설정</h1>
+                    <div class="info-message">
+                        일정, 카테고리는 주최 후 수정이 불가능하니 신중히 작성해주세요.
                     </div>
                 </div>
-            </div>
 
-            <!-- 카테고리 -->
-            <div class="form-group">
-                <label class="form-label required">카테고리</label>
-                <div class="category-tags" id="categoryTags">
-                    <!-- 카테고리 태그들은 JavaScript로 동적 생성 -->
+                <!-- 이벤트명 -->
+                <div class="form-group">
+                    <label class="form-label required">이벤트명</label>
+                    <input type="text" class="form-input" required>
+                </div>
+
+                <!-- 이벤트 대표 이미지 -->
+                <div class="form-group">
+                    <label class="form-label required">이벤트 대표 이미지</label>
+                    <div class="file-input-container" id="imageUpload">
+                        <input type="file" class="file-input" accept="image/*" required>
+                        <p>클릭하여 이미지를 업로드하세요</p>
+                    </div>
+                </div>
+
+                <!-- 발표자 정보 -->
+                <div class="form-group">
+                    <label class="form-label">발표자 정보</label>
+                    <div class="info-message">발표자 정보는 추후 변경 가능합니다.</div>
+                    <div id="speakersContainer"></div>
+                    <button type="button" class="btn btn-secondary" onclick="addSpeaker()">발표자 추가</button>
+                </div>
+
+                <!-- 상세 설명 -->
+                <div class="form-group">
+                    <label class="form-label required">상세 설명</label>
+                    <textarea class="form-input form-textarea" required></textarea>
+                    <div class="file-input-container" style="margin-top: 8px;">
+                        <input type="file" class="file-input" accept="image/*" multiple>
+                        <p>이미지 첨부하기 (선택사항)</p>
+                    </div>
+                </div>
+
+                <!-- 일정 -->
+                <div class="form-group">
+                    <label class="form-label required">일정</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div>
+                            <label class="form-label">시작 일시</label>
+                            <input type="datetime-local" class="form-input" required>
+                        </div>
+                        <div>
+                            <label class="form-label">종료 일시</label>
+                            <input type="datetime-local" class="form-input" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 카테고리 -->
+                <div class="form-group">
+                    <label class="form-label required">카테고리</label>
+                    <div class="category-tags" id="categoryTags">
+                        <!-- 카테고리 태그들은 JavaScript로 동적 생성 -->
+                    </div>
+                </div>
+
+                <!-- 유/무료/하이브리드 여부 -->
+                <div class="form-group">
+                    <label class="form-label required">이벤트 유형</label>
+                    <select class="form-input">
+                        <option value="free">무료</option>
+                        <option value="paid">유료</option>
+                        <option value="hybrid">하이브리드</option>
+                    </select>
+                </div>
+
+                <!-- 온/오프라인/하이브리드 여부 -->
+                <div class="form-group">
+                    <label class="form-label required">진행 방식</label>
+                    <select class="form-input" id="eventType" onchange="handleEventTypeChange()">
+                        <option value="online">온라인</option>
+                        <option value="offline">오프라인</option>
+                        <option value="hybrid">하이브리드</option>
+                    </select>
+                    <div id="addressInput" class="address-input">
+                        <input type="text" class="form-input" placeholder="주소를 입력하세요" style="margin-top: 8px;">
+                    </div>
                 </div>
             </div>
 
-            <!-- 유/무료/하이브리드 여부 -->
-            <div class="form-group">
-                <label class="form-label required">이벤트 유형</label>
-                <select class="form-input">
-                    <option value="free">무료</option>
-                    <option value="paid">유료</option>
-                    <option value="hybrid">하이브리드</option>
-                </select>
-            </div>
+            <div id="ticket-section" style="display:none">
+                <!-- 티켓 설정 페이지 -->
+                <div class="form-section" id="ticketSection">
+                    <div class="form-header">
+                        <h1 class="form-title">티켓 설정</h1>
+                    </div>
 
-            <!-- 온/오프라인/하이브리드 여부 -->
-            <div class="form-group">
-                <label class="form-label required">진행 방식</label>
-                <select class="form-input" id="eventType" onchange="handleEventTypeChange()">
-                    <option value="online">온라인</option>
-                    <option value="offline">오프라인</option>
-                    <option value="hybrid">하이브리드</option>
-                </select>
-                <div id="addressInput" class="address-input">
-                    <input type="text" class="form-input" placeholder="주소를 입력하세요" style="margin-top: 8px;">
+                    <!-- 외부 페이지 연동 부분을 다음과 같이 수정 -->
+                    <div class="form-group">
+                        <label class="form-label">외부 페이지 연동</label>
+                        <div class="toggle-container">
+                            <input type="checkbox" id="externalPage" class="toggle-input" onchange="toggleTicketForm()">
+                            <label for="externalPage" class="toggle-label"></label>
+                            <span class="toggle-text">외부 페이지 연동하기</span>
+                        </div>
+
+                        <!-- URL 입력 필드 추가 -->
+                        <div id="externalUrlContainer" style="display: none; margin-top: 16px;">
+                            <div class="info-message" style="margin-top: 8px;">
+                                외부 페이지로 연동 시 티켓 설정은 입력하실 필요가 없습니다.
+                            </div>
+                            <label class="form-label required">외부 페이지 URL</label>
+                            <input type="url" class="form-input" placeholder="https://example.com" required>
+                        </div>
+                    </div>
+
+                    <!-- 티켓 설정 폼 -->
+                    <div id="ticketFormContainer">
+                        <!-- 티켓 종류 목록 -->
+                        <div id="ticketList"></div>
+
+                        <!-- 티켓 추가 버튼 -->
+                        <button type="button" class="btn btn-secondary" onclick="addTicket()">
+                            + 티켓 추가하기
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <div class="button-group">
-                <button type="button" class="btn btn-secondary">이전</button>
-                <button type="button" class="btn btn-primary">다음</button>
+                <button type="button" class="btn btn-secondary prev-btn">이전</button>
+                <button type="button" class="btn btn-primary next-btn">다음</button>
             </div>
         </form>
     </div>
-       <!-- footer start -->
-       <div class="footer">
+
+
+
+
+    <!-- footer start -->
+    <div class="footer">
         <div class="container">
             <div class="row">
                 <!-- footer-useful links-start -->

@@ -78,12 +78,15 @@ function prevStep() {
 
 // 프로그레스 바 업데이트
 function updateProgress() {
-    const progress = document.getElementById('progress');
+    const progress = document.getElementById('progress-container');
     const steps = document.querySelectorAll('.step');
 
-    progress.style.width = `${((currentStep - 1) / (totalSteps - 1)) * 100}%`;
+    // progress.style.width = `${((currentStep - 1) / (totalSteps - 1)) * 100}%`;
 
     steps.forEach((step, idx) => {
+        console.log("????????")
+        console.log(idx);
+        console.log(currentStep);
         if (idx < currentStep) {
             step.classList.add('active');
             if (idx < currentStep - 1) {
@@ -108,3 +111,155 @@ document.querySelector('.btn-primary').onclick = nextStep;
 
 // 초기 프로그레스 상태 설정
 updateProgress();
+
+// 티켓 카드 HTML 템플릿
+function getTicketTemplate(index) {
+    return `
+        <div class="ticket-card">
+            <div class="ticket-header">
+                <h3 class="ticket-title">티켓 #${index + 1}</h3>
+                <button type="button" class="ticket-remove" onclick="removeTicket(this)">삭제</button>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label required">티켓명</label>
+                <input type="text" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">발급 수량</label>
+                <input type="number" class="form-input" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <div class="price-container">
+                    <div>
+                    <label class="form-label required">가격</label>
+                        <input type="number" class="form-input" min="0" required onchange="calculateDiscountPrice(this)">
+                    </div>
+                    <div>
+                        <label class="form-label">할인율 (%)</label>
+                        <input type="number" class="form-input" min="0" max="100" value="0" onchange="calculateDiscountPrice(this)">
+                    </div>
+                </div>
+                <div class="discount-price" style="margin-top: 8px; color: #2196F3;"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">판매 기간</label>
+                <div class="date-container">
+                    <div>
+                        <label class="form-label">시작일</label>
+                        <input type="datetime-local" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">종료일</label>
+                        <input type="datetime-local" class="form-input" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// 외부 페이지 연동 토글
+function toggleTicketForm() {
+    const externalPage = document.getElementById('externalPage');
+    const ticketFormContainer = document.getElementById('ticketFormContainer');
+    const externalUrlContainer = document.getElementById('externalUrlContainer');
+    
+    if (externalPage.checked) {
+        ticketFormContainer.style.display = 'none';
+        externalUrlContainer.style.display = 'block';
+    } else {
+        ticketFormContainer.style.display = 'block';
+        externalUrlContainer.style.display = 'none';
+    }
+}
+
+// 티켓 추가
+function addTicket() {
+    const ticketList = document.getElementById('ticketList');
+    const ticketCount = ticketList.children.length;
+    const newTicket = document.createElement('div');
+    newTicket.innerHTML = getTicketTemplate(ticketCount);
+    ticketList.appendChild(newTicket);
+}
+
+// 티켓 삭제
+function removeTicket(button) {
+    button.closest('.ticket-card').remove();
+}
+
+// 할인가 계산
+function calculateDiscountPrice(input) {
+    const card = input.closest('.ticket-card');
+    const priceInput = card.querySelector('input[type="number"]');
+    const discountInput = card.querySelectorAll('input[type="number"]')[1];
+    const discountPriceDiv = card.querySelector('.discount-price');
+    
+    const price = Number(priceInput.value);
+    const discount = Number(discountInput.value);
+    const discountedPrice = price * (1 - discount / 100);
+    
+    if (price && discount >= 0) {
+        discountPriceDiv.textContent = `할인 적용가: ${Math.floor(discountedPrice).toLocaleString()}원`;
+    }
+}
+
+// 페이지 전환 함수 업데이트
+function updateFormSection(step) {
+    const eventSection = document.getElementById('event-section');
+    const ticketSection = document.getElementById('ticket-section');
+    console.log(eventSection);
+    console.log(ticketSection)
+    
+    switch(step) {
+        case 1:
+            eventSection.style.display = 'block';
+            ticketSection.style.display = 'none';
+            break;
+        case 2:
+            eventSection.style.display = 'none';
+            ticketSection.style.display = 'block';
+            break;
+    }
+}
+
+// 초기 티켓 추가
+addTicket();
+
+// 스텝 이동 함수
+function updateSteps(currentStep) {
+    const steps = document.querySelectorAll('.step');
+    
+    steps.forEach((step, index) => {
+        if (index < currentStep - 1) {
+            step.classList.add('completed');
+            step.classList.add('active');
+        } else if (index === currentStep - 1) {
+            step.classList.remove('completed');
+            step.classList.add('active');
+        } else {
+            step.classList.remove('completed', 'active');
+        }
+    });
+}
+
+// 다음 버튼 클릭 이벤트 수정
+document.querySelector('.next-btn').addEventListener('click', function() {
+    const currentStep = document.querySelectorAll('.step.active').length;
+    if (currentStep < 4) {
+        updateSteps(currentStep + 1);
+        updateFormSection(currentStep + 1);
+    }
+});
+
+// 이전 버튼 클릭 이벤트 수정
+document.querySelector('.prev-btn').addEventListener('click', function() {
+    const currentStep = document.querySelectorAll('.step.active').length;
+    if (currentStep > 1) {
+        updateSteps(currentStep - 1);
+        updateFormSection(currentStep - 1);
+    }
+});
