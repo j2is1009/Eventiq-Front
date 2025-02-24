@@ -212,6 +212,9 @@ function updateFormSection(step) {
     const eventSection = document.getElementById('event-section');
     const ticketSection = document.getElementById('ticket-section');
     const accountSection = document.getElementById('account-section');
+    const confirmationSection = document.getElementById('confirmation-section');
+    const nextBtn = document.getElementById('next-btn');
+
     
     // 모든 섹션 숨기기
     [eventSection, ticketSection, accountSection].forEach(section => {
@@ -219,17 +222,42 @@ function updateFormSection(step) {
     });
     
     // 현재 스텝에 해당하는 섹션 보이기
+    console.log(step);
     switch(step) {
         case 1:
             eventSection.style.display = 'block';
+            ticketSection.style.display = 'none';
+            accountSection.style.display = 'none';
+            confirmationSection.style.display = 'none';
+            nextBtn.onclick = '';
             break;
         case 2:
+            eventSection.style.display = 'none';
             ticketSection.style.display = 'block';
+            accountSection.style.display = 'none';
+            confirmationSection.style.display = 'none';
             break;
         case 3:
+            eventSection.style.display = 'none';
+            ticketSection.style.display = 'none';
             accountSection.style.display = 'block';
+            confirmationSection.style.display = 'none';
+            break;
+        case 4:
+            eventSection.style.display = 'none';
+            ticketSection.style.display = 'none';
+            accountSection.style.display = 'none';
+            confirmationSection.style.display = 'block';
+            break;
+        case 5 :
+            nextBtn.onclick = handleSubmit();
             break;
     }
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 // 계좌번호 입력 시 숫자만 입력되도록 처리
@@ -259,7 +287,7 @@ function updateSteps(currentStep) {
 // 다음 버튼 클릭 이벤트 수정
 document.querySelector('.next-btn').addEventListener('click', function() {
     const currentStep = document.querySelectorAll('.step.active').length;
-    if (currentStep < 4) {
+    if (currentStep <= 4) {
         updateSteps(currentStep + 1);
         updateFormSection(currentStep + 1);
     }
@@ -273,3 +301,61 @@ document.querySelector('.prev-btn').addEventListener('click', function() {
         updateFormSection(currentStep - 1);
     }
 });
+
+// 최종 확인 페이지 데이터 표시 함수
+function updateConfirmationPage() {
+    // 이벤트 설정 정보 가져오기
+    const eventData = {
+        name: document.querySelector('#eventSection input[type="text"]').value,
+        // 다른 이벤트 설정 데이터도 가져오기
+    };
+
+    // 티켓 설정 정보 가져오기
+    const ticketData = Array.from(document.querySelectorAll('.ticket-card')).map(card => ({
+        name: card.querySelector('input[type="text"]').value,
+        // 다른 티켓 설정 데이터도 가져오기
+    }));
+
+    // 정산 계좌 정보 가져오기
+    const accountData = {
+        holder: document.querySelector('#accountSection input[type="text"]').value,
+        // 다른 계좌 설정 데이터도 가져오기
+    };
+
+    // 데이터를 화면에 표시
+    displayConfirmationData(eventData, ticketData, accountData);
+}
+
+// 제출 처리 함수
+function handleSubmit() {
+    if (!document.getElementById('termsCheck').checked) {
+        alert('안내사항 확인 및 동의가 필요합니다.');
+        return;
+    }
+
+    // 완료 메시지 모달 표시
+    showCompletionModal();
+}
+
+// 완료 메시지 모달 표시 함수
+function showCompletionModal() {
+    const modal = document.createElement('div');
+    modal.className = 'completion-modal';
+    modal.style.display = 'flex';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h2 class="modal-title">신청 완료</h2>
+            <div class="modal-message">
+                <p>이벤트 주최 신청이 완료되었습니다.</p>
+                <p>관리자가 승인 후 Eventiq의 페이지에 노출이 시작되며</p>
+                <p>주최 관리 페이지를 확인하실 수 있습니다.</p>
+                <p>영업일 기준 약 1~3일 소요되며,</p>
+                <p>승인 시 이메일로 결과를 전달드립니다.</p>
+            </div>
+            <button class="btn btn-primary" onclick="window.location.href='/'">
+                확인
+            </button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+}
