@@ -291,7 +291,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr onclick="showDetail(1)">
+                        <tr onclick="location.href='./detail.html'">
                             <td>1</td>
                             <td>컨퍼런스 굿즈 패키지</td>
                             <td>홍길동</td>
@@ -300,7 +300,7 @@
                             <td>2024.02.21</td>
                             <td><span class="status-badge status-shipping">배송중</span></td>
                         </tr>
-                        <tr onclick="showDetail(2)">
+                        <tr>
                             <td>2</td>
                             <td>한정판 티셔츠</td>
                             <td>김영희</td>
@@ -309,7 +309,7 @@
                             <td>2024.02.20</td>
                             <td><span class="status-badge status-delivered">배송완료</span></td>
                         </tr>
-                        <tr onclick="showDetail(2)">
+                        <tr>
                             <td>2</td>
                             <td>한정판 티셔츠</td>
                             <td>김영희</td>
@@ -318,7 +318,7 @@
                             <td>2024.02.20</td>
                             <td><span class="status-badge status-delivered">배송완료</span></td>
                         </tr>
-                        <tr onclick="showDetail(2)">
+                        <tr>
                             <td>2</td>
                             <td>한정판 티셔츠</td>
                             <td>김영희</td>
@@ -327,7 +327,7 @@
                             <td>2024.02.20</td>
                             <td><span class="status-badge status-delivered">배송완료</span></td>
                         </tr>
-                        <tr onclick="showDetail(2)">
+                        <tr>
                             <td>2</td>
                             <td>한정판 티셔츠</td>
                             <td>김영희</td>
@@ -336,7 +336,7 @@
                             <td>2024.02.20</td>
                             <td><span class="status-badge status-delivered">배송완료</span></td>
                         </tr>
-                        <tr onclick="showDetail(2)">
+                        <tr>
                             <td>2</td>
                             <td>한정판 티셔츠</td>
                             <td>김영희</td>
@@ -345,7 +345,7 @@
                             <td>2024.02.20</td>
                             <td><span class="status-badge status-delivered">배송완료</span></td>
                         </tr>
-                        <tr onclick="showDetail(2)">
+                        <tr>
                             <td>2</td>
                             <td>한정판 티셔츠</td>
                             <td>김영희</td>
@@ -354,7 +354,7 @@
                             <td>2024.02.20</td>
                             <td><span class="status-badge status-delivered">배송완료</span></td>
                         </tr>
-                        <tr onclick="showDetail(2)">
+                        <tr>
                             <td>2</td>
                             <td>한정판 티셔츠</td>
                             <td>김영희</td>
@@ -363,7 +363,7 @@
                             <td>2024.02.20</td>
                             <td><span class="status-badge status-delivered">배송완료</span></td>
                         </tr>
-                        <tr onclick="showDetail(2)">
+                        <tr>
                             <td>2</td>
                             <td>한정판 티셔츠</td>
                             <td>김영희</td>
@@ -372,7 +372,7 @@
                             <td>2024.02.20</td>
                             <td><span class="status-badge status-delivered">배송완료</span></td>
                         </tr>
-                        <tr onclick="showDetail(2)">
+                        <tr>
                             <td>2</td>
                             <td>한정판 티셔츠</td>
                             <td>김영희</td>
@@ -425,70 +425,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- 상세 페이지 -->
-        <div class="container" id="detailPage" style="display: none;">
-            <div class="detail-card">
-                <div class="detail-header">
-                    <h1 class="page-title">발송 상세 정보</h1>
-                    <button class="back-button" onclick="showList()">
-                        ← 목록으로 돌아가기
-                    </button>
-                </div>
-
-                <div class="detail-content">
-                    <div class="detail-group">
-                        <div class="detail-label">사은품명</div>
-                        <div class="detail-value">컨퍼런스 굿즈 패키지</div>
-                    </div>
-                    <div class="detail-group">
-                        <div class="detail-label">받는 사람</div>
-                        <div class="detail-value">홍길동</div>
-                    </div>
-                    <div class="detail-group">
-                        <div class="detail-label">연락처</div>
-                        <div class="detail-value">010-1234-5678</div>
-                    </div>
-                    <div class="detail-group">
-                        <div class="detail-label">배송지</div>
-                        <div class="detail-value">서울시 강남구 테헤란로 123</div>
-                    </div>
-                    <div class="detail-group">
-                        <div class="detail-label">택배사</div>
-                        <div class="detail-value">CJ대한통운</div>
-                    </div>
-                    <div class="detail-group">
-                        <div class="detail-label">송장번호</div>
-                        <div class="detail-value">123456789123</div>
-                    </div>
-                </div>
-
-                <div class="tracking-info">
-                    <div class="tracking-header">
-                        <h2>배송 현황</h2>
-                    </div>
-                    <div class="tracking-steps">
-                        <div class="tracking-step active">
-                            <div class="step-time">2024.02.21 14:30</div>
-                            <div class="step-info">배송지 도착</div>
-                        </div>
-                        <div class="tracking-step active">
-                            <div class="step-time">2024.02.21 09:15</div>
-                            <div class="step-info">배송중</div>
-                        </div>
-                        <div class="tracking-step active">
-                            <div class="step-time">2024.02.21 08:00</div>
-                            <div class="step-info">발송 완료</div>
-                        </div>
-                        <div class="tracking-step active">
-                            <div class="step-time">2024.02.20 18:30</div>
-                            <div class="step-info">발송 준비중</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <!-- footer start -->
         <div class="footer">
