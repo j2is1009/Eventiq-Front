@@ -320,6 +320,57 @@
                 </div>
             </div>
 
+            <!-- 정산 계좌 설정 페이지 -->
+            <div class="form-section" id="account-section" style="display: none;">
+                <div class="form-header">
+                    <h1 class="form-title">정산 계좌 설정</h1>
+
+                    <div class="info-message">
+                        <div class="info-item">
+                            1. 오기입될 경우 정산 금액을 제대로 지급받지 못할 수 있습니다.
+                        </div>
+                        <div class="info-item">
+                            2. 무료 이벤트의 경우 입력하지 않으셔도 됩니다.
+                        </div>
+                        <div class="info-item">
+                            3. 해당 내용은 추후 이벤트 크루 페이지에서 변경하실 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="account-form">
+                    <!-- 예금주명 -->
+                    <div class="form-group">
+                        <label class="form-label">예금주명</label>
+                        <input type="text" class="form-input" placeholder="예금주명을 입력하세요">
+                    </div>
+
+                    <!-- 은행명 -->
+                    <div class="form-group">
+                        <label class="form-label">은행명</label>
+                        <select class="form-input">
+                            <option value="">은행을 선택하세요</option>
+                            <option value="KB">KB국민은행</option>
+                            <option value="신한">신한은행</option>
+                            <option value="우리">우리은행</option>
+                            <option value="하나">하나은행</option>
+                            <option value="농협">NH농협은행</option>
+                            <option value="IBK">IBK기업은행</option>
+                            <option value="카카오">카카오뱅크</option>
+                            <option value="토스">토스뱅크</option>
+                        </select>
+                    </div>
+
+                    <!-- 계좌번호 -->
+                    <div class="form-group">
+                        <label class="form-label">계좌번호</label>
+                        <input type="text" class="form-input" placeholder="'-' 없이 숫자만 입력하세요"
+                            oninput="this[^0-9]/g, '')">
+                        <div class="form-hint">숫자만 입력 가능합니다</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="button-group">
                 <button type="button" class="btn btn-secondary prev-btn">이전</button>
                 <button type="button" class="btn btn-primary next-btn">다음</button>

@@ -211,21 +211,31 @@ function calculateDiscountPrice(input) {
 function updateFormSection(step) {
     const eventSection = document.getElementById('event-section');
     const ticketSection = document.getElementById('ticket-section');
-    console.log(eventSection);
-    console.log(ticketSection)
+    const accountSection = document.getElementById('account-section');
     
+    // 모든 섹션 숨기기
+    [eventSection, ticketSection, accountSection].forEach(section => {
+        if (section) section.style.display = 'none';
+    });
+    
+    // 현재 스텝에 해당하는 섹션 보이기
     switch(step) {
         case 1:
             eventSection.style.display = 'block';
-            ticketSection.style.display = 'none';
             break;
         case 2:
-            eventSection.style.display = 'none';
             ticketSection.style.display = 'block';
+            break;
+        case 3:
+            accountSection.style.display = 'block';
             break;
     }
 }
 
+// 계좌번호 입력 시 숫자만 입력되도록 처리
+document.querySelector('input[type="text"][placeholder*="숫자만"]').addEventListener('input', function(e) {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
 // 초기 티켓 추가
 addTicket();
 
