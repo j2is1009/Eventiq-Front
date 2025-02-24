@@ -834,10 +834,10 @@ hr,.post-hr{border-bottom: 1px solid #e6e7e9;
 .mypage-main .mypage-title { font-size: 22px; font-weight: bold; margin: 20px 20px 40px 7px; }
 .mypage-main .mypage-content-container { width: 100%; display: flex; flex-direction: row; }
 .mypage-main .mypage-content-menu { margin-right: 40px; width: 25%; }
-.mypage-main .profile-container { flex-direction: column; display: flex; justify-content: center; align-items: center; width: 100%; aspect-ratio: 1 / 1; background-color: #FFD93D;}
-.mypage-main .user-picture { overflow: hidden; margin: 20px 0; border-radius: 100%; height: 80%; aspect-ratio: 1 / 1; background-color: #fff;}
+.mypage-main .profile-container { border: 0.5px solid #00000031; border-bottom: none; flex-direction: column; display: flex; justify-content: center; align-items: center; width: 100%; aspect-ratio: 1 / 1; background-color: #FFD93D;}
+.mypage-main .user-picture { overflow: hidden; margin: 20px 0; border-radius: 100%; height: 75%; aspect-ratio: 1 / 1; background-color: #fff; border: 5.5px solid #FFF; }
 .mypage-main .user-picture img { object-fit: cover; height: 100%; }
-.mypage-main .user-name { height: 20%;}
+.mypage-main .user-name { display: flex; justify-content: center; align-items: center; height: 25%; font-weight: bold; }
 .mypage-main .menu-container ul { border: 0.5px solid #00000031; border-bottom: none; }
 .mypage-main .menu-container .only-menu { background-color: #fff; border-bottom: 0.5px solid #00000031; }
 .mypage-main .menu-container .only-menu:hover { background-color: #fff9e1; color: #FFD93D; }
@@ -881,20 +881,28 @@ hr,.post-hr{border-bottom: 1px solid #e6e7e9;
 .like-event-list-header .event-category-header { width: 11%; }
 .like-event-list-header .event-img-header { width: 19%; }
 .like-event-list-header .event-info-header { display: flex; flex-direction: column; width: 23%; }
-.like-event-list-header .event-end-header { width: 14%; }
-.like-event-list-header .event-date-header { width: 14%; }
+.like-event-list-header .event-end-header { width: 13.5%; }
+.like-event-list-header .event-date-header { width: 13.5%; }
 .like-event-list-header .event-state-header { width: 9%; }
-.like-event-list-header .event-buy-btn-header { width: 10%; }
-.like-event-list .like-event-list-container { margin-bottom: 22px; height: 90px; align-items: center; display: flex; flex-direction: row; font-size: 11.5px; }
+.like-event-list-header .event-buy-btn-header { width: 11%; }
+.like-event-list .like-event-list-container { margin-bottom: 30px; height: 90px; align-items: center; display: flex; flex-direction: row; font-size: 11.5px; }
 .like-event-list span { text-align: center; }
 .like-event-list .event-category { width: 11%; }
 .like-event-list .event-category p { margin-bottom: 10px; }
 .like-event-list .event-img { width: 19%; padding: 0 10px;}
 .like-event-list .event-info { height: 100%; justify-content: space-evenly; align-items: flex-start; display: flex; flex-direction: column; width: 23%; }
-.like-event-list .event-end { width: 14%; }
-.like-event-list .event-date { width: 14%; }
+.like-event-list .event-info .event-title { font-weight: bold; cursor: pointer; }
+.like-event-list .event-info .event-title:hover { text-decoration: underline; }
+.like-event-list .event-end { width: 13.5%; }
+.like-event-list .event-date { width: 13.5%; }
 .like-event-list .event-state { width: 9%; }
-.like-event-list .event-buy-btn { width: 10%; }
+.like-event-list #on-sale { color: #114fd5; font-weight: bold; }
+.like-event-list #stop-sale { color: #d51111; font-weight: bold; }
+.like-event-list .event-buy-btn { width: 11%; }
+.like-event-list .event-buy-btn a { cursor: pointer; background-color: #1B3B5F; color: #fff; padding: 4px 5px; border-radius: 3px; font-weight: bold; }
+.like-event-list .event-buy-btn a:hover { background-color: #637fa0; color: #fff; padding: 4px 5px; border-radius: 3px; font-weight: bold; }
+.like-event-list .event-buy-btn #stop-sale-btn {cursor: default; background-color: #a6b9cf; }
+
 
 /*==========  Non-Mobile First Method  ==========*/
 
