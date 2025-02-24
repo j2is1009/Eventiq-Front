@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>광고 문의 내역</title>
+    <title>Eventiq</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <style>
         * {
             margin: 0;
@@ -15,218 +16,441 @@
 
         body {
             background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 24px;
         }
 
-        .service-container {
-            background-color: white;
+        /* 배너 슬라이더 */
+        .banner-slider {
+            position: relative;
             border-radius: 16px;
-            padding: 28px;
-            width: 100%;
-            max-width: 530px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-bottom: 40px;
+            height: 400px;
         }
 
-        .header {
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        /* 섹션 스타일 */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 24px;
         }
 
-        .title {
-            font-size: 22px;
+        .section-title {
+            font-size: 24px;
             font-weight: 700;
             color: #1a1a1a;
             letter-spacing: -0.5px;
         }
 
-        .info-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        /* 이벤트 카드 */
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+            height: 100%;
         }
 
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 4px 0;
+        .event-card:hover {
+            transform: translateY(-4px);
         }
 
-        .label {
-            font-size: 15px;
-            color: #666;
-            font-weight: 500;
+        .event-image {
+            width: 100%;
+            height: 200px;
+            background: #e0e0e0;
+            object-fit: cover;
         }
 
-        .value {
-            font-size: 15px;
-            color: #1a1a1a;
+        .event-content {
+            padding: 16px;
+        }
+
+        .event-title {
+            font-size: 16px;
             font-weight: 600;
-            text-align: right;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
-        .status-badge {
-            padding: 8px 16px;
-            border-radius: 24px;
+        .event-info {
             font-size: 14px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .event-price {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2196F3;
+        }
+
+        /* 인기 이벤트 랭킹 */
+        .ranking-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .ranking-item {
+            display: flex;
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .ranking-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .ranking-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2196F3;
+            margin-right: 16px;
+            min-width: 32px;
+        }
+
+        .ranking-content {
+            flex: 1;
+        }
+
+        /* 마감 임박 뱃지 */
+        .deadline-badge {
+            background-color: #ff5252;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
             font-weight: 600;
             display: inline-block;
+            margin-left: 8px;
         }
 
-        .status-pending {
-            background-color: #fff3e0;
-            color: #e65100;
+        /* 슬라이더 네비게이션 커스텀 */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
         }
 
-        .status-completed {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-        }
-
-        .no-inquiry-container {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .no-inquiry-text {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s ease;
-            margin-top: 24px;
-            width: 100%;
-        }
-
-        .button-primary {
-            background-color: #2196F3;
-            color: white;
-        }
-
-        .button-primary:hover {
-            background-color: #1976D2;
-            transform: translateY(-1px);
-        }
-
-        .button-primary:active {
-            transform: translateY(0);
-        }
-
-        .material-icons {
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
             font-size: 20px;
-            margin-left: 4px;
         }
 
-        @media (max-width: 480px) {
-            body {
+        .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .container {
                 padding: 16px;
             }
-            
-            .service-container {
-                border-radius: 12px;
-                padding: 24px;
+
+            .banner-slider {
+                height: 200px;
+                margin-bottom: 32px;
             }
 
-            .button {
-                width: 100%;
+            .section {
+                margin-bottom: 32px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .ranking-list {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="service-container" id="serviceContainer">
-        <!-- 문의 내역이 없을 때 표시되는 컨테이너 -->
-        <div class="no-inquiry-container" id="noInquiryContainer" style="display: none;">
-            <p class="no-inquiry-text">등록된 광고 문의가 없습니다.<br>지금 바로 문의해보세요!</p>
-            <button class="button button-primary" onclick="handleInquiry()">
-                광고 문의하기
-            </button>
-        </div>
-
-        <!-- 문의 정보 컨테이너 -->
-        <div id="inquiryInfoContainer">
-            <div class="header">
-                <h1 class="title">광고 문의 내역</h1>
-            </div>
-
-            <div class="info-container">
-                <div class="info-row">
-                    <span class="label">문의 번호</span>
-                    <span class="value">AD-2024-0001</span>
+    <div class="container">
+        <!-- 상단 배너 슬라이더 -->
+        <div class="banner-slider swiper mainBanner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%201&aspect=16:9" alt="Event Banner 1">
                 </div>
-
-                <div class="info-row">
-                    <span class="label">이벤트명</span>
-                    <span class="value">2024 봄 시즌 프로모션</span>
+                <div class="swiper-slide">
+                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%202&aspect=16:9" alt="Event Banner 2">
                 </div>
-
-                <div class="info-row">
-                    <span class="label">광고 종류</span>
-                    <span class="value">배너 광고</span>
+                <div class="swiper-slide">
+                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%203&aspect=16:9" alt="Event Banner 3">
                 </div>
-
-                <div class="info-row">
-                    <span class="label">광고 기간</span>
-                    <span class="value">2024년 3월 1일 ~ 2024년 5월 31일</span>
-                </div>
-
-                <div class="info-row">
-                    <span class="label">상태</span>
-                    <span class="value">
-                        <span class="status-badge status-pending">문의중</span>
-                    </span>
+                <div class="swiper-slide">
+                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%204&aspect=16:9" alt="Event Banner 4">
                 </div>
             </div>
-
-            <button class="button button-primary" onclick="handleNewInquiry()">
-                광고 문의하기
-                <span class="material-icons">chevron_right</span>
-            </button>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
+
+        <!-- Eventiq 추천 이벤트 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Eventiq 추천 이벤트</h2>
+            </div>
+            <div class="swiper recommendedSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="event-card">
+                            <img class="event-image" src="https://api.a0.dev/assets/image?text=music%20festival%201&aspect=4:3" alt="Event">
+                            <div class="event-content">
+                                <h3 class="event-title">2024 봄 뮤직 페스티벌</h3>
+                                <p class="event-info">2024.03.15 ~ 2024.03.17</p>
+                                <p class="event-price">88,000원</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 추가 6개의 추천 이벤트 -->
+                    <div class="swiper-slide">
+                        <div class="event-card">
+                            <img class="event-image" src="https://api.a0.dev/assets/image?text=concert%202&aspect=4:3" alt="Event">
+                            <div class="event-content">
+                                <h3 class="event-title">K-POP 슈퍼 콘서트</h3>
+                                <p class="event-info">2024.03.20</p>
+                                <p class="event-price">110,000원</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 추가 이벤트 카드들... -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- 맞춤 추천 이벤트 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">홍길동님이 관심 가질만한 이벤트</h2>
+            </div>
+            <div class="swiper personalizedSwiper">
+                <div class="swiper-wrapper">
+                    <!-- 10개의 맞춤 추천 이벤트 -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- 이번 달 인기 이벤트 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">3월 가장 인기있는 이벤트</h2>
+            </div>
+            <div class="ranking-list">
+                <!-- TOP 10 인기 이벤트 -->
+            </div>
+        </section>
+
+        <!-- 최근 올라온 이벤트 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">최근 올라온 이벤트</h2>
+            </div>
+            <div class="swiper recentSwiper">
+                <div class="swiper-wrapper">
+                    <!-- 최신 10개 이벤트 -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- 마감 임박 이벤트 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">마감 임박 이벤트</h2>
+            </div>
+            <div class="swiper deadlineSwiper">
+                <div class="swiper-wrapper">
+                    <!-- 마감 임박 10개 이벤트 -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // 문의 상태에 따라 UI 업데이트
-        const inquiryInfo = {
-            hasInquiry: true,
-            inquiryNumber: 'AD-2024-0001',
-            eventName: '2024 봄 시즌 프로모션',
-            adType: '배너 광고',
-            startDate: '2024-03-01',
-            endDate: '2024-05-31',
-            status: '문의중'
+        // 더미 데이터 생성 함수
+        function generateEvents(count, type) {
+            const events = [];
+            const eventTypes = ['콘서트', '뮤지컬', '연극', '전시회', '페스티벌'];
+            const locations = ['서울', '부산', '대구', '인천', '광주'];
+            
+            for (let i = 0; i < count; i++) {
+                const eventType = eventTypes[Math.floor(Math.random() * eventTypes.length)];
+                const location = locations[Math.floor(Math.random() * locations.length)];
+                const price = Math.floor(Math.random() * 150000 + 30000);
+                const views = Math.floor(Math.random() * 50000 + 1000);
+                const sales = Math.floor(Math.random() * 5000 + 100);
+                
+                events.push({
+                    id: i + 1,
+                    title: `${location} ${eventType} ${type} ${i + 1}`,
+                    image: `https://api.a0.dev/assets/image?text=${eventType}_${i}&aspect=4:3`,
+                    date: '2024.03.15 ~ 2024.03.17',
+                    price: price,
+                    views: views,
+                    sales: sales,
+                    isDeadlineSoon: Math.random() > 0.7
+                });
+            }
+            return events;
+        }
+
+        // 슬라이더 초기화
+        const mainBanner = new Swiper('.mainBanner', {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // 추천 이벤트 슬라이더
+        const recommendedSwiper = new Swiper('.recommendedSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+        });
+
+        // 각 섹션별 데이터 생성 및 렌더링
+        const sections = [
+            { name: 'recommended', count: 7 },
+            { name: 'personalized', count: 10 },
+            { name: 'popular', count: 10 },
+            { name: 'recent', count: 10 },
+            { name: 'deadline', count: 10 }
+        ];
+
+        sections.forEach(section => {
+            const events = generateEvents(section.count, section.name);
+            
+            if (section.name === 'popular') {
+                // 인기 이벤트 랭킹 렌더링
+                const rankingList = document.querySelector('.ranking-list');
+                rankingList.innerHTML = events
+                    .sort((a, b) => b.views - a.views)
+                    .map((event, index) => `
+                        <div class="ranking-item">
+                            <span class="ranking-number">${index + 1}</span>
+                            <div class="ranking-content">
+                                <h3 class="event-title">${event.title}</h3>
+                                <p class="event-info">조회수 ${event.views.toLocaleString()} · 판매 ${event.sales}매</p>
+                            </div>
+                        </div>
+                    `).join('');
+            } else {
+                // 슬라이더 이벤트 렌더링
+                const swiperWrapper = document.querySelector(`.${section.name}Swiper .swiper-wrapper`);
+                if (swiperWrapper) {
+                    swiperWrapper.innerHTML = events.map(event => `
+                        <div class="swiper-slide">
+                            <div class="event-card">
+                                <img class="event-image" src="${event.image}" alt="${event.title}">
+                                <div class="event-content">
+                                    <h3 class="event-title">${event.title}${event.isDeadlineSoon ? '<span class="deadline-badge">마감 임박</span>' : ''}</h3>
+                                    <p class="event-info">${event.date}</p>
+                                    <p class="event-price">${event.price.toLocaleString()}원</p>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+        });
+
+        // 나머지 슬라이더들 초기화
+        const swiperConfigs = {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
         };
 
-        function handleInquiry() {
-            // 광고 문의 페이지로 이동
-            console.log('광고 문의 페이지로 이동');
-        }
-
-        function handleNewInquiry() {
-            // 새로운 광고 문의 페이지로 이동
-            console.log('새로운 광고 문의 페이지로 이동');
-        }
-
-        // 초기 UI 설정
-        if (!inquiryInfo.hasInquiry) {
-            document.getElementById('inquiryInfoContainer').style.display = 'none';
-            document.getElementById('noInquiryContainer').style.display = 'block';
-        }
+        new Swiper('.personalizedSwiper', swiperConfigs);
+        new Swiper('.recentSwiper', swiperConfigs);
+        new Swiper('.deadlineSwiper', swiperConfigs);
     </script>
 </body>
 </html>
