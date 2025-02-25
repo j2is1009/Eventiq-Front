@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트 리스트 - 이벤트 플랫폼</title>
+    <title>이벤트 상세 - AI 개발자 컨퍼런스 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* 전체 스타일 */
         * {
@@ -17,210 +19,74 @@
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
+            padding-bottom: 50px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 90%;
             margin: 0 auto;
             padding: 32px;
         }
 
-        /* 헤더 스타일 */
-        .header {
+        /* 일반 섹션 스타일 */
+        .section {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 32px;
             margin-bottom: 32px;
         }
 
-        .header-title {
-            font-size: 32px;
+        .section-title {
+            font-size: 22px;
             font-weight: 700;
             margin-bottom: 24px;
             color: #333;
-        }
-
-        .search-container {
             display: flex;
             align-items: center;
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 12px 16px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .search-icon {
-            color: #666;
+        .section-title i {
             margin-right: 12px;
-            font-size: 20px;
+            color: #3498db;
         }
 
-        .search-input {
-            flex: 1;
-            border: none;
-            font-size: 16px;
-            color: #333;
-            outline: none;
-        }
-
-        .clear-search {
-            color: #666;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 20px;
+        /* 레이아웃 구조 */
+        .content-layout {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
         }
 
-        /* 정렬 옵션 및 필터 버튼 스타일 */
-        .sort-filter-container {
-            display: flex;
-            margin-bottom: 24px;
-            align-items: center;
-            justify-content: space-between;
+        .main-content {
+            width: calc(100% - 350px);
+            margin-right: 350px;
         }
 
-        .sort-options-container {
-            display: flex;
-            overflow-x: auto;
-            padding-bottom: 8px;
-        }
-
-        .sort-option {
-            padding: 8px 20px;
-            margin-right: 12px;
-            border-radius: 20px;
-            background-color: #fff;
-            border: 1px solid #e0e0e0;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-        }
-
-        .sort-option:hover {
-            background-color: #f0f0f0;
-        }
-
-        .sort-option.selected {
-            background-color: #3498db;
-            border-color: #3498db;
-            color: #fff;
-            font-weight: 600;
-        }
-
-        /* 필터 버튼 스타일 */
-        .filter-button {
-            display: flex;
-            align-items: center;
-            padding: 8px 16px;
-            border-radius: 20px;
-            background-color: #fff;
-            border: 1px solid #e0e0e0;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .filter-button:hover {
-            background-color: #f0f0f0;
-        }
-
-        .filter-button.active {
-            background-color: #3498db;
-            border-color: #3498db;
-            color: #fff;
-        }
-
-        .filter-button i {
-            margin-right: 8px;
-        }
-
-        /* 필터 섹션 스타일 */
-        .filters-container {
-            margin-bottom: 32px;
-            background-color: #fff;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            display: none;
-            transition: all 0.3s ease;
-        }
-
-        .filter-section {
-            margin-bottom: 20px;
-        }
-
-        .filter-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .filter-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #333;
-        }
-
-        .filter-options-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .filter-option {
-            padding: 8px 16px;
-            border-radius: 16px;
-            background-color: #fff;
-            border: 1px solid #e0e0e0;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .filter-option:hover {
-            background-color: #f0f0f0;
-        }
-
-        .filter-option.selected {
-            background-color: #3498db;
-            border-color: #3498db;
-            color: #fff;
-            font-weight: 600;
-        }
-
-        /* 이벤트 카드 스타일 */
-        .events-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 24px;
-        }
-
-        .card {
+        /* 헤더 섹션 스타일 */
+        .event-header {
+            position: relative;
             background-color: #fff;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 32px;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-image {
+        .event-banner {
             width: 100%;
-            height: 200px;
+            height: 400px;
             object-fit: cover;
         }
 
-        .card-content {
-            padding: 20px;
+        .event-details-container {
+            padding: 32px;
         }
 
-        .card-tags {
+        .event-info {
+            margin-bottom: 24px;
+        }
+
+        .event-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
@@ -228,9 +94,9 @@
         }
 
         .tag {
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 12px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
             font-weight: 600;
         }
 
@@ -244,7 +110,7 @@
             color: white;
         }
 
-        .tag-hybrid {
+        .tag-hybrid-price {
             background-color: #9C27B0;
             color: white;
         }
@@ -259,627 +125,582 @@
             color: white;
         }
 
+        .tag-hybrid-venue {
+            background-color: #9C27B0;
+            color: white;
+        }
+
         .tag-category {
             background-color: #E0E0E0;
             color: #333;
         }
 
-        .card-title {
-            font-size: 20px;
+        .event-title {
+            font-size: 32px;
             font-weight: 700;
             margin-bottom: 12px;
             color: #333;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
-        .card-description {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 16px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin: 24px 0;
         }
 
-        .card-details {
-            margin-top: 16px;
-        }
-
-        .card-detail-item {
+        .event-meta-item {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
         }
 
-        .card-detail-icon {
+        .event-meta-icon {
             color: #666;
-            margin-right: 10px;
-            font-size: 16px;
-            width: 16px;
+            margin-right: 8px;
+            font-size: 18px;
+            width: 24px;
             text-align: center;
         }
 
-        .card-detail-text {
+        .event-meta-text {
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* 상세 설명 섹션 */
+        .event-description {
+            margin-bottom: 32px;
+        }
+
+        .desc-text {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        /* 발표자 섹션 */
+        .speakers-section {
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+
+        .speaker-card {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            margin-bottom: 16px;
+        }
+
+        .speaker-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 16px;
+        }
+
+        .speaker-info {
+            flex: 1;
+        }
+
+        .speaker-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #333;
+        }
+
+        .speaker-title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .speaker-bio {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* 지도 섹션 */
+        .map-container {
+            margin-top: 24px;
+            margin-bottom: 32px;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .address {
+            margin-top: 16px;
+            font-size: 16px;
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .address i {
+            margin-right: 12px;
+            margin-top: 4px;
+            color: #3498db;
+        }
+
+        /* 티켓 정보 섹션 - 오른쪽 고정 */
+        .ticket-section {
+            position: fixed;
+            top: 32px;
+            right: 32px;
+            width: 380px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            padding: 24px;
+            max-height: calc(100vh - 64px);
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        /* 티켓 정보 */
+        .ticket-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .ticket-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .ticket-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .ticket-stock {
             font-size: 14px;
             color: #666;
         }
 
-        /* 툴팁 스타일 */
-        .hybrid-container {
-            position: relative;
+        .ticket-stock.low {
+            color: #f44336;
+            font-weight: 600;
         }
 
-        .tooltip {
-            visibility: hidden;
-            position: absolute;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            text-align: center;
-            padding: 8px 12px;
-            border-radius: 6px;
-            z-index: 100;
-            width: 240px;
+        .ticket-price-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .ticket-original-price {
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+        .ticket-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .ticket-discount {
+            margin-left: 8px;
+            padding: 4px 8px;
+            background-color: #e53935;
+            color: white;
             font-size: 12px;
-            opacity: 0;
-            transition: opacity 0.3s;
+            font-weight: 600;
+            border-radius: 4px;
         }
 
-        .tooltip::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
-        }
-
-        .hybrid-container:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        /* 결과가 없을 때 스타일 */
-        .no-events-container {
-            text-align: center;
-            padding: 80px 0;
-            grid-column: 1 / -1;
-            display: none;
-        }
-
-        .no-events-icon {
-            font-size: 64px;
-            color: #ccc;
+        .ticket-details {
+            color: #666;
+            font-size: 14px;
             margin-bottom: 16px;
         }
 
-        .no-events-text {
-            font-size: 20px;
+        .ticket-deadline {
+            color: #e53935;
+            font-size: 14px;
             font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 12px 0;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .buy-button:hover {
+            background-color: #2980b9;
+        }
+
+        .buy-button.external {
+            background-color: #4CAF50;
+        }
+
+        .buy-button.external:hover {
+            background-color: #3d8b40;
+        }
+
+        .buy-button.disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* 주최자 및 오거나이저 정보 영역 */
+        .organizer-container {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .organizer-section {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+        }
+
+        /* 주최자 및 오거나이저 정보 */
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .profile-info:last-child {
+            margin-bottom: 0;
+        }
+
+        .profile-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 16px;
+        }
+
+        .profile-details {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #333;
+        }
+
+        .profile-email {
+            font-size: 14px;
             color: #666;
-            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
         }
 
-        .no-events-subtext {
+        .profile-email i {
+            margin-right: 6px;
+            color: #3498db;
+        }
+
+        /* 문의하기 버튼 */
+        .contact-button {
+            display: block;
+            width: 100%;
+            padding: 16px 0;
+            background-color: #8e44ad;
+            color: white;
+            border: none;
+            border-radius: 6px;
             font-size: 16px;
-            color: #999;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 24px;
+            margin-bottom: 32px;
         }
 
-        /* 아이콘 스타일 */
-        .icon {
-            font-size: 16px;
+        .contact-button:hover {
+            background-color: #703688;
         }
 
-        /* 카드 숨김 상태 */
-        .hidden {
-            display: none;
+        /* 반응형 스타일 */
+        @media (max-width: 1200px) {
+            .content-layout {
+                flex-direction: column;
+            }
+            
+            .main-content {
+                width: 100%;
+                margin-right: 0;
+            }
+            
+            .ticket-section {
+                position: static;
+                width: 100%;
+                max-height: none;
+                margin-bottom: 32px;
+                margin-top: 32px;
+            }
+            
+            .organizer-container {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .event-details-container {
+                padding: 24px;
+            }
+
+            .event-title {
+                font-size: 24px;
+            }
+
+            .section {
+                padding: 24px;
+            }
+            
+            .event-banner {
+                height: 300px;
+            }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <!-- 헤더 섹션 -->
-        <div class="header">
-            <h1 class="header-title">이벤트</h1>
-            <div class="search-container">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-input" placeholder="이벤트 검색" id="search-input">
-                <button class="clear-search" id="clear-search" style="display: none;">
-                    <i class="fas fa-times-circle"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- 정렬 옵션 및 필터 버튼 -->
-        <div class="sort-filter-container">
-            <div class="sort-options-container">
-                <div class="sort-option selected" data-sort="recommended">추천순</div>
-                <div class="sort-option" data-sort="popular">인기순</div>
-                <div class="sort-option" data-sort="latest">최신순</div>
-                <div class="sort-option" data-sort="closing">마감임박</div>
-            </div>
-            
-            <!-- 상세 필터 버튼 -->
-            <button class="filter-button" id="filter-toggle-btn">
-                <i class="fas fa-filter"></i>
-                <span id="filter-btn-text">상세 필터</span>
-            </button>
-        </div>
-
-        <!-- 필터 섹션 -->
-        <div class="filters-container" id="filters-container">
-            <!-- 카테고리 필터 -->
-            <div class="filter-section">
-                <h3 class="filter-title">카테고리</h3>
-                <div class="filter-options-container" id="category-filter">
-                    <div class="filter-option selected" data-category="전체">전체</div>
-                    <div class="filter-option" data-category="컨퍼런스">컨퍼런스</div>
-                    <div class="filter-option" data-category="워크샵">워크샵</div>
-                    <div class="filter-option" data-category="세미나">세미나</div>
-                    <div class="filter-option" data-category="페스티벌">페스티벌</div>
-                    <div class="filter-option" data-category="전시회">전시회</div>
-                    <div class="filter-option" data-category="네트워킹">네트워킹</div>
-                    <div class="filter-option" data-category="기타">기타</div>
-                </div>
-            </div>
-
-            <!-- 가격 유형 필터 -->
-            <div class="filter-section">
-                <h3 class="filter-title">가격 유형</h3>
-                <div class="filter-options-container" id="price-filter">
-                    <div class="filter-option selected" data-price="전체">전체</div>
-                    <div class="filter-option" data-price="무료">무료</div>
-                    <div class="filter-option" data-price="유료">유료</div>
-                    <div class="filter-option hybrid-container" data-price="하이브리드">
-                        하이브리드
-                        <span class="tooltip">하이브리드는 무료 티켓과 유료 티켓을 모두 판매중인 옵션입니다.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 진행 방식 필터 -->
-            <div class="filter-section">
-                <h3 class="filter-title">진행 방식</h3>
-                <div class="filter-options-container" id="venue-filter">
-                    <div class="filter-option selected" data-venue="전체">전체</div>
-                    <div class="filter-option" data-venue="온라인">온라인</div>
-                    <div class="filter-option" data-venue="오프라인">오프라인</div>
-                    <div class="filter-option hybrid-container" data-venue="하이브리드">
-                        하이브리드
-                        <span class="tooltip">하이브리드는 온라인과 오프라인이 동시에 진행되는 옵션입니다.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 지역 필터 -->
-            <div class="filter-section">
-                <h3 class="filter-title">지역</h3>
-                <div class="filter-options-container" id="location-filter">
-                    <div class="filter-option selected" data-location="전체">전체</div>
-                    <div class="filter-option" data-location="서울">서울</div>
-                    <div class="filter-option" data-location="경기">경기</div>
-                    <div class="filter-option" data-location="인천">인천</div>
-                    <div class="filter-option" data-location="부산">부산</div>
-                    <div class="filter-option" data-location="대구">대구</div>
-                    <div class="filter-option" data-location="광주">광주</div>
-                    <div class="filter-option" data-location="대전">대전</div>
-                    <div class="filter-option" data-location="울산">울산</div>
-                    <div class="filter-option" data-location="세종">세종</div>
-                    <div class="filter-option" data-location="강원">강원</div>
-                    <div class="filter-option" data-location="충북">충북</div>
-                    <div class="filter-option" data-location="충남">충남</div>
-                    <div class="filter-option" data-location="전북">전북</div>
-                    <div class="filter-option" data-location="전남">전남</div>
-                    <div class="filter-option" data-location="경북">경북</div>
-                    <div class="filter-option" data-location="경남">경남</div>
-                    <div class="filter-option" data-location="제주">제주</div>
-                </div>
-            </div>
-
-            <!-- 이벤트 기간 필터 -->
-            <div class="filter-section">
-                <h3 class="filter-title">이벤트 기간</h3>
-                <div class="filter-options-container" id="month-filter">
-                    <div class="filter-option selected" data-month="전체">전체</div>
-                    <div class="filter-option" data-month="1">1월</div>
-                    <div class="filter-option" data-month="2">2월</div>
-                    <div class="filter-option" data-month="3">3월</div>
-                    <div class="filter-option" data-month="4">4월</div>
-                    <div class="filter-option" data-month="5">5월</div>
-                    <div class="filter-option" data-month="6">6월</div>
-                    <div class="filter-option" data-month="7">7월</div>
-                    <div class="filter-option" data-month="8">8월</div>
-                    <div class="filter-option" data-month="9">9월</div>
-                    <div class="filter-option" data-month="10">10월</div>
-                    <div class="filter-option" data-month="11">11월</div>
-                    <div class="filter-option" data-month="12">12월</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 이벤트 목록 -->
-        <div class="events-container" id="events-container">
-            <!-- 이벤트 카드 1 -->
-            <div class="card" data-category="컨퍼런스" data-price="유료" data-venue="오프라인" data-location="서울" data-month="3">
-                <img src="https://api.a0.dev/assets/image?text=AI%20Conference%20with%20developers%20collaborating&aspect=16:9" alt="AI 개발자 컨퍼런스 2025" class="card-image">
-                <div class="card-content">
-                    <div class="card-tags">
-                        <span class="tag tag-paid">유료</span>
-                        <span class="tag tag-offline">오프라인</span>
-                        <span class="tag tag-category">컨퍼런스</span>
-                    </div>
+        <div class="content-layout">
+            <!-- 메인 콘텐츠 영역 -->
+            <div class="main-content">
+                <!-- 이벤트 헤더 섹션 -->
+                <div class="event-header">
+                    <img src="https://api.a0.dev/assets/image?text=AI%20Conference%20with%20developers%20collaborating&aspect=16:9" alt="AI 개발자 컨퍼런스 2025" class="event-banner">
                     
-                    <h2 class="card-title">AI 개발자 컨퍼런스 2025</h2>
-                    <p class="card-description">최신 인공지능 기술 트렌드와 개발 사례를 공유하는 컨퍼런스입니다.</p>
-                    
-                    <div class="card-details">
-                        <div class="card-detail-item">
-                            <i class="far fa-calendar-alt card-detail-icon"></i>
-                            <span class="card-detail-text">2025년 3월 15일 ~ 2025년 3월 16일</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-map-marker-alt card-detail-icon"></i>
-                            <span class="card-detail-text">서울</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-tag card-detail-icon"></i>
-                            <span class="card-detail-text">50,000원</span>
+                    <div class="event-details-container">
+                        <div class="event-info">
+                            <div class="event-tags">
+                                <span class="tag tag-paid">유료</span>
+                                <span class="tag tag-offline">오프라인</span>
+                                <span class="tag tag-category">컨퍼런스</span>
+                            </div>
+                            
+                            <h1 class="event-title">AI 개발자 컨퍼런스 2025: 미래를 코딩하다</h1>
+                            
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <i class="far fa-calendar-alt event-meta-icon"></i>
+                                    <span class="event-meta-text">2025년 3월 15일 ~ 2025년 3월 16일</span>
+                                </div>
+                                
+                                <div class="event-meta-item">
+                                    <i class="far fa-clock event-meta-icon"></i>
+                                    <span class="event-meta-text">09:00 ~ 18:00</span>
+                                </div>
+                                
+                                <div class="event-meta-item">
+                                    <i class="fas fa-map-marker-alt event-meta-icon"></i>
+                                    <span class="event-meta-text">서울 강남구 테헤란로 123 AI센터</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- 이벤트 카드 2 -->
-            <div class="card" data-category="워크샵" data-price="무료" data-venue="온라인" data-location="온라인" data-month="2">
-                <img src="https://api.a0.dev/assets/image?text=Web%20Design%20Workshop%20with%20UI%20elements&aspect=16:9" alt="웹 디자인 워크샵" class="card-image">
-                <div class="card-content">
-                    <div class="card-tags">
-                        <span class="tag tag-free">무료</span>
-                        <span class="tag tag-online">온라인</span>
-                        <span class="tag tag-category">워크샵</span>
+                <!-- 이벤트 설명 섹션 -->
+                <div class="section event-description">
+                    <h2 class="section-title"><i class="fas fa-info-circle"></i> 이벤트 상세 정보</h2>
+                    
+                    <div class="desc-text">
+                        <p>AI 개발자 컨퍼런스 2025에서는 국내외 최고의 AI 전문가들이 모여 최신 인공지능 기술 트렌드와 개발 사례를 공유합니다. 이번 컨퍼런스는 개발자, 연구원, 기업가, 학생 등 인공지능에 관심 있는 모든 분들을 위한 자리입니다.</p>
+                        <br>
+                        <p>주요 세션으로는 자연어 처리, 컴퓨터 비전, 강화학습, 생성형 AI 등 다양한 주제의 발표가 준비되어 있으며, 실무에서 바로 적용할 수 있는 핸즈온 워크샵도 함께 진행됩니다.</p>
+                        <br>
+                        <p>또한, 국내 주요 테크 기업과 스타트업의 채용 부스가 마련되어 있어 취업 및 네트워킹의 기회도 만나보실 수 있습니다. AI 기술 발전에 관심 있는 분들의 많은 참여 바랍니다.</p>
+                        <br>
+                        <h3>주요 프로그램</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>인공지능 최신 트렌드 기조 연설</li>
+                            <li>자연어 처리 및 LLM 최신 기술 세션</li>
+                            <li>컴퓨터 비전 연구 및 적용 사례</li>
+                            <li>AI 윤리 및 거버넌스 패널 토론</li>
+                            <li>기업별 AI 도입 사례 발표</li>
+                            <li>AI 개발 실습 워크샵</li>
+                            <li>취업 상담 및 네트워킹 세션</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 발표자 섹션 -->
+                <div class="section speakers-section">
+                    <h2 class="section-title"><i class="fas fa-microphone"></i> 발표자</h2>
+                    
+                    <div class="speaker-card">
+                        <img src="https://api.a0.dev/assets/image?text=Professional%20female%20AI%20researcher%20with%20glasses&aspect=1:1" alt="김민지 박사" class="speaker-image">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">김민지 박사</h3>
+                            <p class="speaker-title">인공지능 연구소 수석 연구원</p>
+                            <p class="speaker-bio">10년간 딥러닝 분야를 연구해온 전문가로, 최근에는 대규모 언어 모델의 효율적 학습 및 최적화 기법을 연구하고 있습니다.</p>
+                        </div>
                     </div>
                     
-                    <h2 class="card-title">웹 디자인 워크샵</h2>
-                    <p class="card-description">실무에서 바로 활용할 수 있는 UX/UI 디자인 스킬을 배우는 워크샵입니다.</p>
-                    
-                    <div class="card-details">
-                        <div class="card-detail-item">
-                            <i class="far fa-calendar-alt card-detail-icon"></i>
-                            <span class="card-detail-text">2025년 2월 28일</span>
+                    <div class="speaker-card">
+                        <img src="https://api.a0.dev/assets/image?text=Professional%20male%20tech%20leader%20in%20business%20attire&aspect=1:1" alt="박준호 CTO" class="speaker-image">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">박준호 CTO</h3>
+                            <p class="speaker-title">테크 기업 최고기술책임자</p>
+                            <p class="speaker-bio">실리콘밸리에서 AI 스타트업을 공동 창업한 경험을 바탕으로, 현재는 국내 선도 기업의 AI 전략을 이끌고 있습니다.</p>
                         </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-map-marker-alt card-detail-icon"></i>
-                            <span class="card-detail-text">온라인</span>
+                    </div>
+                    
+                    <div class="speaker-card">
+                        <img src="https://api.a0.dev/assets/image?text=Young%20female%20computer%20vision%20expert&aspect=1:1" alt="이서연 교수" class="speaker-image">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">이서연 교수</h3>
+                            <p class="speaker-title">국내 유수 대학 컴퓨터 비전 연구실 교수</p>
+                            <p class="speaker-bio">컴퓨터 비전과 영상 처리 분야에서 다수의 논문을 발표했으며, 최근에는 의료 영상 분석 AI 모델 개발에 집중하고 있습니다.</p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- 이벤트 카드 3 -->
-            <div class="card" data-category="네트워킹" data-price="하이브리드" data-venue="하이브리드" data-location="서울" data-month="4">
-                <img src="https://api.a0.dev/assets/image?text=Startup%20networking%20event%20with%20entrepreneurs&aspect=16:9" alt="스타트업 네트워킹 밋업" class="card-image">
-                <div class="card-content">
-                    <div class="card-tags">
-                        <span class="tag tag-hybrid">하이브리드</span>
-                        <span class="tag tag-hybrid">하이브리드</span>
-                        <span class="tag tag-category">네트워킹</span>
-                    </div>
+                <!-- 위치 정보 및 지도 -->
+                <div class="section map-container">
+                    <h2 class="section-title"><i class="fas fa-map-marked-alt"></i> 위치 정보</h2>
                     
-                    <h2 class="card-title">스타트업 네트워킹 밋업</h2>
-                    <p class="card-description">다양한 분야의 스타트업 창업자와 투자자들이 모이는 네트워킹 이벤트입니다.</p>
+                    <iframe class="map-frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2719565228766!2d127.0358486!3d37.5012361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1544cc3b92b%3A0x1e0f7e5fa071610c!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDthYztl6TrnoDroZwgMTIz!5e0!3m2!1sko!2skr!4v1613562319611!5m2!1sko!2skr"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
                     
-                    <div class="card-details">
-                        <div class="card-detail-item">
-                            <i class="far fa-calendar-alt card-detail-icon"></i>
-                            <span class="card-detail-text">2025년 4월 10일</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-map-marker-alt card-detail-icon"></i>
-                            <span class="card-detail-text">서울</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-tag card-detail-icon"></i>
-                            <span class="card-detail-text">10,000원</span>
+                    <div class="address">
+                        <i class="fas fa-map-pin"></i>
+                        <div>
+                            <p>서울 강남구 테헤란로 123 AI센터 5층</p>
+                            <p style="margin-top: 8px; font-size: 14px; color: #666;">
+                                <i class="fas fa-subway" style="margin-right: 6px; color: #3498db;"></i> 지하철: 2호선 강남역 4번 출구에서 도보 5분
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- 이벤트 카드 4 -->
-            <div class="card" data-category="세미나" data-price="하이브리드" data-venue="하이브리드" data-location="경기" data-month="3">
-                <img src="https://api.a0.dev/assets/image?text=React%20Native%20mobile%20app%20development%20seminar&aspect=16:9" alt="실전 React Native 세미나" class="card-image">
-                <div class="card-content">
-                    <div class="card-tags">
-                        <span class="tag tag-hybrid">하이브리드</span>
-                        <span class="tag tag-hybrid">하이브리드</span>
-                        <span class="tag tag-category">세미나</span>
+                <!-- 주최자 및 오거나이저 정보 -->
+                <div class="organizer-container">
+                    <!-- 주최자 정보 -->
+                    <div class="organizer-section">
+                        <h2 class="section-title"><i class="fas fa-user-tie"></i> 주최자 정보</h2>
+                        
+                        <div class="profile-info">
+                            <img src="https://api.a0.dev/assets/image?text=AI%20Developer%20Association%20logo&aspect=1:1" alt="AI 개발자 협회" class="profile-image">
+                            <div class="profile-details">
+                                <h3 class="profile-name">AI 개발자 협회</h3>
+                                <p class="profile-email"><i class="far fa-envelope"></i> contact@aidevassoc.org</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <h2 class="card-title">실전 React Native 세미나</h2>
-                    <p class="card-description">모바일 앱 개발을 위한 React Native의 핵심 개념과 실전 기술을 배웁니다.</p>
-                    
-                    <div class="card-details">
-                        <div class="card-detail-item">
-                            <i class="far fa-calendar-alt card-detail-icon"></i>
-                            <span class="card-detail-text">2025년 3월 5일 ~ 2025년 3월 6일</span>
+                    <!-- 오거나이저 정보 -->
+                    <div class="organizer-section">
+                        <h2 class="section-title"><i class="fas fa-users"></i> 오거나이저 정보</h2>
+                        
+                        <div class="profile-info">
+                            <img src="https://api.a0.dev/assets/image?text=Professional%20event%20organizer%20male&aspect=1:1" alt="정현우" class="profile-image">
+                            <div class="profile-details">
+                                <h3 class="profile-name">정현우</h3>
+                                <p class="profile-email"><i class="far fa-envelope"></i> hyunwoo.jung@aidevassoc.org</p>
+                            </div>
                         </div>
                         
-                        <div class="card-detail-item">
-                            <i class="fas fa-map-marker-alt card-detail-icon"></i>
-                            <span class="card-detail-text">경기</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-tag card-detail-icon"></i>
-                            <span class="card-detail-text">30,000원</span>
+                        <div class="profile-info">
+                            <img src="https://api.a0.dev/assets/image?text=Professional%20event%20organizer%20female&aspect=1:1" alt="한지민" class="profile-image">
+                            <div class="profile-details">
+                                <h3 class="profile-name">한지민</h3>
+                                <p class="profile-email"><i class="far fa-envelope"></i> jimin.han@aidevassoc.org</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- 문의하기 버튼 -->
+                <a href="#" class="contact-button"><i class="fas fa-envelope"></i> 이벤트 문의하기</a>
             </div>
 
-            <!-- 이벤트 카드 5 -->
-            <div class="card" data-category="전시회" data-price="유료" data-venue="오프라인" data-location="부산" data-month="2 3">
-                <img src="https://api.a0.dev/assets/image?text=Digital%20art%20exhibition%20with%20colorful%20displays&aspect=16:9" alt="디지털 아트 전시회" class="card-image">
-                <div class="card-content">
-                    <div class="card-tags">
-                        <span class="tag tag-paid">유료</span>
-                        <span class="tag tag-offline">오프라인</span>
-                        <span class="tag tag-category">전시회</span>
+            <!-- 티켓 정보 섹션 (오른쪽 고정) -->
+            <div class="ticket-section">
+                <h2 class="section-title"><i class="fas fa-ticket-alt"></i> 티켓 정보</h2>
+                
+                <!-- 일반 티켓 -->
+                <div class="ticket-card">
+                    <div class="ticket-header">
+                        <h3 class="ticket-name">일반 티켓</h3>
+                        <span class="ticket-stock">잔여: 89석</span>
                     </div>
                     
-                    <h2 class="card-title">디지털 아트 전시회</h2>
-                    <p class="card-description">국내외 유명 디지털 아티스트들의 작품을 감상할 수 있는 전시회입니다.</p>
-                    
-                    <div class="card-details">
-                        <div class="card-detail-item">
-                            <i class="far fa-calendar-alt card-detail-icon"></i>
-                            <span class="card-detail-text">2025년 2월 25일 ~ 2025년 3월 25일</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-map-marker-alt card-detail-icon"></i>
-                            <span class="card-detail-text">부산</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-tag card-detail-icon"></i>
-                            <span class="card-detail-text">15,000원</span>
-                        </div>
+                    <div class="ticket-price-container">
+                        <span class="ticket-original-price">220,000원</span>
+                        <span class="ticket-price">187,000원</span>
+                        <span class="ticket-discount">15% 할인</span>
                     </div>
+                    
+                    <p class="ticket-details">컨퍼런스 2일 참가권, 점심식사, 굿즈 패키지 포함</p>
+                    <p class="ticket-deadline">판매 마감: D-30 (2025년 2월 13일 23:59)</p>
+                    
+                    <a href="#" class="buy-button">구매하기</a>
                 </div>
-            </div>
-
-            <!-- 이벤트 카드 6 -->
-            <div class="card" data-category="페스티벌" data-price="유료" data-venue="오프라인" data-location="인천" data-month="4">
-                <img src="https://api.a0.dev/assets/image?text=Music%20festival%20with%20colorful%20stage%20and%20crowd&aspect=16:9" alt="음악 페스티벌 2025" class="card-image">
-                <div class="card-content">
-                    <div class="card-tags">
-                        <span class="tag tag-paid">유료</span>
-                        <span class="tag tag-offline">오프라인</span>
-                        <span class="tag tag-category">페스티벌</span>
+                
+                <!-- VIP 티켓 -->
+                <div class="ticket-card">
+                    <div class="ticket-header">
+                        <h3 class="ticket-name">VIP 티켓</h3>
+                        <span class="ticket-stock low">잔여: 12석</span>
                     </div>
                     
-                    <h2 class="card-title">음악 페스티벌 2025</h2>
-                    <p class="card-description">다양한 장르의 음악을 즐길 수 있는 봄맞이 페스티벌입니다.</p>
-                    
-                    <div class="card-details">
-                        <div class="card-detail-item">
-                            <i class="far fa-calendar-alt card-detail-icon"></i>
-                            <span class="card-detail-text">2025년 4월 20일 ~ 2025년 4월 22일</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-map-marker-alt card-detail-icon"></i>
-                            <span class="card-detail-text">인천</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-tag card-detail-icon"></i>
-                            <span class="card-detail-text">80,000원</span>
-                        </div>
+                    <div class="ticket-price-container">
+                        <span class="ticket-original-price">350,000원</span>
+                        <span class="ticket-price">297,500원</span>
+                        <span class="ticket-discount">15% 할인</span>
                     </div>
+                    
+                    <p class="ticket-details">컨퍼런스 2일 참가권, 점심식사, 프리미엄 굿즈 패키지, 발표자 네트워킹 세션 참여 기회, 전용 라운지 이용</p>
+                    <p class="ticket-deadline">판매 마감: D-15 (2025년 2월 28일 23:59)</p>
+                    
+                    <a href="#" class="buy-button">구매하기</a>
                 </div>
-            </div>
-
-            <!-- 이벤트 카드 7 -->
-            <div class="card" data-category="세미나" data-price="무료" data-venue="온라인" data-location="온라인" data-month="3">
-                <img src="https://api.a0.dev/assets/image?text=Blockchain%20technology%20forum%20with%20digital%20connections&aspect=16:9" alt="블록체인 기술 포럼" class="card-image">
-                <div class="card-content">
-                    <div class="card-tags">
-                        <span class="tag tag-free">무료</span>
-                        <span class="tag tag-online">온라인</span>
-                        <span class="tag tag-category">세미나</span>
-                    </div>
-                    
-                    <h2 class="card-title">블록체인 기술 포럼</h2>
-                    <p class="card-description">블록체인 기술의 최신 동향과 실제 활용 사례를 소개하는 포럼입니다.</p>
-                    
-                    <div class="card-details">
-                        <div class="card-detail-item">
-                            <i class="far fa-calendar-alt card-detail-icon"></i>
-                            <span class="card-detail-text">2025년 3월 18일 ~ 2025년 3월 19일</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-map-marker-alt card-detail-icon"></i>
-                            <span class="card-detail-text">온라인</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 이벤트 카드 8 -->
-            <div class="card" data-category="세미나" data-price="하이브리드" data-venue="하이브리드" data-location="서울" data-month="5">
-                <img src="https://api.a0.dev/assets/image?text=Investment%20seminar%20for%20startup%20founders&aspect=16:9" alt="창업자를 위한 투자 세미나" class="card-image">
-                <div class="card-content">
-                    <div class="card-tags">
-                        <span class="tag tag-hybrid">하이브리드</span>
-                        <span class="tag tag-hybrid">하이브리드</span>
-                        <span class="tag tag-category">세미나</span>
-                    </div>
-                    
-                    <h2 class="card-title">창업자를 위한 투자 세미나</h2>
-                    <p class="card-description">스타트업 투자 유치를 위한 실전 전략과 팁을 배우는 세미나입니다.</p>
-                    
-                    <div class="card-details">
-                        <div class="card-detail-item">
-                            <i class="far fa-calendar-alt card-detail-icon"></i>
-                            <span class="card-detail-text">2025년 5월 2일</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-map-marker-alt card-detail-icon"></i>
-                            <span class="card-detail-text">서울</span>
-                        </div>
-                        
-                        <div class="card-detail-item">
-                            <i class="fas fa-tag card-detail-icon"></i>
-                            <span class="card-detail-text">20,000원</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- "결과 없음" 메시지 -->
-            <div class="no-events-container" id="no-events">
-                <i class="fas fa-search no-events-icon"></i>
-                <p class="no-events-text">검색 결과가 없습니다.</p>
-                <p class="no-events-subtext">다른 검색어나 필터 옵션을 사용해 보세요.</p>
             </div>
         </div>
     </div>
-
-    <script>
-        // 필터링 및 검색 관련 상태
-        let selectedCategory = '전체';
-        let selectedPrice = '전체';
-        let selectedVenue = '전체';
-        let selectedLocation = '전체';
-        let selectedMonth = '전체';
-        let searchQuery = '';
-        let isFilterOpen = false;
-
-        // 필터 섹션 토글 기능
-        const filterToggleBtn = document.getElementById('filter-toggle-btn');
-        const filtersContainer = document.getElementById('filters-container');
-        const filterBtnText = document.getElementById('filter-btn-text');
-        
-        filterToggleBtn.addEventListener('click', function() {
-            isFilterOpen = !isFilterOpen;
-            
-            if (isFilterOpen) {
-                filtersContainer.style.display = 'block';
-                filterBtnText.textContent = '필터 접기';
-                filterToggleBtn.classList.add('active');
-                filterToggleBtn.querySelector('i').className = 'fas fa-times';
-            } else {
-                filtersContainer.style.display = 'none';
-                filterBtnText.textContent = '상세 필터';
-                filterToggleBtn.classList.remove('active');
-                filterToggleBtn.querySelector('i').className = 'fas fa-filter';
-            }
-        });
-
-        // 필터 옵션 클릭 이벤트 처리
-        document.querySelectorAll('.filter-option, .sort-option').forEach(option => {
-            option.addEventListener('click', function() {
-                // 같은 그룹 내에서 선택된 항목을 해제
-                const parent = this.parentNode;
-                parent.querySelectorAll('.selected').forEach(selected => {
-                    selected.classList.remove('selected');
-                });
-                
-                // 클릭한 항목을 선택 상태로 변경
-                this.classList.add('selected');
-                
-                // 필터링 상태 업데이트
-                if (parent.id === 'category-filter') {
-                    selectedCategory = this.getAttribute('data-category');
-                } else if (parent.id === 'price-filter') {
-                    selectedPrice = this.getAttribute('data-price');
-                } else if (parent.id === 'venue-filter') {
-                    selectedVenue = this.getAttribute('data-venue');
-                } else if (parent.id === 'location-filter') {
-                    selectedLocation = this.getAttribute('data-location');
-                } else if (parent.id === 'month-filter') {
-                    selectedMonth = this.getAttribute('data-month');
-                }
-                
-                // 필터링 적용
-                applyFilters();
-            });
-        });
-
-        // 검색 기능 처리
-        const searchInput = document.getElementById('search-input');
-        const clearSearchBtn = document.getElementById('clear-search');
-        
-        searchInput.addEventListener('input', function() {
-            searchQuery = this.value.toLowerCase().trim();
-            clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
-            applyFilters();
-        });
-        
-        clearSearchBtn.addEventListener('click', function() {
-            searchInput.value = '';
-            searchQuery = '';
-            this.style.display = 'none';
-            applyFilters();
-        });
-
-        // 필터링 적용 함수
-        function applyFilters() {
-            const cards = document.querySelectorAll('.card');
-            let visibleCount = 0;
-            
-            cards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                const price = card.getAttribute('data-price');
-                const venue = card.getAttribute('data-venue');
-                const location = card.getAttribute('data-location');
-                const month = card.getAttribute('data-month');
-                
-                const title = card.querySelector('.card-title').textContent.toLowerCase();
-                const description = card.querySelector('.card-description').textContent.toLowerCase();
-                
-                const matchesCategory = selectedCategory === '전체' || category === selectedCategory;
-                const matchesPrice = selectedPrice === '전체' || price === selectedPrice;
-                const matchesVenue = selectedVenue === '전체' || venue === selectedVenue;
-                const matchesLocation = selectedLocation === '전체' || location === selectedLocation;
-                const matchesMonth = selectedMonth === '전체' || month.includes(selectedMonth);
-                const matchesSearch = !searchQuery || title.includes(searchQuery) || description.includes(searchQuery);
-                
-                const isVisible = matchesCategory && matchesPrice && matchesVenue && matchesLocation && matchesMonth && matchesSearch;
-                
-                if (isVisible) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-            
-            // "결과 없음" 메시지 표시 여부
-            const noEventsContainer = document.getElementById('no-events');
-            if (visibleCount === 0) {
-                noEventsContainer.style.display = 'block';
-            } else {
-                noEventsContainer.style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>

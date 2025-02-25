@@ -58,22 +58,6 @@ document.querySelectorAll('.filter-option, .sort-option').forEach(option => {
     });
 });
 
-// 검색 기능 처리
-const searchInput = document.getElementById('search-input');
-const clearSearchBtn = document.getElementById('clear-search');
-
-searchInput.addEventListener('input', function () {
-    searchQuery = this.value.toLowerCase().trim();
-    clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
-    applyFilters();
-});
-
-clearSearchBtn.addEventListener('click', function () {
-    searchInput.value = '';
-    searchQuery = '';
-    this.style.display = 'none';
-    applyFilters();
-});
 
 // 필터링 적용 함수
 function applyFilters() {
@@ -114,4 +98,8 @@ function applyFilters() {
     } else {
         noEventsContainer.style.display = 'none';
     }
+
 }
+document.getElementById('card').addEventListener('click', function () {
+    location.href = `../event/detail.html`;
+});
