@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
@@ -29,10 +29,12 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../static/css/home/index.css">
+    <link rel="stylesheet" href="../../../static/css/home/index.css">
+    <link rel="stylesheet" href="../../../static/css/event/ticket-buy-complete.css">
 </head>
 
 <body>
@@ -43,7 +45,7 @@
                 <div class="col-lg-2 col-sm-4 col-md-2 col-xs-12">
                     <div class="logo">
                         <a href="../home/index.html"><img src="../../../static/images/logo.png" class="img-responsive"
-                            alt=""></a>
+                                alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">
@@ -167,123 +169,40 @@
             </div>
         </div>
     </div>
-    <!-- header-close -->
-    <div class="container">
-        <!-- 상단 배너 슬라이더 -->
-        <div class="banner-slider swiper mainBanner">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%201&aspect=16:9"
-                        alt="Event Banner 1">
+
+        <div class="buy-complete-container">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+
+            <h1>티켓 구매가 완료되었습니다</h1>
+
+            <div class="ticket-info">
+                <h2>구매 정보</h2>
+
+                <div class="info-row">
+                    <div class="info-label">이벤트명</div>
+                    <div class="info-value">AI 개발자 컨퍼런스 2025: 미래를 코딩하다</div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%202&aspect=16:9"
-                        alt="Event Banner 2">
+
+                <div class="info-row">
+                    <div class="info-label">티켓 종류</div>
+                    <div class="info-value">일반 티켓</div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%203&aspect=16:9"
-                        alt="Event Banner 3">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%204&aspect=16:9"
-                        alt="Event Banner 4">
+
+                <div class="info-row">
+                    <div class="info-label">이벤트 일정</div>
+                    <div class="info-value">2025년 3월 15일 ~ 2025년 3월 16일</div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+
+            <div class="notice">
+                <i class="fas fa-info-circle"></i>
+                구매하신 티켓 정보가 이메일로 발송되었습니다. 마이페이지에서도 확인하실 수 있습니다.
+            </div>
+
+            <a href="../event/list.html" class="button">이벤트 페이지로 돌아가기</a>
         </div>
-
-        <!-- Eventiq 추천 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Eventiq 추천 이벤트</h2>
-            </div>
-            <div class="swiper recommendedSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="event-card">
-                            <img class="event-image"
-                                src="https://api.a0.dev/assets/image?text=music%20festival%201&aspect=4:3" alt="Event">
-                            <div class="event-content">
-                                <h3 class="event-title">2024 봄 뮤직 페스티벌</h3>
-                                <p class="event-info">2024.03.15 ~ 2024.03.17</p>
-                                <p class="event-price">88,000원</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 추가 6개의 추천 이벤트 -->
-                    <div class="swiper-slide">
-                        <div class="event-card">
-                            <img class="event-image" src="https://api.a0.dev/assets/image?text=concert%202&aspect=4:3"
-                                alt="Event">
-                            <div class="event-content">
-                                <h3 class="event-title">K-POP 슈퍼 콘서트</h3>
-                                <p class="event-info">2024.03.20</p>
-                                <p class="event-price">110,000원</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 추가 이벤트 카드들... -->
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <!-- 맞춤 추천 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">홍길동님이 관심 가질만한 이벤트</h2>
-            </div>
-            <div class="swiper personalizedSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 10개의 맞춤 추천 이벤트 -->
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <!-- 이번 달 인기 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">3월 가장 인기있는 이벤트</h2>
-            </div>
-            <div class="ranking-list">
-                <!-- TOP 10 인기 이벤트 -->
-            </div>
-        </section>
-
-        <!-- 최근 올라온 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">최근 올라온 이벤트</h2>
-            </div>
-            <div class="swiper recentSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 최신 10개 이벤트 -->
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <!-- 마감 임박 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">마감 임박 이벤트</h2>
-            </div>
-            <div class="swiper deadlineSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 마감 임박 10개 이벤트 -->
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-    </div>
-
     <!-- footer start -->
     <div class="footer">
         <div class="container">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
@@ -30,9 +30,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../static/css/home/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/home/index.css">
+    <link rel="stylesheet" href="../../../static/css/event/ticket-buy.css">
 </head>
 
 <body>
@@ -43,7 +45,7 @@
                 <div class="col-lg-2 col-sm-4 col-md-2 col-xs-12">
                     <div class="logo">
                         <a href="../home/index.html"><img src="../../../static/images/logo.png" class="img-responsive"
-                            alt=""></a>
+                                alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">
@@ -167,123 +169,178 @@
             </div>
         </div>
     </div>
-    <!-- header-close -->
+
     <div class="container">
-        <!-- 상단 배너 슬라이더 -->
-        <div class="banner-slider swiper mainBanner">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%201&aspect=16:9"
-                        alt="Event Banner 1">
+        <!-- 헤더 섹션 -->
+        <div class="header">
+            <h1>티켓 구매</h1>
+            <div class="purchase-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">티켓 선택</div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%202&aspect=16:9"
-                        alt="Event Banner 2">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%203&aspect=16:9"
-                        alt="Event Banner 3">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%204&aspect=16:9"
-                        alt="Event Banner 4">
+                <div class="step inactive">
+                    <div class="step-number">2</div>
+                    <div class="step-text">결제 완료</div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
 
-        <!-- Eventiq 추천 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Eventiq 추천 이벤트</h2>
-            </div>
-            <div class="swiper recommendedSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="event-card">
-                            <img class="event-image"
-                                src="https://api.a0.dev/assets/image?text=music%20festival%201&aspect=4:3" alt="Event">
-                            <div class="event-content">
-                                <h3 class="event-title">2024 봄 뮤직 페스티벌</h3>
-                                <p class="event-info">2024.03.15 ~ 2024.03.17</p>
-                                <p class="event-price">88,000원</p>
-                            </div>
-                        </div>
+        <!-- 이벤트 정보 섹션 -->
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> 이벤트 정보</h2>
+
+            <div class="event-info">
+                <img src="https://api.a0.dev/assets/image?text=AI%20Conference%20with%20developers%20collaborating&aspect=16:9"
+                    alt="AI 개발자 컨퍼런스 2025" class="event-image">
+
+                <div class="event-details">
+                    <h3 class="event-name">AI 개발자 컨퍼런스 2025: 미래를 코딩하다</h3>
+
+                    <div class="event-meta">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2025년 3월 15일 ~ 2025년 3월 16일</span>
                     </div>
-                    <!-- 추가 6개의 추천 이벤트 -->
-                    <div class="swiper-slide">
-                        <div class="event-card">
-                            <img class="event-image" src="https://api.a0.dev/assets/image?text=concert%202&aspect=4:3"
-                                alt="Event">
-                            <div class="event-content">
-                                <h3 class="event-title">K-POP 슈퍼 콘서트</h3>
-                                <p class="event-info">2024.03.20</p>
-                                <p class="event-price">110,000원</p>
-                            </div>
-                        </div>
+
+                    <div class="event-meta">
+                        <i class="far fa-clock"></i>
+                        <span>09:00 ~ 18:00</span>
                     </div>
-                    <!-- 추가 이벤트 카드들... -->
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
 
-        <!-- 맞춤 추천 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">홍길동님이 관심 가질만한 이벤트</h2>
-            </div>
-            <div class="swiper personalizedSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 10개의 맞춤 추천 이벤트 -->
+                    <div class="event-meta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>서울 강남구 테헤란로 123 AI센터</span>
+                    </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
-        </section>
+        </div>
 
-        <!-- 이번 달 인기 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">3월 가장 인기있는 이벤트</h2>
-            </div>
-            <div class="ranking-list">
-                <!-- TOP 10 인기 이벤트 -->
-            </div>
-        </section>
+        <!-- 티켓 선택 섹션 -->
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-ticket-alt"></i> 티켓 선택</h2>
 
-        <!-- 최근 올라온 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">최근 올라온 이벤트</h2>
-            </div>
-            <div class="swiper recentSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 최신 10개 이벤트 -->
+            <div class="ticket-options">
+                <!-- 일반 티켓 -->
+                <div class="ticket-option" onclick="selectTicket(this, '일반 티켓', 187000, 220000)">
+                    <input type="radio" name="ticket" id="ticket-normal" class="ticket-radio">
+                    <div class="ticket-info">
+                        <label for="ticket-normal" class="ticket-name">일반 티켓</label>
+                        <p class="ticket-description">컨퍼런스 2일 참가권, 점심식사, 굿즈 패키지 포함</p>
+                        <p class="ticket-stock">잔여: 89석</p>
+                    </div>
+                    <div class="ticket-price">
+                        <span class="price-original">220,000원</span>
+                        <span class="price-value">187,000원</span>
+                    </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
 
-        <!-- 마감 임박 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">마감 임박 이벤트</h2>
-            </div>
-            <div class="swiper deadlineSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 마감 임박 10개 이벤트 -->
+                <!-- VIP 티켓 -->
+                <div class="ticket-option" onclick="selectTicket(this, 'VIP 티켓', 297500, 350000)">
+                    <input type="radio" name="ticket" id="ticket-vip" class="ticket-radio">
+                    <div class="ticket-info">
+                        <label for="ticket-vip" class="ticket-name">VIP 티켓</label>
+                        <p class="ticket-description">컨퍼런스 2일 참가권, 점심식사, 프리미엄 굿즈 패키지, 발표자 네트워킹 세션 참여 기회, 전용 라운지 이용</p>
+                        <p class="ticket-stock low">잔여: 12석</p>
+                    </div>
+                    <div class="ticket-price">
+                        <span class="price-original">350,000원</span>
+                        <span class="price-value">297,500원</span>
+                    </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+
+                <!-- 워크샵 패키지 -->
+                <div class="ticket-option" onclick="selectTicket(this, '워크샵 패키지', 240000, 300000)">
+                    <input type="radio" name="ticket" id="ticket-workshop" class="ticket-radio">
+                    <div class="ticket-info">
+                        <label for="ticket-workshop" class="ticket-name">워크샵 패키지</label>
+                        <p class="ticket-description">컨퍼런스 2일 참가권, 점심식사, 굿즈 패키지, 실습 워크샵 참여권 (노트북 지참 필수)</p>
+                        <p class="ticket-stock low">잔여: 8석</p>
+                    </div>
+                    <div class="ticket-price">
+                        <span class="price-original">300,000원</span>
+                        <span class="price-value">240,000원</span>
+                    </div>
+                </div>
+
+                <!-- 학생 티켓 -->
+                <div class="ticket-option" onclick="selectTicket(this, '학생 티켓', 110000, 110000)">
+                    <input type="radio" name="ticket" id="ticket-student" class="ticket-radio">
+                    <div class="ticket-info">
+                        <label for="ticket-student" class="ticket-name">학생 티켓</label>
+                        <p class="ticket-description">컨퍼런스 2일 참가권, 점심식사, 기본 굿즈 포함 (학생증 확인 필요)</p>
+                        <p class="ticket-stock">잔여: 45석</p>
+                    </div>
+                    <div class="ticket-price">
+                        <span class="price-value">110,000원</span>
+                    </div>
+                </div>
+
+                <!-- 무료 체험 티켓 (예시) -->
+                <div class="ticket-option" onclick="selectTicket(this, '무료 체험 티켓', 0, 0)">
+                    <input type="radio" name="ticket" id="ticket-free" class="ticket-radio">
+                    <div class="ticket-info">
+                        <label for="ticket-free" class="ticket-name">무료 체험 티켓</label>
+                        <p class="ticket-description">온라인 세션만 참여 가능한 체험 티켓 (실시간 Q&A 불가)</p>
+                        <p class="ticket-stock">잔여: 무제한</p>
+                    </div>
+                    <div class="ticket-price">
+                        <span class="price-free">무료</span>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+
+        <!-- 쿠폰 섹션 -->
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-ticket-alt"></i> 쿠폰 적용</h2>
+
+            <div class="coupon-section">
+                <div class="coupon-form">
+                    <input type="text" class="coupon-input" placeholder="쿠폰 코드를 입력하세요">
+                    <button class="coupon-button" onclick="applyCoupon()">쿠폰 적용하기</button>
+                </div>
+
+                <div class="applied-coupon" id="appliedCoupon">
+                    <div>
+                        <span class="coupon-name">AI2025</span>
+                        <span class="coupon-discount">10% 할인 쿠폰</span>
+                    </div>
+                    <button class="remove-coupon" onclick="removeCoupon()">삭제</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 결제 정보 섹션 -->
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-receipt"></i> 결제 정보</h2>
+
+            <div class="payment-summary">
+                <div class="summary-row">
+                    <div class="summary-label">티켓 종류</div>
+                    <div class="summary-value" id="summaryTicket">선택한 티켓이 없습니다</div>
+                </div>
+
+                <div class="summary-row">
+                    <div class="summary-label">기본 가격</div>
+                    <div class="summary-value" id="summaryOriginal">0원</div>
+                </div>
+
+                <div class="summary-row">
+                    <div class="summary-label">할인 금액</div>
+                    <div class="summary-value discount-value" id="summaryDiscount">0원</div>
+                </div>
+
+                <div class="summary-row total">
+                    <div class="summary-label">최종 결제 금액</div>
+                    <div class="summary-value" id="summaryTotal">0원</div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="pay-button paid" id="payButton">결제하기</button>
+            </div>
+        </div>
     </div>
-
     <!-- footer start -->
     <div class="footer">
         <div class="container">
@@ -373,6 +430,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <script type="text/javascript" src="../../../static/js/home/swiper-slide.js"></script>
+    <script type="text/javascript" src="../../../static/js/event/ticket-buy.js"></script>
 </body>
 
 </html>

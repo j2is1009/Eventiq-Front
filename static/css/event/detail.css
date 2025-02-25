@@ -1,0 +1,499 @@
+/* 전체 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 0;
+    padding: 32px;
+}
+
+/* 일반 섹션 스타일 */
+.section {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.section-title i {
+    margin-right: 12px;
+    color: #3498db;
+}
+
+/* 레이아웃 구조 */
+.content-layout {
+    display: flex;
+    position: relative;
+}
+
+
+/* 헤더 섹션 스타일 */
+.event-header {
+    display: block;
+    align-items: normal;
+    margin-bottom: 0px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 32px;
+}
+
+.event-banner {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.event-details-container {
+    padding: 32px;
+}
+
+.event-info {
+    margin-bottom: 24px;
+}
+
+.event-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tag-free {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tag-paid {
+    background-color: #FF5722;
+    color: white;
+}
+
+.tag-hybrid-price {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.tag-online {
+    background-color: #2196F3;
+    color: white;
+}
+
+.tag-offline {
+    background-color: #FF9800;
+    color: white;
+}
+
+.tag-hybrid-venue {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.tag-category {
+    background-color: #E0E0E0;
+    color: #333;
+}
+
+.event-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #333;
+    line-height: 1.3;
+}
+
+.event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.event-meta-item {
+    display: flex;
+    align-items: center;
+}
+
+.event-meta-icon {
+    color: #666;
+    margin-right: 8px;
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+.event-meta-text {
+    font-size: 15px;
+    color: #666;
+}
+
+/* 상세 설명 섹션 */
+.event-description {
+    margin-bottom: 32px;
+}
+
+.desc-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+/* 발표자 섹션 */
+.speakers-section {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.speaker-card {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 16px;
+}
+
+.speaker-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
+.speaker-info {
+    flex: 1;
+}
+
+.speaker-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.speaker-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.speaker-bio {
+    font-size: 14px;
+    color: #777;
+}
+
+/* 지도 섹션 */
+.map-container {
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.map-frame {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+}
+
+.address {
+    margin-top: 16px;
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    align-items: flex-start;
+}
+
+.address i {
+    margin-right: 12px;
+    margin-top: 4px;
+    color: #3498db;
+}
+
+/* 티켓 정보 섹션 - 오른쪽 고정 */
+.ticket-section {
+    position: fixed;
+    top: 250px;
+    right: 32px;
+    width: 380px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    z-index: 100;
+}
+
+/* 티켓 정보 */
+.ticket-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+}
+
+.ticket-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.ticket-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.ticket-stock {
+    font-size: 14px;
+    color: #666;
+}
+
+.ticket-stock.low {
+    color: #f44336;
+    font-weight: 600;
+}
+
+.ticket-price-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.ticket-original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    margin-right: 8px;
+}
+
+.ticket-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+.ticket-discount {
+    margin-left: 8px;
+    padding: 4px 8px;
+    background-color: #e53935;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.ticket-details {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.ticket-deadline {
+    color: #e53935;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.buy-button {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.buy-button:hover {
+    background-color: #2980b9;
+}
+
+.buy-button.external {
+    background-color: #4CAF50;
+}
+
+.buy-button.external:hover {
+    background-color: #3d8b40;
+}
+
+.buy-button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 주최자 및 오거나이저 정보 영역 */
+.organizer-container {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.organizer-section {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+/* 주최자 및 오거나이저 정보 */
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.profile-info:last-child {
+    margin-bottom: 0;
+}
+
+.profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.profile-email {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.profile-email i {
+    margin-right: 6px;
+    color: #3498db;
+}
+
+/* 문의하기 버튼 */
+.contact-button {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.contact-button:hover {
+    background-color: #703688;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1200px) {
+    .content-layout {
+        flex-direction: column;
+    }
+    
+    .main-content {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .ticket-section {
+        position: static;
+        width: 100%;
+        max-height: none;
+        margin-bottom: 32px;
+        margin-top: 32px;
+    }
+    
+    .organizer-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .event-details-container {
+        padding: 24px;
+    }
+
+    .event-title {
+        font-size: 24px;
+    }
+
+    .section {
+        padding: 24px;
+    }
+    
+    .event-banner {
+        height: 300px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .container {
+        width: 1400px;
+        margin-left: 50px;
+    }
+}

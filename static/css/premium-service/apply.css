@@ -1,0 +1,515 @@
+:root {
+    --primary-color: #4a6fa1;
+    --secondary-color: #2a4365;
+    --light-bg: #f5f7fa;
+    --border-radius: 8px;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--light-bg);
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Tab Navigation */
+.tab-container {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.apply-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: #666;
+}
+
+
+.login-required {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.login-form {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.login-form h2 {
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #555;
+}
+
+.section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid #eee;
+}
+
+.section-header i {
+    color: var(--primary-color);
+    margin-right: var(--spacing-xs);
+    font-size: 20px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0px;
+}
+
+
+.section-title > h2 {
+    margin-bottom: 0px;
+}
+
+.info-box {
+    background-color: #f8fafc;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--primary-color);
+}
+
+.info-text {
+    margin-bottom: var(--spacing-sm);
+    font-size: 15px;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.info-list-item {
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    font-size: 15px;
+}
+
+.service-info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-info-label {
+    width: 150px;
+    color: #666;
+    font-size: 15px;
+}
+
+.service-info-value {
+    font-weight: 500;
+    font-size: 16px;
+    flex: 1;
+}
+
+.service-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.edit-button {
+    border: 1px solid #ddd;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #666;
+    margin-left: var(--spacing-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.edit-button:hover {
+    border-color: #999;
+    color: #333;
+}
+
+.pricing-row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+    font-size: 16px;
+}
+
+.pricing-label {
+    color: #666;
+}
+
+.pricing-value {
+    font-weight: 500;
+}
+
+.discount-text {
+    color: #e53e3e;
+}
+
+.divider {
+    height: 1px;
+    background-color: #eee;
+    margin: var(--spacing-sm) 0;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.total-value {
+    color: var(--primary-color);
+}
+
+.notice-box {
+    background-color: rgba(74, 111, 161, 0.08);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+}
+
+.notice-title {
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.payment-methods {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.payment-method {
+    flex: 1;
+    border: 2px solid #eee;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.payment-method:hover {
+    border-color: #ccc;
+}
+
+.payment-method.selected {
+    border-color: var(--primary-color);
+    background-color: rgba(74, 111, 161, 0.05);
+}
+
+.payment-method i {
+    font-size: 24px;
+    margin-bottom: var(--spacing-xs);
+    color: #666;
+}
+
+.payment-method.selected i {
+    color: var(--primary-color);
+}
+
+.payment-method-title {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.bank-info {
+    background-color: #f8fafc;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.bank-info-title {
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+}
+
+.bank-info-title i {
+    color: var(--primary-color);
+    margin-right: var(--spacing-xs);
+}
+
+.bank-info-row {
+    display: flex;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid #eee;
+}
+
+.bank-info-label {
+    width: 100px;
+    color: #666;
+}
+
+.bank-info-value {
+    font-weight: 500;
+    flex: 1;
+}
+
+.copy-button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-left: var(--spacing-xs);
+    font-size: 18px;
+}
+
+.bank-notice {
+    background-color: rgba(74, 111, 161, 0.08);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    font-size: 14px;
+}
+
+.bank-notice > p {
+    margin-bottom: 0px;
+}
+
+.payment-button {
+    width: 100%;
+    padding: var(--spacing-sm);
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-top: var(--spacing-sm);
+    transition: all 0.3s;
+}
+
+.payment-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.completion-container {
+    text-align: center;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.completion-icon {
+    font-size: 70px;
+    color: #4CAF50;
+    margin-bottom: var(--spacing-md);
+}
+
+.completion-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.completion-message {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.completion-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.completion-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Subscription period selection styles */
+.subscription-periods {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.subscription-period {
+    flex: 1;
+    border: 2px solid #eee;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.subscription-period:hover {
+    border-color: #ccc;
+}
+
+.subscription-period.selected {
+    border-color: var(--primary-color);
+    background-color: rgba(74, 111, 161, 0.05);
+}
+
+.period-duration {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.discount-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e53e3e;
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.period-price {
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.period-monthly-price {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.best-value {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+}

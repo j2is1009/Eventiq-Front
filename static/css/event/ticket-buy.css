@@ -1,0 +1,377 @@
+/* 전체 스타일 */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+background-color: #f5f5f5;
+color: #333;
+line-height: 1.6;
+}
+
+.container {
+max-width: 1000px;
+margin: 40px auto;
+padding: 0 20px;
+}
+
+/* 헤더 스타일 */
+.header {
+text-align: center;
+margin-bottom: 30px;
+}
+
+.header h1 {
+font-size: 24px;
+font-weight: 700;
+margin-bottom: 10px;
+color: #333;
+}
+
+.purchase-steps {
+display: flex;
+justify-content: center;
+margin-bottom: 30px;
+}
+
+.step {
+display: flex;
+align-items: center;
+margin: 0 15px;
+}
+
+.step-number {
+width: 30px;
+height: 30px;
+border-radius: 50%;
+background-color: #3498db;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 600;
+margin-right: 10px;
+}
+
+.step.inactive .step-number {
+background-color: #ccc;
+}
+
+.step-text {
+font-size: 14px;
+color: #333;
+}
+
+.step.inactive .step-text {
+color: #999;
+}
+
+/* 섹션 스타일 */
+.section {
+background-color: #fff;
+border-radius: 12px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+padding: 30px;
+margin-bottom: 30px;
+}
+
+.section-title {
+font-size: 18px;
+font-weight: 700;
+margin-bottom: 20px;
+color: #333;
+display: flex;
+align-items: center;
+}
+
+.section-title i {
+margin-right: 10px;
+color: #3498db;
+}
+
+/* 이벤트 정보 섹션 */
+.event-info {
+display: flex;
+margin-bottom: 20px;
+}
+
+.event-image {
+width: 180px;
+height: 120px;
+border-radius: 8px;
+object-fit: cover;
+margin-right: 20px;
+flex-shrink: 0;
+}
+
+.event-details {
+flex: 1;
+}
+
+.event-name {
+font-size: 20px;
+font-weight: 700;
+margin-bottom: 10px;
+}
+
+.event-meta {
+font-size: 14px;
+color: #666;
+margin-bottom: 5px;
+}
+
+.event-meta i {
+width: 20px;
+color: #666;
+margin-right: 5px;
+}
+
+/* 티켓 선택 섹션 */
+.ticket-options {
+margin-bottom: 20px;
+}
+
+.ticket-option {
+display: flex;
+align-items: flex-start;
+padding: 15px;
+border: 1px solid #eee;
+border-radius: 8px;
+margin-bottom: 15px;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+
+.ticket-option:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-option.selected {
+border-color: #3498db;
+background-color: #f0f8ff;
+}
+
+.ticket-radio {
+margin-right: 15px;
+margin-top: 3px;
+}
+
+.ticket-info {
+flex: 1;
+}
+
+.ticket-name {
+font-size: 16px;
+font-weight: 600;
+margin-bottom: 5px;
+}
+
+.ticket-description {
+font-size: 14px;
+color: #666;
+margin-bottom: 10px;
+}
+
+.ticket-stock {
+font-size: 13px;
+color: #666;
+}
+
+.ticket-stock.low {
+color: #e74c3c;
+}
+
+.ticket-price {
+text-align: right;
+min-width: 100px;
+}
+
+.price-value {
+font-size: 18px;
+font-weight: 700;
+color: #333;
+}
+
+.price-original {
+font-size: 14px;
+color: #999;
+text-decoration: line-through;
+margin-right: 5px;
+}
+
+.price-free {
+font-size: 18px;
+font-weight: 700;
+color: #2ecc71;
+}
+
+/* 쿠폰 섹션 */
+.coupon-section {
+margin-bottom: 20px;
+}
+
+.coupon-form {
+display: flex;
+margin-bottom: 15px;
+}
+
+.coupon-input {
+flex: 1;
+padding: 12px 15px;
+border: 1px solid #ddd;
+border-radius: 6px 0 0 6px;
+font-size: 14px;
+}
+
+.coupon-button {
+padding: 12px 20px;
+background-color: #3498db;
+color: white;
+border: none;
+border-radius: 0 6px 6px 0;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.2s ease;
+}
+
+.coupon-button:hover {
+background-color: #2980b9;
+}
+
+.applied-coupon {
+display: none;
+padding: 10px 15px;
+background-color: #f0f8ff;
+border: 1px solid #bde0ff;
+border-radius: 6px;
+font-size: 14px;
+}
+
+.applied-coupon.visible {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.coupon-name {
+font-weight: 600;
+color: #3498db;
+}
+
+.coupon-discount {
+color: #666;
+}
+
+.remove-coupon {
+color: #e74c3c;
+cursor: pointer;
+border: none;
+background: none;
+font-size: 14px;
+}
+
+/* 결제 정보 섹션 */
+.payment-summary {
+padding: 20px;
+background-color: #f9f9f9;
+border-radius: 8px;
+}
+
+.summary-row {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+
+.summary-label {
+font-size: 14px;
+color: #666;
+}
+
+.summary-value {
+font-size: 14px;
+font-weight: 500;
+color: #333;
+}
+
+.summary-row.total {
+margin-top: 15px;
+padding-top: 15px;
+border-top: 1px solid #eee;
+}
+
+.summary-row.total .summary-label,
+.summary-row.total .summary-value {
+font-size: 18px;
+font-weight: 700;
+color: #333;
+}
+
+.discount-value {
+color: #e74c3c;
+}
+
+/* 버튼 스타일 */
+.button-container {
+text-align: center;
+margin-top: 30px;
+}
+
+.pay-button {
+padding: 15px 40px;
+font-size: 16px;
+font-weight: 600;
+color: white;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+
+.pay-button.paid {
+background-color: #3498db;
+}
+
+.pay-button.paid:hover {
+background-color: #2980b9;
+}
+
+.pay-button.free {
+background-color: #2ecc71;
+}
+
+.pay-button.free:hover {
+background-color: #27ae60;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+.event-info {
+    flex-direction: column;
+}
+
+.event-image {
+    width: 100%;
+    height: 180px;
+    margin-right: 0;
+    margin-bottom: 15px;
+}
+
+.ticket-option {
+    flex-direction: column;
+}
+
+.ticket-radio {
+    margin-bottom: 10px;
+}
+
+.ticket-price {
+    text-align: left;
+    margin-top: 10px;
+}
+}
