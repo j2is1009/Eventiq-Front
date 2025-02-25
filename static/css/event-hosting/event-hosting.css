@@ -313,6 +313,9 @@
 }
 
 /* 티켓 설정 페이지 스타일 */
+#ticketFormContainer > button {
+    display: block !important;
+}
 .toggle-container {
     display: flex;
     align-items: center;

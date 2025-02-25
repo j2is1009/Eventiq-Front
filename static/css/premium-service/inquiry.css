@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.advertis-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.advertis-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: #666;
+}
+
+.navigation-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: white;
+    color: #4A90E2;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover {
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.nav-link i {
+    margin-right: 8px;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+.form-input:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.option-item {
+    flex-basis: calc(33.333% - 10px);
+    position: relative;
+    min-width: 200px;
+}
+
+.option-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.option-label {
+    display: block;
+    padding: 15px;
+    background-color: #f0f5ff;
+    border: 2px solid #dfecff;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.option-input:checked+.option-label {
+    background-color: #e1efff;
+    border-color: #4A90E2;
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
+}
+
+.option-label:hover {
+    background-color: #e6eeff;
+}
+
+.option-icon {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #4A90E2;
+}
+
+.cost-calculator {
+    background-color: #f5f9ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.cost-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.cost-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.cost-label {
+    color: #555;
+}
+
+.cost-value {
+    font-weight: 500;
+    color: #333;
+}
+
+.cost-total {
+    font-size: 20px;
+    font-weight: 600;
+    color: #4A90E2;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.refund-policy {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff8e1;
+    border-left: 4px solid #ffc107;
+    border-radius: 4px;
+}
+
+.refund-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.refund-text {
+    color: #555;
+    font-size: 14px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #4A90E2;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3A7BC0;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.btn-secondary {
+    background-color: #e9ecef;
+    color: #555;
+}
+
+.btn-secondary:hover {
+    background-color: #dee2e6;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    transition: all 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.modal-body {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-icon {
+    font-size: 60px;
+    color: #4A90E2;
+    margin-bottom: 20px;
+}
+
+/* Login Modal */
+.login-required {
+    text-align: center;
+}
+
+.login-icon {
+    font-size: 50px;
+    color: #ffc107;
+    margin-bottom: 20px;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.login-text {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Date picker style overrides */
+.flatpickr-calendar {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.flatpickr-day.selected {
+    background: #4A90E2;
+    border-color: #4A90E2;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .option-item {
+        flex-basis: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .advertis-container {
+        padding: 20px 15px;
+    }
+
+    .form-container {
+        padding: 25px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .option-item {
+        flex-basis: 100%;
+    }
+
+    .navigation-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn {
+        padding: 12px 20px;
+    }
+}

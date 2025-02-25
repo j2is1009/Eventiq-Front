@@ -32,7 +32,9 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../static/css/home/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/premium-service/inquiry.css">
 </head>
 
 <body>
@@ -43,7 +45,7 @@
                 <div class="col-lg-2 col-sm-4 col-md-2 col-xs-12">
                     <div class="logo">
                         <a href="../home/index.html"><img src="../../../static/images/logo.png" class="img-responsive"
-                            alt=""></a>
+                                alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">
@@ -51,7 +53,8 @@
                         <div id="navigation">
                             <ul>
                                 <li class="active"><a href="index.html" title="">이벤트 둘러보기</a></li>
-                                <li class="active"><a href="../event-hosting/event-hosting.html" title="">이벤트 주최하기</a></li>
+                                <li class="active"><a href="../event-hosting/event-hosting.html" title="">이벤트 주최하기</a>
+                                </li>
                                 <li class="active"><a href="../premium-service/info.html" title="">유료 서비스</a></li>
                             </ul>
                         </div>
@@ -167,121 +170,172 @@
             </div>
         </div>
     </div>
-    <!-- header-close -->
-    <div class="container">
-        <!-- 상단 배너 슬라이더 -->
-        <div class="banner-slider swiper mainBanner">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%201&aspect=16:9"
-                        alt="Event Banner 1">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%202&aspect=16:9"
-                        alt="Event Banner 2">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%203&aspect=16:9"
-                        alt="Event Banner 3">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://api.a0.dev/assets/image?text=exciting%20concert%20banner%204&aspect=16:9"
-                        alt="Event Banner 4">
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+
+    <div class="advertis-container">
+        <div class="advertis-header">
+            <h1 class="page-title">광고 문의하기</h1>
+            <p class="page-subtitle">효과적인 광고 솔루션으로 비즈니스를 성장시키세요</p>
         </div>
 
-        <!-- Eventiq 추천 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Eventiq 추천 이벤트</h2>
-            </div>
-            <div class="swiper recommendedSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="event-card">
-                            <img class="event-image"
-                                src="https://api.a0.dev/assets/image?text=music%20festival%201&aspect=4:3" alt="Event">
-                            <div class="event-content">
-                                <h3 class="event-title">2024 봄 뮤직 페스티벌</h3>
-                                <p class="event-info">2024.03.15 ~ 2024.03.17</p>
-                                <p class="event-price">88,000원</p>
+        <div class="navigation-links">
+            <a href="#" class="nav-link" id="cost-guide-link">
+                <i class="fas fa-info-circle"></i> 광고 비용 안내
+            </a>
+        </div>
+
+        <div class="form-container">
+            <form id="adInquiryForm">
+                <!-- Ad Type Selection -->
+                <div class="form-section">
+                    <h3 class="section-title">신청할 광고 종류 선택</h3>
+                    <div class="form-options">
+                        <div class="option-item">
+                            <input type="radio" name="adType" id="adType1" class="option-input" value="미정">
+                            <label for="adType1" class="option-label">
+                                <i class="fas fa-question-circle option-icon"></i>
+                                미정
+                            </label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="adType" id="adType2" class="option-input" value="메일">
+                            <label for="adType2" class="option-label">
+                                <i class="fas fa-envelope option-icon"></i>
+                                메일
+                            </label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="adType" id="adType3" class="option-input" value="SMS">
+                            <label for="adType3" class="option-label">
+                                <i class="fas fa-sms option-icon"></i>
+                                SMS
+                            </label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="adType" id="adType4" class="option-input" value="검색 프리미엄 광고">
+                            <label for="adType4" class="option-label">
+                                <i class="fas fa-search option-icon"></i>
+                                검색 프리미엄 광고
+                            </label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="adType" id="adType5" class="option-input" value="배너">
+                            <label for="adType5" class="option-label">
+                                <i class="fas fa-image option-icon"></i>
+                                배너
+                            </label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="adType" id="adType6" class="option-input" value="팝업">
+                            <label for="adType6" class="option-label">
+                                <i class="fas fa-window-restore option-icon"></i>
+                                팝업
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Banner Type (Only visible when Banner is selected) -->
+                    <div id="bannerTypeSection" class="form-group" style="display: none; margin-top: 20px;">
+                        <label class="form-label">배너 종류</label>
+                        <div class="form-options">
+                            <div class="option-item">
+                                <input type="radio" name="bannerType" id="bannerType1" class="option-input"
+                                    value="메인 프로모션 배너">
+                                <label for="bannerType1" class="option-label">
+                                    <i class="fas fa-star option-icon"></i>
+                                    메인 프로모션 배너
+                                </label>
+                            </div>
+                            <div class="option-item">
+                                <input type="radio" name="bannerType" id="bannerType2" class="option-input"
+                                    value="프리미엄 추천 광고">
+                                <label for="bannerType2" class="option-label">
+                                    <i class="fas fa-award option-icon"></i>
+                                    프리미엄 추천 광고
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <!-- 추가 6개의 추천 이벤트 -->
-                    <div class="swiper-slide">
-                        <div class="event-card">
-                            <img class="event-image" src="https://api.a0.dev/assets/image?text=concert%202&aspect=4:3"
-                                alt="Event">
-                            <div class="event-content">
-                                <h3 class="event-title">K-POP 슈퍼 콘서트</h3>
-                                <p class="event-info">2024.03.20</p>
-                                <p class="event-price">110,000원</p>
-                            </div>
-                        </div>
+                </div>
+
+                <!-- Applicant Information -->
+                <div class="form-section">
+                    <h3 class="section-title">신청자 정보</h3>
+                    <div class="form-group">
+                        <label for="applicantId" class="form-label">신청자 아이디</label>
+                        <input type="text" id="applicantId" class="form-input" value="user123" disabled>
                     </div>
-                    <!-- 추가 이벤트 카드들... -->
+                    <div class="form-group">
+                        <label for="applicantEmail" class="form-label">신청자 이메일</label>
+                        <input type="email" id="applicantEmail" class="form-input" value="user123@example.com" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantPhone" class="form-label">신청자 휴대전화 번호</label>
+                        <input type="tel" id="applicantPhone" class="form-input" value="010-1234-5678" disabled>
+                    </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
 
-        <!-- 맞춤 추천 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">홍길동님이 관심 가질만한 이벤트</h2>
-            </div>
-            <div class="swiper personalizedSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 10개의 맞춤 추천 이벤트 -->
+                <!-- Event and Schedule Information -->
+                <div class="form-section">
+                    <h3 class="section-title">이벤트 및 일정 정보</h3>
+                    <div class="form-group">
+                        <label for="eventName" class="form-label">이벤트명</label>
+                        <select id="eventName" class="form-select">
+                            <option value="">이벤트를 선택해주세요</option>
+                            <option value="봄맞이 특별 프로모션">봄맞이 특별 프로모션</option>
+                            <option value="여름 할인 페스티벌">여름 할인 페스티벌</option>
+                            <option value="신규 회원 특별 혜택">신규 회원 특별 혜택</option>
+                            <option value="연말 감사 이벤트">연말 감사 이벤트</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="adDate" class="form-label">광고 노출 날짜</label>
+                        <input type="text" id="adDate" class="form-input" placeholder="원하시는 날짜를 선택해주세요">
+                        <div class="error-message" id="dateError">이미 예약된 날짜입니다. 다른 날짜를 선택해주세요.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="adDuration" class="form-label">노출 기간</label>
+                        <select id="adDuration" class="form-select">
+                            <option value="1">1일</option>
+                            <option value="3">3일</option>
+                            <option value="7">7일</option>
+                            <option value="15">15일</option>
+                            <option value="30">30일</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
 
-        <!-- 이번 달 인기 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">3월 가장 인기있는 이벤트</h2>
-            </div>
-            <div class="ranking-list">
-                <!-- TOP 10 인기 이벤트 -->
-            </div>
-        </section>
-
-        <!-- 최근 올라온 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">최근 올라온 이벤트</h2>
-            </div>
-            <div class="swiper recentSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 최신 10개 이벤트 -->
+                <!-- Inquiry Content -->
+                <div class="form-section">
+                    <h3 class="section-title">문의하기</h3>
+                    <div class="form-group">
+                        <label for="inquiryContent" class="form-label">문의 내용</label>
+                        <textarea id="inquiryContent" class="form-textarea"
+                            placeholder="광고 관련 추가 문의 사항이나 요청사항을 자유롭게 작성해주세요."></textarea>
+                    </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <!-- 마감 임박 이벤트 -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">마감 임박 이벤트</h2>
-            </div>
-            <div class="swiper deadlineSwiper">
-                <div class="swiper-wrapper">
-                    <!-- 마감 임박 10개 이벤트 -->
+                <!-- Form Buttons -->
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">취소</button>
+                    <button type="submit" class="btn btn-primary">문의하기</button>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Required Modal -->
+    <div id="loginRequiredModal" class="modal">
+        <div class="modal-content">
+            <div class="login-required">
+                <div class="login-icon">
+                    <i class="fas fa-user-lock"></i>
+                </div>
+                <h3 class="login-title">로그인이 필요합니다</h3>
+                <p class="login-text">광고 문의를 위해서는 로그인이 필요합니다.<br>로그인 페이지로 이동하시겠습니까?</p>
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" id="goToLoginBtn">로그인 페이지로 이동</button>
+                </div>
             </div>
-        </section>
+        </div>
     </div>
 
     <!-- footer start -->
@@ -371,8 +425,9 @@
     <script type="text/javascript" src="../../../static/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../../static/js/slider.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-    <script type="text/javascript" src="../../../static/js/home/swiper-slide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="text/javascript" src="../../../static/js/premium-service/inquiry.js"></script>
+    
 </body>
 
 </html>

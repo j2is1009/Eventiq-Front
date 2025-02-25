@@ -84,9 +84,6 @@ function updateProgress() {
     // progress.style.width = `${((currentStep - 1) / (totalSteps - 1)) * 100}%`;
 
     steps.forEach((step, idx) => {
-        console.log("????????")
-        console.log(idx);
-        console.log(currentStep);
         if (idx < currentStep) {
             step.classList.add('active');
             if (idx < currentStep - 1) {
@@ -100,7 +97,6 @@ function updateProgress() {
     // 버튼 상태 업데이트
     const prevButton = document.querySelector('.btn-secondary');
     const nextButton = document.querySelector('.btn-primary');
-
     prevButton.style.display = currentStep === 1 ? 'none' : 'block';
     nextButton.textContent = currentStep === totalSteps ? '제출' : '다음';
 }
@@ -178,12 +174,15 @@ function toggleTicketForm() {
 }
 
 // 티켓 추가
+document.getElementById('addTicketBtn').addEventListener('click', addTicket);
 function addTicket() {
     const ticketList = document.getElementById('ticketList');
     const ticketCount = ticketList.children.length;
     const newTicket = document.createElement('div');
     newTicket.innerHTML = getTicketTemplate(ticketCount);
     ticketList.appendChild(newTicket);
+    console.log("------------")
+    console.log(newTicket)
 }
 
 // 티켓 삭제
